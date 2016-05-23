@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -27,6 +28,9 @@
     <Filter Include="Blocks\vnm\src">
       <UniqueIdentifier>{1C47D5A5-6E5F-4EFC-B680-2086A9C9DB9B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\facetracker">
+      <UniqueIdentifier>{c544f5b7-fcb7-4335-ad3c-f9dff2f76401}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\FaceOffApp.cpp">
@@ -50,10 +54,79 @@
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\MiniConfig.cpp">
       <Filter>Blocks\vnm\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\ciFaceTracker\ciFaceTracker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\CLM.cc">
+      <Filter>Source Files\facetracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\FCheck.cc">
+      <Filter>Source Files\facetracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\FDet.cc">
+      <Filter>Source Files\facetracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\IO.cc">
+      <Filter>Source Files\facetracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\Patch.cc">
+      <Filter>Source Files\facetracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\PAW.cc">
+      <Filter>Source Files\facetracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\PDM.cc">
+      <Filter>Source Files\facetracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\Tracker.cc">
+      <Filter>Source Files\facetracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Clone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ciFaceTracker\ciFaceTracker.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\CLM.h">
+      <Filter>Source Files\facetracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\FCheck.h">
+      <Filter>Source Files\facetracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\FDet.h">
+      <Filter>Source Files\facetracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\IO.h">
+      <Filter>Source Files\facetracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\Patch.h">
+      <Filter>Source Files\facetracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\PAW.h">
+      <Filter>Source Files\facetracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\PDM.h">
+      <Filter>Source Files\facetracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\Tracker.h">
+      <Filter>Source Files\facetracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Clone.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.h">
+      <Filter>Blocks\vnm\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\CaptureHelper.h">
+      <Filter>Blocks\vnm\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\TextureHelper.h">
+      <Filter>Blocks\vnm\src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

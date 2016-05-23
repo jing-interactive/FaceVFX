@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -106,16 +107,38 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup />
   <ItemGroup>
+    <ClCompile Include="..\src\ciFaceTracker\ciFaceTracker.cpp" />
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\CLM.cc" />
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\FCheck.cc" />
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\FDet.cc" />
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\IO.cc" />
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\Patch.cc" />
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\PAW.cc" />
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\PDM.cc" />
+    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\Tracker.cc" />
+    <ClCompile Include="..\src\Clone.cpp" />
     <ClCompile Include="..\src\FaceOffApp.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\DistortionHelper.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\MiniConfig.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\CaptureHelper.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\TextureHelper.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h" />
+    <ClInclude Include="..\src\ciFaceTracker\ciFaceTracker.h" />
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\CLM.h" />
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\FCheck.h" />
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\FDet.h" />
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\IO.h" />
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\Patch.h" />
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\PAW.h" />
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\PDM.h" />
+    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\Tracker.h" />
+    <ClInclude Include="..\src\Clone.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

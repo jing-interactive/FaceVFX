@@ -1,0 +1,6 @@
+ITEM_DEF(bool, PHOTO_VISIBLE, false)
+ITEM_DEF(bool, FACE_SUB_VISIBLE, true)
+ITEM_DEF(bool, CAMERA_WIREFRAME, false)
+// ITEM_DEF(bool, FLIP, true)
+ITEM_DEF(int, DEVICE_ID, 0)
+ITEM_DEF(int, PEOPLE_ID, 0)
