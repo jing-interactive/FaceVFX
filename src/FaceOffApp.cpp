@@ -1,10 +1,12 @@
 #include "cinder/app/App.h"
 #include "cinder/Capture.h"
 #include "cinder/Utilities.h"
+#include "cinder/ImageIo.h"
 
 #include "cinder/app/RendererGl.h" 
 #include "cinder/gl/Texture.h"
 #include "cinder/gl/Fbo.h"
+#include "cinder/gl/shader.h"
 #include "cinder/gl/draw.h"
 #include "cinder/gl/scoped.h"
 #include "cinder/params/Params.h"
@@ -71,7 +73,7 @@ public:
 
                 if (newTracker->getFound())
                 {
-                    mPhotoTracker = newTracker;
+                    mOfflineTracker = newTracker;
                     mPhotoTex = newTex;
                 }
             }
@@ -99,8 +101,8 @@ private:
     gl::TextureRef mCaptureTex;				// our camera capture texture
     TriMesh         mFaceMesh;
 
-    ciFaceTracker   mFaceTracker;
-    shared_ptr<ciFaceTracker> mPhotoTracker;//to use as background or be replaced
+    ciFaceTracker   mOnlineTracker;
+    shared_ptr<ciFaceTracker> mOfflineTracker;
     gl::TextureRef mPhotoTex;
 
     //
@@ -141,8 +143,8 @@ void FaceOff::setup()
         }
     }
 
-    mFaceTracker.setup();
-    mFaceTracker.setRescale(0.5f);
+    mOnlineTracker.setup();
+    mOnlineTracker.setRescale(0.5f);
 
     mParam = params::InterfaceGl::create("param", ivec2(300, getConfigUIHeight()));
     setupConfigUI(mParam.get());
@@ -170,11 +172,11 @@ void FaceOff::setup()
     mPeopleId = -1;
 
     // Fbo
-    gl::Texture::Format texFormat;
-    texFormat.setTargetRect();
+    //gl::Texture::Format texFormat;
+    //texFormat.setTargetRect();
 
     gl::Fbo::Format fboFormat;
-    fboFormat.setColorTextureFormat(texFormat);
+    //fboFormat.setColorTextureFormat(texFormat);
     fboFormat.enableDepthBuffer(false);
     mSrcFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
     mMaskFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
@@ -208,13 +210,13 @@ void FaceOff::update()
     if (mPeopleId != PEOPLE_ID)
     {
         mPeopleId = PEOPLE_ID;
-        mPhotoTracker = std::make_shared<ciFaceTracker>();
-        mPhotoTracker->setup();
+        mOfflineTracker = std::make_shared<ciFaceTracker>();
+        mOfflineTracker->setup();
 
-        //mPhotoTracker->setRescale(0.5f);
+        //mOfflineTracker->setRescale(0.5f);
         ImageSourceRef img = loadImage(loadAsset("people/" + mPeopleNames[PEOPLE_ID]));
         if (img) mPhotoTex = gl::Texture::create(img);
-        mPhotoTracker->update(toOcv(img));
+        mOfflineTracker->update(toOcv(img));
 
         mFaceMesh.getBufferTexCoords0().clear();
     }
@@ -229,35 +231,35 @@ void FaceOff::update()
         else
         {
             gl::Texture::Format format;
-            format.setTargetRect();
+            //format.setTargetRect();
             mCaptureTex = gl::Texture::create(surface, format);
         }
 
-        mFaceTracker.update(toOcv(surface));
+        mOnlineTracker.update(toOcv(surface));
 
-        if (!mFaceTracker.getFound())
+        if (!mOnlineTracker.getFound())
             return;
 
-        int nPoints = mFaceTracker.size();
+        int nPoints = mOnlineTracker.size();
         if (mFaceMesh.getBufferTexCoords0().empty())
         {
             for (int i = 0; i < nPoints; i++)
             {
-                mFaceMesh.appendTexCoord(mPhotoTracker->getUVPoint(i));
+                mFaceMesh.appendTexCoord(mOfflineTracker->getUVPoint(i));
             }
-            mFaceTracker.addTriangleIndices(mFaceMesh);
+            mOnlineTracker.addTriangleIndices(mFaceMesh);
         }
 
         mFaceMesh.getBufferPositions().clear();
         for (int i = 0; i < nPoints; i++)
         {
-            mFaceMesh.appendPosition(vec3(mFaceTracker.getImagePoint(i), 0));
+            mFaceMesh.appendPosition(vec3(mOnlineTracker.getImagePoint(i), 0));
         }
 
         if (FACE_SUB_VISIBLE)
         {
-            gl::setMatricesWindow(getWindowSize(), false);
-
+            //gl::setMatricesWindow(getWindowSize(), true);
+            // TODO: merge these two passes w/ MRTs
             {
                 gl::ScopedFramebuffer fbo(mMaskFbo);
                 gl::clear(ColorA::black(), false);
@@ -267,13 +269,17 @@ void FaceOff::update()
 
             {
                 gl::ScopedFramebuffer fbo(mSrcFbo);
+                gl::ScopedGlslProg glsl(gl::getStockShader(gl::ShaderDef().texture()));
+                gl::ScopedTextureBind t0(mPhotoTex, 0);
                 gl::clear(ColorA::black(), false);
-                mPhotoTex->bind();
                 gl::draw(mFaceMesh);
-                mPhotoTex->unbind();
             }
 
-            mClone.update(mSrcFbo->getTexture2d(GL_COLOR_ATTACHMENT0), mCaptureTex, mMaskFbo->getTexture2d(GL_COLOR_ATTACHMENT0));
+#if 0
+            Surface s8(mSrcFbo->getColorTexture()->createSource());
+            writeImage(writeFile("test.png"), s8);
+#endif
+            mClone.update(mSrcFbo->getColorTexture(), mCaptureTex, mMaskFbo->getColorTexture());
         }
     }
 }
@@ -289,12 +295,11 @@ void FaceOff::draw()
 
     gl::enableAlphaBlending();
 
-    if (FACE_SUB_VISIBLE && mFaceTracker.getFound())
+    if (FACE_SUB_VISIBLE && mOnlineTracker.getFound())
     {
-        gl::pushModelView();
+        gl::ScopedModelMatrix modelMatrix;
         gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
         mClone.draw();
-        gl::popModelView();
     }
     else
     {
@@ -310,28 +315,22 @@ void FaceOff::draw()
 
     gl::disableAlphaBlending();
 
-    gl::enableWireframe();
-    if (mFaceTracker.getFound())
+    if (WIREFRAME_MODE && mOnlineTracker.getFound())
     {
-        //wire
-        if (CAMERA_WIREFRAME)
-        {
-            gl::color(ColorA(0, 1.0f, 0, 1.0f));
-            gl::pushModelView();
-            gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
-            gl::draw(mFaceTracker.getImageMesh());
-            gl::popModelView();
-            gl::color(ColorA::white());
-        }
-    }
+        gl::enableWireframe();
 
-    if (PHOTO_VISIBLE && mPhotoTracker->getFound())
-    {
-        gl::color(ColorA(0, 0, 1.0f, 0.5f));
-        gl::draw(mPhotoTracker->getImageMesh());
-        gl::color(ColorA::white());
+        gl::ScopedModelMatrix modelMatrix;
+        gl::ScopedColor color(ColorA(0, 1.0f, 0, 1.0f));
+        gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
+        gl::draw(mOnlineTracker.getImageMesh());
+
+        if (PHOTO_VISIBLE)
+        {
+            gl::draw(mOfflineTracker->getImageMesh());
+        }
+    
+        gl::disableWireframe();
     }
-    gl::disableWireframe();
 
     mParam->draw();
 }
