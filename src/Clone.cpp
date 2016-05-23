@@ -43,13 +43,10 @@ void Clone::maskedBlur(gl::TextureRef& tex, gl::TextureRef& mask, gl::FboRef& re
     gl::ScopedGlslProg glslTexOnly(gl::getStockShader(gl::ShaderDef().color()));
 #endif
 
-    mMaskBlurShader->uniform("strength", mStrength);
-
     {
         gl::ScopedFramebuffer fbo(mBufferFbo);
         gl::clear(ColorA::black(), false);
         gl::ScopedTextureBind t1(tex, 1);
-        tex->bind(1);
         mMaskBlurShader->uniform("direction", vec2(1, 0));
         gl::drawSolidRect(tex->getBounds());
     }
@@ -70,6 +67,8 @@ void Clone::setStrength(int strength)
 
 void Clone::update(gl::TextureRef& src, gl::TextureRef& dst, gl::TextureRef& mask)
 {
+    mMaskBlurShader->uniform("strength", mStrength);
+
     maskedBlur(src, mask, mSrcBlurFbo);
     maskedBlur(dst, mask, mDstBlurFbo);
 
