@@ -9,6 +9,12 @@ Depends on
 * Cinder-VNM
 * ciFaceTracker
 
+Tools used
+
+* apitrace
+* glintercept
+* Very Sleepy
+
 -------------------
 
 ![](https://raw.githubusercontent.com/OpenAVR/FaceOff/master/doc/tom-cruise.jpg)
