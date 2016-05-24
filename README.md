@@ -8,3 +8,7 @@ Depends on
 * Cinder-OpenCV3
 * Cinder-VNM
 * ciFaceTracker
+
+-------------------
+
+![](https://raw.githubusercontent.com/OpenAVR/FaceOff/master/doc/tom-cruise.jpg)
