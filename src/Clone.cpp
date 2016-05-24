@@ -17,11 +17,11 @@ void Clone::setup(int width, int height)
 
     try
     {
-        mMaskBlurShader = gl::GlslProg::create(DataSourceRef(), app::loadAsset("shader/maskBlur.frag"));
+        mMaskBlurShader = gl::GlslProg::create(app::loadAsset("shader/basic.vert"), app::loadAsset("shader/maskBlur.frag"));
         mMaskBlurShader->uniform("tex", 1);
         mMaskBlurShader->uniform("mask", 2);
 
-        mCloneShader = gl::GlslProg::create(DataSourceRef(), app::loadAsset("shader/clone.frag"));
+        mCloneShader = gl::GlslProg::create(app::loadAsset("shader/basic.vert"), app::loadAsset("shader/clone.frag"));
         mCloneShader->uniform("src", 1);
         mCloneShader->uniform("srcBlur", 2);
         mCloneShader->uniform("dstBlur", 3);

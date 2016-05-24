@@ -215,7 +215,10 @@ void FaceOff::update()
 
         //mOfflineTracker->setRescale(0.5f);
         ImageSourceRef img = loadImage(loadAsset("people/" + mPeopleNames[PEOPLE_ID]));
-        if (img) mPhotoTex = gl::Texture::create(img);
+        if (img)
+        {
+            mPhotoTex = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+        }
         mOfflineTracker->update(toOcv(img));
 
         mFaceMesh.getBufferTexCoords0().clear();
@@ -258,7 +261,7 @@ void FaceOff::update()
 
         if (FACE_SUB_VISIBLE)
         {
-            //gl::setMatricesWindow(getWindowSize(), true);
+            //gl::setMatricesWindow(getWindowSize(), false);
             // TODO: merge these two passes w/ MRTs
             {
                 gl::ScopedFramebuffer fbo(mMaskFbo);
@@ -275,10 +278,6 @@ void FaceOff::update()
                 gl::draw(mFaceMesh);
             }
 
-#if 0
-            Surface s8(mSrcFbo->getColorTexture()->createSource());
-            writeImage(writeFile("test.png"), s8);
-#endif
             mClone.update(mSrcFbo->getColorTexture(), mCaptureTex, mMaskFbo->getColorTexture());
         }
     }
