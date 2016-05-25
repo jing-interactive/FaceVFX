@@ -11,6 +11,9 @@
 #include "cinder/gl/scoped.h"
 #include "cinder/params/Params.h"
 
+#include "cinder/qtime/QuickTimeGl.h"
+#include "TextureHelper.h"
+
 #include "CinderOpenCV.h"
 #include "ciFaceTracker/ciFacetracker.h"
 #include "MiniConfig.h"
@@ -29,14 +32,14 @@ int CAM_H = 480;
 class FaceOff : public App
 {
 public:
-    void prepareSettings(Settings *settings)
+    static void prepareSettings(Settings *settings)
     {
         readConfig();
 
         settings->setWindowSize(APP_W, APP_H);
         settings->setFrameRate(60.0f);
         settings->setFullScreen(false);
-        settings->setTitle("FaceOff. CRE Imagination");
+        settings->setTitle("face-switcher");
     }
 
     void	keyUp(KeyEvent event)
@@ -105,19 +108,25 @@ private:
     shared_ptr<ciFaceTracker> mOfflineTracker;
     gl::TextureRef mPhotoTex;
 
+    qtime::MovieSurfaceRef		mMovie;
+
     //
     vector<Capture::DeviceRef>  mDevices;
     vector<string>              mDeviceNames;
-    int         mDeviceId;
     CaptureRef		mCapture;
 
-    int         mPeopleId;
     vector<string>              mPeopleNames;
 
     params::InterfaceGlRef mParam;
 
+    gl::TextureRef mRefTex;
+    gl::TextureRef mRenderedRefTex;
     gl::FboRef     mSrcFbo, mMaskFbo;
     Clone       mClone;
+
+    //  param
+    int         mDeviceId;
+    int         mPeopleId;
 };
 
 void FaceOff::setup()
@@ -191,6 +200,49 @@ void FaceOff::setup()
 
 void FaceOff::update()
 {
+    if (MOVIE_MODE)
+    {
+        if (!mMovie)
+        {
+            fs::path moviePath = getAssetPath(MOVIE_PATH);
+            try {
+                // load up the movie, set it to loop, and begin playing
+                mMovie = qtime::MovieSurface::create(moviePath);
+                mMovie->setLoop();
+                mMovie->play();
+                mRefTex.reset();
+                mRenderedRefTex.reset();
+            }
+            catch (ci::Exception &exc) {
+                console() << "Exception caught trying to load the movie from path: " << moviePath << ", what: " << exc.what() << std::endl;
+                mMovie.reset();
+            }
+        }
+        else
+        {
+            if (mMovie->checkNewFrame())
+            {
+                auto surface = mMovie->getSurface();
+                if (!mRefTex)
+                {
+                    mRefTex = gl::Texture2d::create(*surface, gl::Texture::Format().loadTopDown());
+                }
+                else
+                {
+                    mRefTex->update(*surface);
+                }
+            }
+        }
+    }
+    else
+    {
+        if (mMovie)
+        {
+            mMovie.reset();
+        }
+        mRefTex = mPhotoTex;
+    }
+
     if (mDeviceId != DEVICE_ID)
     {
         mDeviceId = DEVICE_ID;
@@ -217,7 +269,7 @@ void FaceOff::update()
         ImageSourceRef img = loadImage(loadAsset("people/" + mPeopleNames[PEOPLE_ID]));
         if (img)
         {
-            mPhotoTex = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+            mRefTex = mPhotoTex = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
         }
         mOfflineTracker->update(toOcv(img));
 
@@ -259,26 +311,30 @@ void FaceOff::update()
             mFaceMesh.appendPosition(vec3(mOnlineTracker.getImagePoint(i), 0));
         }
 
-        if (FACE_SUB_VISIBLE)
+        if (FACE_SUB_VISIBLE && mRefTex)
         {
             //gl::setMatricesWindow(getWindowSize(), false);
             // TODO: merge these two passes w/ MRTs
             {
-                gl::ScopedFramebuffer fbo(mMaskFbo);
-                gl::clear(ColorA::black(), false);
-                mPhotoTex->unbind();
-                gl::draw(mFaceMesh);
-            }
-
-            {
                 gl::ScopedFramebuffer fbo(mSrcFbo);
                 gl::ScopedGlslProg glsl(gl::getStockShader(gl::ShaderDef().texture()));
-                gl::ScopedTextureBind t0(mPhotoTex, 0);
+                gl::ScopedTextureBind t0(mRefTex, 0);
                 gl::clear(ColorA::black(), false);
                 gl::draw(mFaceMesh);
+                mRenderedRefTex = mSrcFbo->getColorTexture();
             }
 
-            mClone.update(mSrcFbo->getColorTexture(), mCaptureTex, mMaskFbo->getColorTexture());
+            if (!MOVIE_MODE)
+            {
+                {
+                    gl::ScopedFramebuffer fbo(mMaskFbo);
+                    gl::clear(ColorA::black(), false);
+                    mRefTex->unbind();
+                    gl::draw(mFaceMesh);
+                }
+
+                mClone.update(mRenderedRefTex, mCaptureTex, mMaskFbo->getColorTexture());
+            }
         }
     }
 }
@@ -298,16 +354,23 @@ void FaceOff::draw()
     {
         gl::ScopedModelMatrix modelMatrix;
         gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
-        mClone.draw();
+        if (MOVIE_MODE)
+        {
+            if (mRenderedRefTex) gl::draw(mRenderedRefTex);
+        }
+        else
+        {
+            mClone.draw();
+        }
     }
     else
     {
         gl::draw(mCaptureTex, getWindowBounds());
     }
 
-    if (PHOTO_VISIBLE)
+    if (REF_VISIBLE)
     {
-        gl::draw(mPhotoTex);
+        gl::draw(mRefTex);
     }
 
     gl::drawStringCentered("fps: " + toString(getAverageFps()), vec2(150, 10));
@@ -323,7 +386,7 @@ void FaceOff::draw()
         gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
         gl::draw(mOnlineTracker.getImageMesh());
 
-        if (PHOTO_VISIBLE)
+        if (REF_VISIBLE)
         {
             gl::draw(mOfflineTracker->getImageMesh());
         }
@@ -334,4 +397,4 @@ void FaceOff::draw()
     mParam->draw();
 }
 
-CINDER_APP(FaceOff, RendererGl)
+CINDER_APP(FaceOff, RendererGl, &FaceOff::prepareSettings)
