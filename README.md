@@ -1,6 +1,6 @@
-# FaceOff
+# face-swapper
 
-Experimental project to showcase realtime face off effects. 
+Experimental project to showcase realtime face swap effects. 
 
 Depends on
 
@@ -17,4 +17,4 @@ Tools used
 
 -------------------
 
-![](https://raw.githubusercontent.com/OpenAVR/FaceOff/master/doc/tom-cruise.jpg)
+![](https://raw.githubusercontent.com/OpenAVR/face-swapper/master/doc/tom-cruise.jpg)
