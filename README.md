@@ -17,4 +17,10 @@ Tools used
 
 -------------------
 
+### Photo mode (Tom Cruise)
+
 ![](https://raw.githubusercontent.com/OpenAVR/face-swapper/master/doc/tom-cruise.jpg)
+
+### Movie mode
+
+![](https://raw.githubusercontent.com/OpenAVR/face-swapper/master/doc/movie-mode.jpg)
