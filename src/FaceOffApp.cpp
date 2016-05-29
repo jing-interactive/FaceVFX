@@ -147,9 +147,8 @@ void FaceOff::setup()
         return;
     }
 
-    for (vector<Capture::DeviceRef>::const_iterator deviceIt = devices.begin(); deviceIt != devices.end(); ++deviceIt)
+    for (auto device : devices)
     {
-        Capture::DeviceRef device = *deviceIt;
         console() << "Found Device " << device->getName() << " ID: " << device->getUniqueId() << endl;
 
         if (device->checkAvailable())
@@ -358,7 +357,20 @@ void FaceOff::draw()
     if (!mCaptureTex)
         return;
 
+    gl::ScopedModelMatrix modelScope;
+
     gl::setMatricesWindow(getWindowSize());
+    
+#if defined( CINDER_GL_ES )
+    // change iphone to landscape orientation
+    gl::rotate( M_PI / 2 );
+    gl::translate( 0, - getWindowWidth() );
+    
+    Rectf flippedBounds( 0, 0, CAM_W, CAM_H );
+//    gl::draw( mCaptureHelper.texture, flippedBounds );
+#else
+//    gl::draw( mCaptureHelper.texture );
+#endif
 
     gl::enableAlphaBlending();
 
