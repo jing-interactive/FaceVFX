@@ -1,13 +1,17 @@
+#ifdef GL_ES
+precision mediump float;
+#endif
+
 uniform sampler2D tex, mask;
 uniform vec2 direction;
 uniform int strength;
 uniform ivec2 ciWindowSize;
 
-in vec2     TexCoord;
+in highp vec2 TexCoord;
 out highp vec4   Color;
 
 void main() {
-    vec2 dir = direction / ciWindowSize;
+    vec2 dir = direction / vec2(ciWindowSize);
     vec4 sum = texture(tex, TexCoord);
     int i;
     for(i = 1; i < strength; i++) {

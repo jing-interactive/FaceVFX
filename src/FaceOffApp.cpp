@@ -29,6 +29,13 @@ int	APP_H = 480;
 int CAM_W = 640;
 int CAM_H = 480;
 
+#if defined( CINDER_GL_ES )
+namespace cinder { namespace gl {
+    void enableWireframe() {}
+    void disableWireframe() {}
+} }
+#endif
+
 class FaceOff : public App
 {
 public:
@@ -155,6 +162,15 @@ void FaceOff::setup()
     mOnlineTracker.setup();
     mOnlineTracker.setRescale(0.5f);
 
+    // TODO: assert
+    fs::directory_iterator kEnd;
+    fs::path peopleFolder = getAssetPath("people");
+    for (fs::directory_iterator it(peopleFolder); it != kEnd; ++it)
+    {
+        mPeopleNames.push_back(it->path().filename().string());
+    }
+
+#if !defined( CINDER_GL_ES )
     mParam = params::InterfaceGl::create("param", ivec2(300, getConfigUIHeight()));
     setupConfigUI(mParam.get());
 
@@ -166,20 +182,16 @@ void FaceOff::setup()
     ADD_ENUM_TO_INT(mParam, DEVICE_ID, mDeviceNames);
     mDeviceId = -1;
 
-    // TODO: assert
-    fs::directory_iterator kEnd;
-    fs::path peopleFolder = getAssetPath("people");
-    for (fs::directory_iterator it(peopleFolder); it != kEnd; ++it)
-    {
-        mPeopleNames.push_back(it->path().filename().string());
-    }
     if (PEOPLE_ID > mPeopleNames.size() - 1)
     {
         PEOPLE_ID = 0;
     }
     ADD_ENUM_TO_INT(mParam, PEOPLE_ID, mPeopleNames);
+#else
+    DEVICE_ID = 1; // pick front camera for mobile devices
+#endif
+    
     mPeopleId = -1;
-
     // Fbo
     //gl::Texture::Format texFormat;
     //texFormat.setTargetRect();
@@ -393,8 +405,6 @@ void FaceOff::draw()
     
         gl::disableWireframe();
     }
-
-    mParam->draw();
 }
 
 CINDER_APP(FaceOff, RendererGl, &FaceOff::prepareSettings)

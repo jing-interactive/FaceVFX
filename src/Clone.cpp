@@ -2,6 +2,7 @@
 #include "cinder/app/App.h"
 #include "cinder/gl/draw.h"
 #include "cinder/gl/scoped.h"
+#include "AssetManager.h"
 #include "cinder/gl/shader.h"
 
 using namespace ci;
@@ -15,22 +16,14 @@ void Clone::setup(int width, int height)
     mSrcBlurFbo = gl::Fbo::create(width, height, fboFormat);
     mDstBlurFbo = gl::Fbo::create(width, height, fboFormat);
 
-    try
-    {
-        mMaskBlurShader = gl::GlslProg::create(app::loadAsset("shader/basic.vert"), app::loadAsset("shader/maskBlur.frag"));
-        mMaskBlurShader->uniform("tex", 1);
-        mMaskBlurShader->uniform("mask", 2);
+    mMaskBlurShader = am::glslProg("shader/basic.vert", "shader/maskBlur.frag");
+    mMaskBlurShader->uniform("tex", 1);
+    mMaskBlurShader->uniform("mask", 2);
 
-        mCloneShader = gl::GlslProg::create(app::loadAsset("shader/basic.vert"), app::loadAsset("shader/clone.frag"));
-        mCloneShader->uniform("src", 1);
-        mCloneShader->uniform("srcBlur", 2);
-        mCloneShader->uniform("dstBlur", 3);
-    }
-    catch (const std::exception& e)
-    {
-        app::console() << e.what() << std::endl;
-        app::AppBase::get()->quit();
-    }
+    mCloneShader = am::glslProg("shader/basic.vert", "shader/clone.frag");
+    mCloneShader->uniform("src", 1);
+    mCloneShader->uniform("srcBlur", 2);
+    mCloneShader->uniform("dstBlur", 3);
 
     mStrength = 0;
 }
@@ -38,11 +31,7 @@ void Clone::setup(int width, int height)
 void Clone::maskedBlur(gl::TextureRef tex, gl::TextureRef mask, gl::FboRef result)
 {
     gl::ScopedTextureBind t2(mask, 2);
-#if 1
     gl::ScopedGlslProg glsl(mMaskBlurShader);
-#else
-    gl::ScopedGlslProg glslTexOnly(gl::getStockShader(gl::ShaderDef().color()));
-#endif
 
     {
         gl::ScopedFramebuffer fbo(mBufferFbo);

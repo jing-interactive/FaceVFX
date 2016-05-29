@@ -7,71 +7,94 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00748058165D41390024B57A /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 00748057165D41390024B57A /* assets */; };
 		0087D25512CD809F002CD69F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0087D25412CD809F002CD69F /* CoreText.framework */; };
+		00A66A361965AC8800B17EB3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A66A351965AC8800B17EB3 /* Accelerate.framework */; };
 		00CFDF6B1138442D0091E310 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CFDF6A1138442D0091E310 /* CoreGraphics.framework */; };
-		C725E001121DAC8FFFFA18FF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CFDF6A1138442D0091FFFF /* ImageIO.framework */; };
-		DDDDE001121DAC8FFFFADDDD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDDDF6A1138442D0091DDDD /* MobileCoreServices.framework */; };
+		03959E52CE154A2B9842A31A /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 048283C8EC88493DAE215FC7 /* AssetManager.cpp */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
-		C725DFFE121DAC7F00FA186B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C727C02B121B400300192073 /* CoreMedia.framework */; settings = {
-	ATTRIBUTES = (
-		Weak,
-	);
-}; };
-		C725E001121DAC8F00FA186B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C725E000121DAC8F00FA186B /* AVFoundation.framework */; settings = {
-	ATTRIBUTES = (
-		Weak,
-	);
-}; };
-		C727C02E121B400300192073 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C727C02D121B400300192073 /* CoreVideo.framework */; settings = {
-	ATTRIBUTES = (
-		Weak,
-	);
-}; };
-		C7FB19D6124BC0D70045AFD2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FB19D5124BC0D70045AFD2 /* AudioToolbox.framework */; };
-		00A66A361965AC8800B17EB3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A66A351965AC8800B17EB3 /* Accelerate.framework */; };
-		00748058165D41390024B57A /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 00748057165D41390024B57A /* assets */; };
-		A901921565DA41FF88833CC0 /* MiniConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 246C662365EC42C290CF175C /* MiniConfig.cpp */; };
-		81C2F7C7FCCD4858863E412E /* DistortionHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */; };
-		03959E52CE154A2B9842A31A /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 048283C8EC88493DAE215FC7 /* AssetManager.cpp */; };
-		FB53053AD1FD471AA5EE0179 /* CinderOpenCV.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B814C1668774D5BA66FFBA9 /* CinderOpenCV.h */; };
-		5BB48F956BC94858841013D8 /* FaceOff_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E303B7FFE2FC4F9BB04E5647 /* FaceOff_Prefix.pch */; };
 		586989F1497D423B904455D5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD8BB986F7E449E89284CB72 /* LaunchScreen.xib */; };
-		C8A7432F173A4C2B8B13BE85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60539AFC2081411DBB11E9D4 /* Images.xcassets */; };
-		9714D3E08F884AA59720284D /* CinderApp_ios.png in Resources */ = {isa = PBXBuildFile; fileRef = C300FC69A8074EAF9827E463 /* CinderApp_ios.png */; };
-		22E5EFBD7FAE433DBB2DACD6 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = 900028DF1FB34907B73D5B9B /* Resources.h */; };
+		74A547921CFAE7B300C05CAC /* ciFaceTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A5477A1CFAE7B300C05CAC /* ciFaceTracker.cpp */; };
+		74A547931CFAE7B300C05CAC /* CLM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A5477D1CFAE7B300C05CAC /* CLM.cc */; };
+		74A547941CFAE7B300C05CAC /* COPYRIGHT in Resources */ = {isa = PBXBuildFile; fileRef = 74A5477F1CFAE7B300C05CAC /* COPYRIGHT */; };
+		74A547951CFAE7B300C05CAC /* FCheck.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547801CFAE7B300C05CAC /* FCheck.cc */; };
+		74A547961CFAE7B300C05CAC /* FDet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547821CFAE7B300C05CAC /* FDet.cc */; };
+		74A547971CFAE7B300C05CAC /* IO.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547841CFAE7B300C05CAC /* IO.cc */; };
+		74A547981CFAE7B300C05CAC /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 74A547861CFAE7B300C05CAC /* Makefile */; };
+		74A547991CFAE7B300C05CAC /* Patch.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547871CFAE7B300C05CAC /* Patch.cc */; };
+		74A5479A1CFAE7B300C05CAC /* PAW.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547891CFAE7B300C05CAC /* PAW.cc */; };
+		74A5479B1CFAE7B300C05CAC /* PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A5478B1CFAE7B300C05CAC /* PDM.cc */; };
+		74A5479C1CFAE7B300C05CAC /* README in Resources */ = {isa = PBXBuildFile; fileRef = 74A5478D1CFAE7B300C05CAC /* README */; };
+		74A5479D1CFAE7B300C05CAC /* Tracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A5478E1CFAE7B300C05CAC /* Tracker.cc */; };
+		74A5479E1CFAE7B300C05CAC /* Clone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A547901CFAE7B300C05CAC /* Clone.cpp */; };
+		74A547A01CFAE7BD00C05CAC /* item.def in Resources */ = {isa = PBXBuildFile; fileRef = 74A5479F1CFAE7BD00C05CAC /* item.def */; };
+		81C2F7C7FCCD4858863E412E /* DistortionHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */; };
 		83B21AE6FC5A4F9DBE9F2252 /* FaceOffApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 720A519E19DA44CEAB1B3D2D /* FaceOffApp.cpp */; };
+		9714D3E08F884AA59720284D /* CinderApp_ios.png in Resources */ = {isa = PBXBuildFile; fileRef = C300FC69A8074EAF9827E463 /* CinderApp_ios.png */; };
+		A901921565DA41FF88833CC0 /* MiniConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 246C662365EC42C290CF175C /* MiniConfig.cpp */; };
+		C725DFFE121DAC7F00FA186B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C727C02B121B400300192073 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C725E001121DAC8F00FA186B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C725E000121DAC8F00FA186B /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C725E001121DAC8FFFFA18FF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CFDF6A1138442D0091FFFF /* ImageIO.framework */; };
+		C727C02E121B400300192073 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C727C02D121B400300192073 /* CoreVideo.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C7FB19D6124BC0D70045AFD2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FB19D5124BC0D70045AFD2 /* AudioToolbox.framework */; };
+		C8A7432F173A4C2B8B13BE85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60539AFC2081411DBB11E9D4 /* Images.xcassets */; };
+		DDDDE001121DAC8FFFFADDDD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDDDF6A1138442D0091DDDD /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00692BCF14FF149000D0A05E /* FaceOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00748057165D41390024B57A /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../assets; sourceTree = "<group>"; };
 		0087D25412CD809F002CD69F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		00A66A351965AC8800B17EB3 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		00CFDF6A1138442D0091E310 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		00CFDF6A1138442D0091FFFF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		DDDDDF6A1138442D0091DDDD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		048283C8EC88493DAE215FC7 /* AssetManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = AssetManager.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/AssetManager.cpp"; sourceTree = "<group>"; };
+		15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = DistortionHelper.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/DistortionHelper.cpp"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		246C662365EC42C290CF175C /* MiniConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = MiniConfig.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.cpp"; sourceTree = "<group>"; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		60539AFC2081411DBB11E9D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = Images.xcassets; sourceTree = "<group>"; };
+		720A519E19DA44CEAB1B3D2D /* FaceOffApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = FaceOffApp.cpp; path = ../src/FaceOffApp.cpp; sourceTree = "<group>"; };
+		74A5477A1CFAE7B300C05CAC /* ciFaceTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ciFaceTracker.cpp; sourceTree = "<group>"; };
+		74A5477B1CFAE7B300C05CAC /* ciFaceTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ciFaceTracker.h; sourceTree = "<group>"; };
+		74A5477D1CFAE7B300C05CAC /* CLM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLM.cc; sourceTree = "<group>"; };
+		74A5477E1CFAE7B300C05CAC /* CLM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLM.h; sourceTree = "<group>"; };
+		74A5477F1CFAE7B300C05CAC /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
+		74A547801CFAE7B300C05CAC /* FCheck.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FCheck.cc; sourceTree = "<group>"; };
+		74A547811CFAE7B300C05CAC /* FCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCheck.h; sourceTree = "<group>"; };
+		74A547821CFAE7B300C05CAC /* FDet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FDet.cc; sourceTree = "<group>"; };
+		74A547831CFAE7B300C05CAC /* FDet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDet.h; sourceTree = "<group>"; };
+		74A547841CFAE7B300C05CAC /* IO.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IO.cc; sourceTree = "<group>"; };
+		74A547851CFAE7B300C05CAC /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IO.h; sourceTree = "<group>"; };
+		74A547861CFAE7B300C05CAC /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		74A547871CFAE7B300C05CAC /* Patch.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Patch.cc; sourceTree = "<group>"; };
+		74A547881CFAE7B300C05CAC /* Patch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch.h; sourceTree = "<group>"; };
+		74A547891CFAE7B300C05CAC /* PAW.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PAW.cc; sourceTree = "<group>"; };
+		74A5478A1CFAE7B300C05CAC /* PAW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAW.h; sourceTree = "<group>"; };
+		74A5478B1CFAE7B300C05CAC /* PDM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PDM.cc; sourceTree = "<group>"; };
+		74A5478C1CFAE7B300C05CAC /* PDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDM.h; sourceTree = "<group>"; };
+		74A5478D1CFAE7B300C05CAC /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		74A5478E1CFAE7B300C05CAC /* Tracker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tracker.cc; sourceTree = "<group>"; };
+		74A5478F1CFAE7B300C05CAC /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
+		74A547901CFAE7B300C05CAC /* Clone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clone.cpp; path = ../src/Clone.cpp; sourceTree = "<group>"; };
+		74A547911CFAE7B300C05CAC /* Clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clone.h; path = ../src/Clone.h; sourceTree = "<group>"; };
+		74A5479F1CFAE7BD00C05CAC /* item.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = item.def; path = ../include/item.def; sourceTree = "<group>"; };
+		900028DF1FB34907B73D5B9B /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+		9B814C1668774D5BA66FFBA9 /* CinderOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CinderOpenCV.h; path = "../../Cinder/blocks/Cinder-OpenCV3/include/CinderOpenCV.h"; sourceTree = "<group>"; };
+		A28415F2C28F4341BD479B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C300FC69A8074EAF9827E463 /* CinderApp_ios.png */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; name = CinderApp_ios.png; path = ../resources/CinderApp_ios.png; sourceTree = "<group>"; };
 		C725E000121DAC8F00FA186B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C727C02B121B400300192073 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		C727C02D121B400300192073 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		C7FB19D5124BC0D70045AFD2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		00A66A351965AC8800B17EB3 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		00748057165D41390024B57A /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../assets; sourceTree = "<group>"; };
-		720A519E19DA44CEAB1B3D2D /* FaceOffApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/FaceOffApp.cpp; sourceTree = "<group>"; name = FaceOffApp.cpp; };
-		900028DF1FB34907B73D5B9B /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
-		C300FC69A8074EAF9827E463 /* CinderApp_ios.png */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = ../resources/CinderApp_ios.png; sourceTree = "<group>"; name = CinderApp_ios.png; };
-		60539AFC2081411DBB11E9D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = Images.xcassets; sourceTree = "<group>"; name = Images.xcassets; };
-		FD8BB986F7E449E89284CB72 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = LaunchScreen.xib; sourceTree = "<group>"; name = LaunchScreen.xib; };
-		A28415F2C28F4341BD479B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
-		E303B7FFE2FC4F9BB04E5647 /* FaceOff_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = FaceOff_Prefix.pch; sourceTree = "<group>"; name = FaceOff_Prefix.pch; };
-		9B814C1668774D5BA66FFBA9 /* CinderOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "../../Cinder/blocks/Cinder-OpenCV3/include/CinderOpenCV.h"; sourceTree = "<group>"; name = CinderOpenCV.h; };
-		048283C8EC88493DAE215FC7 /* AssetManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/AssetManager.cpp"; sourceTree = "<group>"; name = AssetManager.cpp; };
-		15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/DistortionHelper.cpp"; sourceTree = "<group>"; name = DistortionHelper.cpp; };
-		246C662365EC42C290CF175C /* MiniConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.cpp"; sourceTree = "<group>"; name = MiniConfig.cpp; };
+		DDDDDF6A1138442D0091DDDD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E303B7FFE2FC4F9BB04E5647 /* FaceOff_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = FaceOff_Prefix.pch; sourceTree = "<group>"; };
+		FD8BB986F7E449E89284CB72 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,61 +161,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		54741D37809D42479ED3C08E /* include */ = {
-			isa = PBXGroup;
-			children = (
-				9B814C1668774D5BA66FFBA9 /* CinderOpenCV.h */,
-			);
-			name = include;
-			sourceTree = "<group>";
-		};
-		8619BF3C33DA4E79AB6E2634 /* OpenCV3 */ = {
-			isa = PBXGroup;
-			children = (
-				54741D37809D42479ED3C08E /* include */,
-			);
-			name = OpenCV3;
-			sourceTree = "<group>";
-		};
-		39106A9A0F1349D4A7B27389 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				048283C8EC88493DAE215FC7 /* AssetManager.cpp */,
-				15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */,
-				246C662365EC42C290CF175C /* MiniConfig.cpp */,
-			);
-			name = src;
-			sourceTree = "<group>";
-		};
-		272978287C264DF8A94E4C14 /* vnm */ = {
-			isa = PBXGroup;
-			children = (
-				39106A9A0F1349D4A7B27389 /* src */,
-			);
-			name = vnm;
-			sourceTree = "<group>";
-		};
-		99692BD914FF149000DFFFFF /* Blocks */ = {
-			isa = PBXGroup;
-			children = (
-				8619BF3C33DA4E79AB6E2634 /* OpenCV3 */,
-				272978287C264DF8A94E4C14 /* vnm */,
-			);
-			name = Blocks;
-			sourceTree = "<group>";
-		};
-		99692BD914FF149000D0A05F /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				900028DF1FB34907B73D5B9B /* Resources.h */,
-				E303B7FFE2FC4F9BB04E5647 /* FaceOff_Prefix.pch */,
-			);
-			name = Headers;
-			sourceTree = "<group>";
-		};
 		00692BD914FF149000D0A05E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				74A547791CFAE7B300C05CAC /* ciFaceTracker */,
+				74A547901CFAE7B300C05CAC /* Clone.cpp */,
+				74A547911CFAE7B300C05CAC /* Clone.h */,
 				720A519E19DA44CEAB1B3D2D /* FaceOffApp.cpp */,
 			);
 			name = Source;
@@ -208,6 +182,96 @@
 				A28415F2C28F4341BD479B72 /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		272978287C264DF8A94E4C14 /* vnm */ = {
+			isa = PBXGroup;
+			children = (
+				39106A9A0F1349D4A7B27389 /* src */,
+			);
+			name = vnm;
+			sourceTree = "<group>";
+		};
+		39106A9A0F1349D4A7B27389 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				048283C8EC88493DAE215FC7 /* AssetManager.cpp */,
+				15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */,
+				246C662365EC42C290CF175C /* MiniConfig.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		54741D37809D42479ED3C08E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9B814C1668774D5BA66FFBA9 /* CinderOpenCV.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		74A547791CFAE7B300C05CAC /* ciFaceTracker */ = {
+			isa = PBXGroup;
+			children = (
+				74A5477A1CFAE7B300C05CAC /* ciFaceTracker.cpp */,
+				74A5477B1CFAE7B300C05CAC /* ciFaceTracker.h */,
+				74A5477C1CFAE7B300C05CAC /* FaceTracker */,
+			);
+			name = ciFaceTracker;
+			path = ../src/ciFaceTracker;
+			sourceTree = "<group>";
+		};
+		74A5477C1CFAE7B300C05CAC /* FaceTracker */ = {
+			isa = PBXGroup;
+			children = (
+				74A5477D1CFAE7B300C05CAC /* CLM.cc */,
+				74A5477E1CFAE7B300C05CAC /* CLM.h */,
+				74A5477F1CFAE7B300C05CAC /* COPYRIGHT */,
+				74A547801CFAE7B300C05CAC /* FCheck.cc */,
+				74A547811CFAE7B300C05CAC /* FCheck.h */,
+				74A547821CFAE7B300C05CAC /* FDet.cc */,
+				74A547831CFAE7B300C05CAC /* FDet.h */,
+				74A547841CFAE7B300C05CAC /* IO.cc */,
+				74A547851CFAE7B300C05CAC /* IO.h */,
+				74A547861CFAE7B300C05CAC /* Makefile */,
+				74A547871CFAE7B300C05CAC /* Patch.cc */,
+				74A547881CFAE7B300C05CAC /* Patch.h */,
+				74A547891CFAE7B300C05CAC /* PAW.cc */,
+				74A5478A1CFAE7B300C05CAC /* PAW.h */,
+				74A5478B1CFAE7B300C05CAC /* PDM.cc */,
+				74A5478C1CFAE7B300C05CAC /* PDM.h */,
+				74A5478D1CFAE7B300C05CAC /* README */,
+				74A5478E1CFAE7B300C05CAC /* Tracker.cc */,
+				74A5478F1CFAE7B300C05CAC /* Tracker.h */,
+			);
+			path = FaceTracker;
+			sourceTree = "<group>";
+		};
+		8619BF3C33DA4E79AB6E2634 /* OpenCV3 */ = {
+			isa = PBXGroup;
+			children = (
+				54741D37809D42479ED3C08E /* include */,
+			);
+			name = OpenCV3;
+			sourceTree = "<group>";
+		};
+		99692BD914FF149000D0A05F /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				74A5479F1CFAE7BD00C05CAC /* item.def */,
+				900028DF1FB34907B73D5B9B /* Resources.h */,
+				E303B7FFE2FC4F9BB04E5647 /* FaceOff_Prefix.pch */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		99692BD914FF149000DFFFFF /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				8619BF3C33DA4E79AB6E2634 /* OpenCV3 */,
+				272978287C264DF8A94E4C14 /* vnm */,
+			);
+			name = Blocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +299,8 @@
 /* Begin PBXProject section */
 		00692BC614FF149000D0A05E /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 00692BC914FF149000D0A05E /* Build configuration list for PBXProject "FaceOff" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -257,9 +323,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A5479C1CFAE7B300C05CAC /* README in Resources */,
+				74A547941CFAE7B300C05CAC /* COPYRIGHT in Resources */,
 				00748058165D41390024B57A /* assets in Resources */,
 				9714D3E08F884AA59720284D /* CinderApp_ios.png in Resources */,
 				C8A7432F173A4C2B8B13BE85 /* Images.xcassets in Resources */,
+				74A547A01CFAE7BD00C05CAC /* item.def in Resources */,
 				586989F1497D423B904455D5 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,9 +340,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A5479B1CFAE7B300C05CAC /* PDM.cc in Sources */,
+				74A547981CFAE7B300C05CAC /* Makefile in Sources */,
 				83B21AE6FC5A4F9DBE9F2252 /* FaceOffApp.cpp in Sources */,
+				74A5479A1CFAE7B300C05CAC /* PAW.cc in Sources */,
 				03959E52CE154A2B9842A31A /* AssetManager.cpp in Sources */,
 				81C2F7C7FCCD4858863E412E /* DistortionHelper.cpp in Sources */,
+				74A547921CFAE7B300C05CAC /* ciFaceTracker.cpp in Sources */,
+				74A547931CFAE7B300C05CAC /* CLM.cc in Sources */,
+				74A5479D1CFAE7B300C05CAC /* Tracker.cc in Sources */,
+				74A547991CFAE7B300C05CAC /* Patch.cc in Sources */,
+				74A547951CFAE7B300C05CAC /* FCheck.cc in Sources */,
+				74A547971CFAE7B300C05CAC /* IO.cc in Sources */,
+				74A547961CFAE7B300C05CAC /* FDet.cc in Sources */,
+				74A5479E1CFAE7B300C05CAC /* Clone.cpp in Sources */,
 				A901921565DA41FF88833CC0 /* MiniConfig.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,14 +364,18 @@
 		00692BF314FF149000D0A05E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage";
-				DEAD_CODE_STRIPPING = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					arm64,
+				);
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CINDER_PATH = ../../Cinder;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
-				ARCHS = "armv7 arm64";
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -304,30 +388,26 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				CINDER_PATH = "../../Cinder";
-				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
-				USER_HEADER_SEARCH_PATHS = (
-					"\"$(CINDER_PATH)/include\" ../include",
-					"\"../../Cinder/blocks/Cinder-OpenCV3/include\"",
-					"\"../../Cinder/blocks/Cinder-VNM/src\"",
-				);
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks/Cinder-VNM/src\"";
 			};
 			name = Debug;
 		};
 		00692BF414FF149000D0A05E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage";
-				DEAD_CODE_STRIPPING = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
-				CLANG_CXX_LIBRARY = "libc++";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CINDER_PATH = ../../Cinder;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG=1",
@@ -337,29 +417,23 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks/Cinder-VNM/src\"";
 				VALIDATE_PRODUCT = YES;
-				CINDER_PATH = "../../Cinder";
-				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
-				USER_HEADER_SEARCH_PATHS = (
-					"\"$(CINDER_PATH)/include\" ../include",
-					"\"../../Cinder/blocks/Cinder-OpenCV3/include\"",
-					"\"../../Cinder/blocks/Cinder-VNM/src\"",
-				);
 			};
 			name = Release;
 		};
 		00692BF614FF149000D0A05E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FaceOff_Prefix.pch";
-				INFOPLIST_FILE = "Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
+				GCC_PREFIX_HEADER = FaceOff_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
 				"OTHER_LDFLAGS[sdk=iphoneos*][arch=*]" = (
 					"\"$(CINDER_PATH)/lib/libcinder-iphone_d.a\"",
 					"-lz",
@@ -370,17 +444,18 @@
 					"-lz",
 					"\"../../Cinder/blocks/Cinder-OpenCV3/lib/ios-sim/libopencv.a\"",
 				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		00692BF714FF149000D0A05E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FaceOff_Prefix.pch";
-				INFOPLIST_FILE = "Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
+				GCC_PREFIX_HEADER = FaceOff_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
 				"OTHER_LDFLAGS[sdk=iphoneos*][arch=*]" = (
 					"\"$(CINDER_PATH)/lib/libcinder-iphone.a\"",
 					"-lz",
@@ -391,6 +466,8 @@
 					"-lz",
 					"\"../../Cinder/blocks/Cinder-OpenCV3/lib/ios-sim/libopencv.a\"",
 				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};

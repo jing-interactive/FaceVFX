@@ -1,7 +1,11 @@
+#ifdef GL_ES
+precision mediump float;
+#endif
+
 uniform sampler2D src, srcBlur, dstBlur;
 uniform ivec2 ciWindowSize;
 
-in vec2     TexCoord;
+in highp vec2     TexCoord;
 out highp vec4   Color;
 
 void main() {
