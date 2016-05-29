@@ -29,12 +29,13 @@ void Clone::setup(int width, int height)
     catch (const std::exception& e)
     {
         app::console() << e.what() << std::endl;
+        app::AppBase::get()->quit();
     }
 
     mStrength = 0;
 }
 
-void Clone::maskedBlur(gl::TextureRef& tex, gl::TextureRef& mask, gl::FboRef& result)
+void Clone::maskedBlur(gl::TextureRef tex, gl::TextureRef mask, gl::FboRef result)
 {
     gl::ScopedTextureBind t2(mask, 2);
 #if 1
@@ -65,7 +66,7 @@ void Clone::setStrength(int strength)
     mStrength = strength;
 }
 
-void Clone::update(gl::TextureRef& src, gl::TextureRef& dst, gl::TextureRef& mask)
+void Clone::update(gl::TextureRef src, gl::TextureRef dst, gl::TextureRef mask)
 {
     mMaskBlurShader->uniform("strength", mStrength);
 

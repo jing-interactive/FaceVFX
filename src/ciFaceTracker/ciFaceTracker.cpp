@@ -94,8 +94,11 @@ bool ciFaceTracker::update(Mat image) {
         resize(image, mIm, cv::Size(mRescale * image.cols, mRescale * image.rows));
     }
 
-    if (mIm.channels() == 3)
+    int nChannels = mIm.channels();
+    if (nChannels == 3)
         cvtColor(mIm, mGray, CV_RGB2GRAY);
+    else if (nChannels == 4)
+        cvtColor(mIm, mGray, CV_RGBA2GRAY);
     else
         mGray = mIm;
     mImgSize = { image.cols, image.rows };

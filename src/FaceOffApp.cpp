@@ -373,8 +373,8 @@ void FaceOff::draw()
         gl::draw(mRefTex);
     }
 
-    gl::drawStringCentered("fps: " + toString(getAverageFps()), vec2(150, 10));
-
+    FPS = getAverageFps();
+  
     gl::disableAlphaBlending();
 
     if (WIREFRAME_MODE && mOnlineTracker.getFound())
