@@ -60,6 +60,11 @@
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60539AFC2081411DBB11E9D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = Images.xcassets; sourceTree = "<group>"; };
 		720A519E19DA44CEAB1B3D2D /* FaceOffApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = FaceOffApp.cpp; path = ../src/FaceOffApp.cpp; sourceTree = "<group>"; };
+		744B67261CFC7492006BE21C /* CaptureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CaptureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/CaptureHelper.h"; sourceTree = "<group>"; };
+		744B67271CFC749C006BE21C /* MiniConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MiniConfig.h; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.h"; sourceTree = "<group>"; };
+		744B67281CFC749C006BE21C /* MotionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MotionHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/MotionHelper.h"; sourceTree = "<group>"; };
+		744B67291CFC749C006BE21C /* StateMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StateMachine.h; path = "../../Cinder/blocks/Cinder-VNM/src/StateMachine.h"; sourceTree = "<group>"; };
+		744B672A1CFC749C006BE21C /* TextureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/TextureHelper.h"; sourceTree = "<group>"; };
 		74A5477A1CFAE7B300C05CAC /* ciFaceTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ciFaceTracker.cpp; sourceTree = "<group>"; };
 		74A5477B1CFAE7B300C05CAC /* ciFaceTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ciFaceTracker.h; sourceTree = "<group>"; };
 		74A5477D1CFAE7B300C05CAC /* CLM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLM.cc; sourceTree = "<group>"; };
@@ -195,8 +200,13 @@
 		39106A9A0F1349D4A7B27389 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				744B67261CFC7492006BE21C /* CaptureHelper.h */,
 				048283C8EC88493DAE215FC7 /* AssetManager.cpp */,
 				15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */,
+				744B67271CFC749C006BE21C /* MiniConfig.h */,
+				744B67281CFC749C006BE21C /* MotionHelper.h */,
+				744B67291CFC749C006BE21C /* StateMachine.h */,
+				744B672A1CFC749C006BE21C /* TextureHelper.h */,
 				246C662365EC42C290CF175C /* MiniConfig.cpp */,
 			);
 			name = src;

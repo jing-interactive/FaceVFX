@@ -332,7 +332,6 @@ void ciFaceTracker::updateObjectPoints() {
 }
 
 void ciFaceTracker::addTriangleIndices(ci::TriMesh& mesh) const {
-    int in = mTri.rows;
     for (int i = 0; i < mTri.rows; i++) {
         int i0 = mTri.it(i, 0), i1 = mTri.it(i, 1), i2 = mTri.it(i, 2);
         bool visible = getVisibility(i0) && getVisibility(i1) && getVisibility(i2);

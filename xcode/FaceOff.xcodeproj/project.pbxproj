@@ -16,10 +16,11 @@
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
 		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
-		0323CF6A5E1D4DEAAC339B74 /* DistortionHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 031E704BF313432ABA3C02D3 /* DistortionHelper.cpp */; };
 		2237EEE8588B43DBA8E48E7A /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 440B1FEF603A4D35BA33F977 /* CinderApp.icns */; };
 		38FBF0514EEB4923B74FC5B0 /* AssetManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69A4FBA3522946C68C0A7236 /* AssetManager.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
+		744B67361CFC8945006BE21C /* DistortionHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 744B672E1CFC8945006BE21C /* DistortionHelper.cpp */; };
+		744B67371CFC8945006BE21C /* MiniConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 744B67301CFC8945006BE21C /* MiniConfig.cpp */; };
 		74A547521CFADFF900C05CAC /* item.def in Resources */ = {isa = PBXBuildFile; fileRef = 74A547511CFADFF900C05CAC /* item.def */; };
 		74A547551CFAE06300C05CAC /* Clone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A547531CFAE06300C05CAC /* Clone.cpp */; };
 		74A5476D1CFAE06900C05CAC /* ciFaceTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A547571CFAE06900C05CAC /* ciFaceTracker.cpp */; };
@@ -34,7 +35,6 @@
 		74A547761CFAE06900C05CAC /* PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547681CFAE06900C05CAC /* PDM.cc */; };
 		74A547771CFAE06900C05CAC /* README in Resources */ = {isa = PBXBuildFile; fileRef = 74A5476A1CFAE06900C05CAC /* README */; };
 		74A547781CFAE06900C05CAC /* Tracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A5476B1CFAE06900C05CAC /* Tracker.cc */; };
-		814F28F4608348D38839E601 /* MiniConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C0AE04D6DE3545C2A854FB7C /* MiniConfig.cpp */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C59DFB1955294C3DA7C9882F /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9551DDA29DEC456CA2BC86FB /* OpenCL.framework */; };
 		D5701A71C9844149A33FDA8C /* FaceOffApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B93F7ABE481247C2AA97F074 /* FaceOffApp.cpp */; };
@@ -50,7 +50,6 @@
 		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		00B995581B128DF400A5C623 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
-		031E704BF313432ABA3C02D3 /* DistortionHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = DistortionHelper.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/DistortionHelper.cpp"; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -58,6 +57,15 @@
 		440B1FEF603A4D35BA33F977 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		69A4FBA3522946C68C0A7236 /* AssetManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = AssetManager.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/AssetManager.cpp"; sourceTree = "<group>"; };
+		744B672C1CFC8945006BE21C /* AssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetManager.h; path = "../../Cinder/blocks/Cinder-VNM/src/AssetManager.h"; sourceTree = "<group>"; };
+		744B672D1CFC8945006BE21C /* CaptureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/CaptureHelper.h"; sourceTree = "<group>"; };
+		744B672E1CFC8945006BE21C /* DistortionHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DistortionHelper.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/DistortionHelper.cpp"; sourceTree = "<group>"; };
+		744B672F1CFC8945006BE21C /* DistortionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DistortionHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/DistortionHelper.h"; sourceTree = "<group>"; };
+		744B67301CFC8945006BE21C /* MiniConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniConfig.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.cpp"; sourceTree = "<group>"; };
+		744B67311CFC8945006BE21C /* MiniConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniConfig.h; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.h"; sourceTree = "<group>"; };
+		744B67321CFC8945006BE21C /* MotionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/MotionHelper.h"; sourceTree = "<group>"; };
+		744B67331CFC8945006BE21C /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StateMachine.h; path = "../../Cinder/blocks/Cinder-VNM/src/StateMachine.h"; sourceTree = "<group>"; };
+		744B67341CFC8945006BE21C /* TextureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/TextureHelper.h"; sourceTree = "<group>"; };
 		74A547511CFADFF900C05CAC /* item.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = item.def; path = ../include/item.def; sourceTree = "<group>"; };
 		74A547531CFAE06300C05CAC /* Clone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clone.cpp; path = ../src/Clone.cpp; sourceTree = "<group>"; };
 		74A547541CFAE06300C05CAC /* Clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clone.h; path = ../src/Clone.h; sourceTree = "<group>"; };
@@ -87,7 +95,6 @@
 		9551DDA29DEC456CA2BC86FB /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 		A44AB67F244B4B00A3E2038E /* CinderOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CinderOpenCV.h; path = "../../Cinder/blocks/Cinder-OpenCV3/include/CinderOpenCV.h"; sourceTree = "<group>"; };
 		B93F7ABE481247C2AA97F074 /* FaceOffApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = FaceOffApp.cpp; path = ../src/FaceOffApp.cpp; sourceTree = "<group>"; };
-		C0AE04D6DE3545C2A854FB7C /* MiniConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = MiniConfig.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.cpp"; sourceTree = "<group>"; };
 		E9259CF2A3C140388B1E0ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,8 +230,15 @@
 			isa = PBXGroup;
 			children = (
 				69A4FBA3522946C68C0A7236 /* AssetManager.cpp */,
-				031E704BF313432ABA3C02D3 /* DistortionHelper.cpp */,
-				C0AE04D6DE3545C2A854FB7C /* MiniConfig.cpp */,
+				744B672C1CFC8945006BE21C /* AssetManager.h */,
+				744B672D1CFC8945006BE21C /* CaptureHelper.h */,
+				744B672E1CFC8945006BE21C /* DistortionHelper.cpp */,
+				744B672F1CFC8945006BE21C /* DistortionHelper.h */,
+				744B67301CFC8945006BE21C /* MiniConfig.cpp */,
+				744B67311CFC8945006BE21C /* MiniConfig.h */,
+				744B67321CFC8945006BE21C /* MotionHelper.h */,
+				744B67331CFC8945006BE21C /* StateMachine.h */,
+				744B67341CFC8945006BE21C /* TextureHelper.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -348,8 +362,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744B67371CFC8945006BE21C /* MiniConfig.cpp in Sources */,
 				74A547751CFAE06900C05CAC /* PAW.cc in Sources */,
 				74A547741CFAE06900C05CAC /* Patch.cc in Sources */,
+				744B67361CFC8945006BE21C /* DistortionHelper.cpp in Sources */,
 				74A547711CFAE06900C05CAC /* FDet.cc in Sources */,
 				D5701A71C9844149A33FDA8C /* FaceOffApp.cpp in Sources */,
 				74A547701CFAE06900C05CAC /* FCheck.cc in Sources */,
@@ -358,10 +374,8 @@
 				74A547721CFAE06900C05CAC /* IO.cc in Sources */,
 				74A547761CFAE06900C05CAC /* PDM.cc in Sources */,
 				38FBF0514EEB4923B74FC5B0 /* AssetManager.cpp in Sources */,
-				0323CF6A5E1D4DEAAC339B74 /* DistortionHelper.cpp in Sources */,
 				74A5476E1CFAE06900C05CAC /* CLM.cc in Sources */,
 				74A547551CFAE06300C05CAC /* Clone.cpp in Sources */,
-				814F28F4608348D38839E601 /* MiniConfig.cpp in Sources */,
 				74A5476D1CFAE06900C05CAC /* ciFaceTracker.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

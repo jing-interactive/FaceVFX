@@ -76,7 +76,7 @@ void Clone::update(gl::TextureRef src, gl::TextureRef dst, gl::TextureRef mask)
     }
 }
 
-void Clone::draw(vec2 pos)
+gl::Texture2dRef Clone::getResultTexture()
 {
-    gl::draw(mBufferFbo->getColorTexture(), pos);
+    return mBufferFbo->getColorTexture();
 }

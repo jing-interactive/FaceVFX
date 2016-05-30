@@ -13,6 +13,7 @@
 
 #include "cinder/qtime/QuickTimeGl.h"
 #include "TextureHelper.h"
+#include "CaptureHelper.h"
 
 #include "CinderOpenCV.h"
 #include "ciFaceTracker/ciFacetracker.h"
@@ -22,12 +23,6 @@
 using namespace ci;
 using namespace app;
 using namespace std;
-
-int	APP_W = 640;
-int	APP_H = 480;
-
-int CAM_W = 640;
-int CAM_H = 480;
 
 #if defined( CINDER_GL_ES )
 namespace cinder { namespace gl {
@@ -100,15 +95,11 @@ public:
 
     void    shutdown()
     {
-        if (mCapture)
-        {
-            mCapture->stop();
-        }
+
     }
 
 private:
 
-    gl::TextureRef mCaptureTex;				// our camera capture texture
     TriMesh         mFaceMesh;
 
     ciFaceTracker   mOnlineTracker;
@@ -120,7 +111,7 @@ private:
     //
     vector<Capture::DeviceRef>  mDevices;
     vector<string>              mDeviceNames;
-    CaptureRef		mCapture;
+    CaptureHelper   mCapture;
 
     vector<string>              mPeopleNames;
 
@@ -134,10 +125,14 @@ private:
     //  param
     int         mDeviceId;
     int         mPeopleId;
+    bool        mDoesCaptureNeedsInit;
 };
 
 void FaceOff::setup()
 {
+    APP_W = getWindowWidth();
+    APP_H = getWindowHeight();
+    
     // list out the devices
     vector<Capture::DeviceRef> devices(Capture::getDevices());
     if (devices.empty())
@@ -191,22 +186,9 @@ void FaceOff::setup()
 #endif
     
     mPeopleId = -1;
-    // Fbo
-    //gl::Texture::Format texFormat;
-    //texFormat.setTargetRect();
-
-    gl::Fbo::Format fboFormat;
-    //fboFormat.setColorTextureFormat(texFormat);
-    fboFormat.enableDepthBuffer(false);
-    mSrcFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
-    mMaskFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
-
-    mClone.setup(CAM_W, CAM_H);
-    mClone.setStrength(16);
 
     gl::disableDepthRead();
     gl::disableDepthWrite();
-
 }
 
 void FaceOff::update()
@@ -257,17 +239,8 @@ void FaceOff::update()
     if (mDeviceId != DEVICE_ID)
     {
         mDeviceId = DEVICE_ID;
-        if (mCapture)
-        {
-            mCapture->stop();
-        }
-        mCapture = Capture::create(CAM_W, CAM_H, mDevices[DEVICE_ID]);
-        mCapture->start();
-        CAM_W = mCapture->getWidth();
-        CAM_H = mCapture->getHeight();
-
-        // TODO: placeholder text
-        //mCaptureTex = gl::Texture();
+        mDoesCaptureNeedsInit = true;
+        mCapture.setup(CAM_W, CAM_H, mDevices[DEVICE_ID]);
     }
 
     if (mPeopleId != PEOPLE_ID)
@@ -287,20 +260,30 @@ void FaceOff::update()
         mFaceMesh.getBufferTexCoords0().clear();
     }
 
-    if (mCapture && mCapture->checkNewFrame())
+    // TODO: more robust
+    // use signal?
+    if (mCapture.isDirty())
     {
-        Surface8u surface = *mCapture->getSurface();
-        if (mCaptureTex)
+        if (mDoesCaptureNeedsInit)
         {
-            mCaptureTex->update(surface);
-        }
-        else
-        {
-            gl::Texture::Format format;
-            //format.setTargetRect();
-            mCaptureTex = gl::Texture::create(surface, format);
+            mDoesCaptureNeedsInit = false;
+            
+            // TODO: more robust
+            // use signal?
+            CAM_W = mCapture.size.x;
+            CAM_H = mCapture.size.y;
+            
+            gl::Fbo::Format fboFormat;
+            //fboFormat.setColorTextureFormat(texFormat);
+            fboFormat.enableDepthBuffer(false);
+            mSrcFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
+            mMaskFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
+            
+            mClone.setup(CAM_W, CAM_H);
+            mClone.setStrength(16);
         }
 
+        Surface8u surface = mCapture.surface;
         mOnlineTracker.update(toOcv(surface));
 
         if (!mOnlineTracker.getFound())
@@ -344,7 +327,7 @@ void FaceOff::update()
                     gl::draw(mFaceMesh);
                 }
 
-                mClone.update(mRenderedRefTex, mCaptureTex, mMaskFbo->getColorTexture());
+                mClone.update(mRenderedRefTex, mCapture.texture, mMaskFbo->getColorTexture());
             }
         }
     }
@@ -354,42 +337,52 @@ void FaceOff::draw()
 {
     gl::clear(ColorA::black(), false);
 
-    if (!mCaptureTex)
+    if (!mCapture.isReady())
         return;
 
-    gl::ScopedModelMatrix modelScope;
-
     gl::setMatricesWindow(getWindowSize());
-    
-#if defined( CINDER_GL_ES )
-    // change iphone to landscape orientation
-    gl::rotate( M_PI / 2 );
-    gl::translate( 0, - getWindowWidth() );
-    
-    Rectf flippedBounds( 0, 0, CAM_W, CAM_H );
-//    gl::draw( mCaptureHelper.texture, flippedBounds );
-#else
-//    gl::draw( mCaptureHelper.texture );
-#endif
 
     gl::enableAlphaBlending();
 
+    float camAspect = CAM_W / (float)CAM_H;
+    float winAspect = getWindowAspectRatio();
+    float adaptiveCamW = 0;
+    float adaptiveCamH = 0;
+    if (camAspect > winAspect)
+    {
+        adaptiveCamW = APP_W;
+        adaptiveCamH = APP_W / camAspect;
+    }
+    else
+    {
+        adaptiveCamH = APP_H;
+        adaptiveCamW = APP_H * camAspect;
+    }
+    Area srcArea = {0, 0, CAM_W, CAM_H};
+    Rectf dstRect =
+    {
+        APP_W * 0.5f - adaptiveCamW * 0.5f,
+        APP_H * 0.5f - adaptiveCamH * 0.5f,
+        APP_W * 0.5f + adaptiveCamW * 0.5f,
+        APP_H * 0.5f + adaptiveCamH * 0.5f
+    };
+
     if (FACE_SUB_VISIBLE && mOnlineTracker.getFound())
     {
-        gl::ScopedModelMatrix modelMatrix;
-        gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
+//        gl::ScopedModelMatrix modelMatrix;
+//        gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
         if (MOVIE_MODE)
         {
-            if (mRenderedRefTex) gl::draw(mRenderedRefTex);
+            if (mRenderedRefTex) gl::draw(mRenderedRefTex, srcArea, dstRect);
         }
         else
         {
-            mClone.draw();
+            gl::draw(mClone.getResultTexture(), srcArea, dstRect);
         }
     }
     else
     {
-        gl::draw(mCaptureTex, getWindowBounds());
+        gl::draw(mCapture.texture, srcArea, dstRect);
     }
 
     if (REF_VISIBLE)
@@ -407,7 +400,7 @@ void FaceOff::draw()
 
         gl::ScopedModelMatrix modelMatrix;
         gl::ScopedColor color(ColorA(0, 1.0f, 0, 1.0f));
-        gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
+        gl::translate(APP_W * 0.5f - adaptiveCamW * 0.5f, APP_H * 0.5f - adaptiveCamH * 0.5f);
         gl::draw(mOnlineTracker.getImageMesh());
 
         if (REF_VISIBLE)

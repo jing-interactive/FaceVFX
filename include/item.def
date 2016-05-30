@@ -1,3 +1,7 @@
+ITEM_DEF(int, APP_W, 800)
+ITEM_DEF(int, APP_H, 480)
+ITEM_DEF(int, CAM_W, 640)
+ITEM_DEF(int, CAM_H, 480)
 ITEM_DEF(bool, REF_VISIBLE, false)
 ITEM_DEF(bool, FACE_SUB_VISIBLE, true)
 ITEM_DEF(bool, WIREFRAME_MODE, false)
