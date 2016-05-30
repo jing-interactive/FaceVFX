@@ -207,7 +207,7 @@ void FaceOff::update()
                 mRenderedRefTex.reset();
             }
             catch (ci::Exception &exc) {
-                console() << "Exception caught trying to load the movie from path: " << moviePath << ", what: " << exc.what() << std::endl;
+                console() << "Exception caught trying to load the movie from path: " << MOVIE_PATH << ", what: " << exc.what() << std::endl;
                 mMovie.reset();
             }
         }
@@ -367,15 +367,15 @@ void FaceOff::draw()
         APP_H * 0.5f + adaptiveCamH * 0.5f
     };
 
-    if (FACE_SUB_VISIBLE && mOnlineTracker.getFound())
+    if (FACE_SUB_VISIBLE)
     {
 //        gl::ScopedModelMatrix modelMatrix;
 //        gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
         if (MOVIE_MODE)
         {
-            if (mRenderedRefTex) gl::draw(mRenderedRefTex, srcArea, dstRect);
+            gl::draw(mRenderedRefTex, srcArea, dstRect);
         }
-        else
+        else if (mOnlineTracker.getFound())
         {
             gl::draw(mClone.getResultTexture(), srcArea, dstRect);
         }
@@ -394,7 +394,7 @@ void FaceOff::draw()
   
     gl::disableAlphaBlending();
 
-    if (WIREFRAME_MODE && mOnlineTracker.getFound())
+    if (WIREFRAME_MODE && (MOVIE_MODE || mOnlineTracker.getFound()))
     {
         gl::enableWireframe();
 
