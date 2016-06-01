@@ -50,7 +50,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;"..\..\Cinder\include";..\..\Cinder\blocks\Cinder-OpenCV3\include;..\..\Cinder\blocks\Cinder-VNM\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\blocks\Cinder-OpenCV3\include;..\..\Cinder\blocks\Cinder-VNM\src;..\..\Cinder\blocks\Cinder-WMFVideo\src</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -76,7 +76,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;"..\..\Cinder\include";..\..\Cinder\blocks\Cinder-OpenCV3\include;..\..\Cinder\blocks\Cinder-VNM\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\blocks\Cinder-OpenCV3\include;..\..\Cinder\blocks\Cinder-VNM\src;..\..\Cinder\blocks\Cinder-WMFVideo\src</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
@@ -113,6 +113,12 @@
     <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\README" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayer.cpp" />
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayerUtils.cpp" />
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresentEngine.cpp" />
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\Presenter.cpp" />
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresenterHelpers.cpp" />
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\scheduler.cpp" />
     <ClCompile Include="..\src\Clone.cpp" />
     <ClCompile Include="..\src\FaceOffApp.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.cpp" />
@@ -133,6 +139,14 @@
     <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\CaptureHelper.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\TextureHelper.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayer.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayerUtils.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\EVRPresenter.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\EVRPresenterUuid.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresentEngine.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\Presenter.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresenterHelpers.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\scheduler.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h" />
     <ClInclude Include="..\src\Clone.h" />

@@ -37,6 +37,15 @@
     <Filter Include="Source Files\IFaceTracker\jason_saragih_tracker\lib">
       <UniqueIdentifier>{311b048d-7ebc-4e5e-a50b-28e23c0754ac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Blocks\WMFVideo">
+      <UniqueIdentifier>{1f3446d9-3fd0-4d73-81e3-ab252fc8a813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\WMFVideo\src">
+      <UniqueIdentifier>{e63db887-7201-45dc-88fe-2a69ebba07c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\WMFVideo\src\presenter">
+      <UniqueIdentifier>{7aa89ff6-b45d-45d7-beff-f9e30946543f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\FaceOffApp.cpp">
@@ -93,6 +102,24 @@
     <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.cc">
       <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayerUtils.cpp">
+      <Filter>Blocks\WMFVideo\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayer.cpp">
+      <Filter>Blocks\WMFVideo\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\scheduler.cpp">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresenterHelpers.cpp">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\Presenter.cpp">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresentEngine.cpp">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -139,6 +166,30 @@
     </ClInclude>
     <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.h">
       <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayerUtils.h">
+      <Filter>Blocks\WMFVideo\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayer.h">
+      <Filter>Blocks\WMFVideo\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\scheduler.h">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresenterHelpers.h">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\Presenter.h">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresentEngine.h">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\EVRPresenterUuid.h">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\EVRPresenter.h">
+      <Filter>Blocks\WMFVideo\src\presenter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
