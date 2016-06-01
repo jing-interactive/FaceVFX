@@ -20,7 +20,8 @@
 
 #include "cinder/TriMesh.h"
 #include "cinder/PolyLine.h"
-#include "FaceTracker/Tracker.h" 
+#include "lib/Tracker.h"
+#include "../IFaceTracker.h"
 
 using std::vector;
 
@@ -29,38 +30,36 @@ using std::vector;
 #	pragma warning(disable:4018)  //signed/unsigned mismatch
 #endif
 
-class ciFaceTracker {
+class ciFaceTracker : public ft::IFaceTracker {
 public:
 	ciFaceTracker();
-	void setup();
-	bool update(cv::Mat image);
+    void setup() override;
+    bool update(const ci::Surface& surface) override;
+
 	void draw() const;
-	void reset();
+    void reset() override;
 	
-	int size() const;
-	bool getFound() const;
+    int size() const override;
+    bool getFound() const override;
 	bool getVisibility(int i) const;
 	
 	vector<ci::vec2> getImagePoints() const;
 	vector<ci::vec3> getObjectPoints() const;
 	vector<ci::vec3> getMeanObjectPoints() const;
 	
-	//(u,v) ~ [0,1)
-	ci::vec2 getUVPoint(int i) const;
-
 	//(x,y) ~ [0,width) X [0,height)
-	ci::vec2 getImagePoint(int i) const;
+    ci::vec2 getImagePoint(int i) const override;
 	ci::vec3 getObjectPoint(int i) const;
 	ci::vec3 getMeanObjectPoint(int i) const;
 	
-	ci::TriMesh getImageMesh() const;
+    ci::TriMesh getImageMesh() const override;
 	ci::TriMesh getObjectMesh() const;
 	ci::TriMesh getMeanObjectMesh() const;
 	
 	const cv::Mat& getObjectPointsMat() const;
-	const ci::vec2 getImageSize() const;
+    const ci::vec2 getImageSize() const override;
 
-	void addTriangleIndices(ci::TriMesh& mesh) const;
+    void addTriangleIndices(ci::TriMesh& mesh) const override;
 	
 	ci::vec2 getPosition() const;
 	float getScale() const;

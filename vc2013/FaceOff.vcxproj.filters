@@ -28,8 +28,14 @@
     <Filter Include="Blocks\vnm\src">
       <UniqueIdentifier>{1C47D5A5-6E5F-4EFC-B680-2086A9C9DB9B}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\facetracker">
-      <UniqueIdentifier>{c544f5b7-fcb7-4335-ad3c-f9dff2f76401}</UniqueIdentifier>
+    <Filter Include="Source Files\IFaceTracker">
+      <UniqueIdentifier>{bc79f5e3-a52c-4e55-b3af-c23260eced81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IFaceTracker\jason_saragih_tracker">
+      <UniqueIdentifier>{c7cf9fff-ef8e-4ba4-aa00-0945c98cc72c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\IFaceTracker\jason_saragih_tracker\lib">
+      <UniqueIdentifier>{311b048d-7ebc-4e5e-a50b-28e23c0754ac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,67 +60,43 @@
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\MiniConfig.cpp">
       <Filter>Blocks\vnm\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\ciFaceTracker\ciFaceTracker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\CLM.cc">
-      <Filter>Source Files\facetracker</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\FCheck.cc">
-      <Filter>Source Files\facetracker</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\FDet.cc">
-      <Filter>Source Files\facetracker</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\IO.cc">
-      <Filter>Source Files\facetracker</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\Patch.cc">
-      <Filter>Source Files\facetracker</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\PAW.cc">
-      <Filter>Source Files\facetracker</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\PDM.cc">
-      <Filter>Source Files\facetracker</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\Tracker.cc">
-      <Filter>Source Files\facetracker</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Clone.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\IFaceTracker.cpp">
+      <Filter>Source Files\IFaceTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.cpp">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\CLM.cc">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FCheck.cc">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FDet.cc">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\IO.cc">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Patch.cc">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PAW.cc">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PDM.cc">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.cc">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ciFaceTracker\ciFaceTracker.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\CLM.h">
-      <Filter>Source Files\facetracker</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\FCheck.h">
-      <Filter>Source Files\facetracker</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\FDet.h">
-      <Filter>Source Files\facetracker</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\IO.h">
-      <Filter>Source Files\facetracker</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\Patch.h">
-      <Filter>Source Files\facetracker</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\PAW.h">
-      <Filter>Source Files\facetracker</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\PDM.h">
-      <Filter>Source Files\facetracker</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\Tracker.h">
-      <Filter>Source Files\facetracker</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Clone.h">
       <Filter>Source Files</Filter>
@@ -128,6 +110,36 @@
     <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\TextureHelper.h">
       <Filter>Blocks\vnm\src</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\IFaceTracker.h">
+      <Filter>Source Files\IFaceTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.h">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\CLM.h">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FCheck.h">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FDet.h">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\IO.h">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Patch.h">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PAW.h">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PDM.h">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.h">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc">
@@ -137,6 +149,15 @@
   <ItemGroup>
     <None Include="..\include\item.def">
       <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\COPYRIGHT">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </None>
+    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Makefile">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </None>
+    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\README">
+      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
     </None>
   </ItemGroup>
 </Project>

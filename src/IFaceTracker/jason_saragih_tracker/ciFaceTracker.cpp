@@ -2,6 +2,9 @@
 #include "cinder/app/App.h"
 #include "cinder/Utilities.h"
 #include "cinder/gl/gl.h"
+#include "cinder/gl/gl.h"
+#include "CinderOpenCV.h"
+
 #include <string>
 
 using namespace ci;
@@ -86,8 +89,9 @@ void ciFaceTracker::setup() {
     mTri = IO::LoadTri(triFile.c_str());
     mCon = IO::LoadCon(conFile.c_str());  // not being used right now
 }
+bool ciFaceTracker::update(const ci::Surface& surface) {
+    Mat image = toOcv(surface);
 
-bool ciFaceTracker::update(Mat image) {	
     if (mRescale == 1) {
         mIm = image; 
     } else {
@@ -371,9 +375,4 @@ ci::TriMesh ciFaceTracker::getMesh(const vector<ci::vec2>& points) const {
 const ci::vec2 ciFaceTracker::getImageSize() const
 {
     return mImgSize;
-}
-
-ci::vec2 ciFaceTracker::getUVPoint( int i ) const
-{
-    return getImagePoint(i)/mImgSize;
 }

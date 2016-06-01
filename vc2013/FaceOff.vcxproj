@@ -108,22 +108,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\include\item.def" />
+    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\COPYRIGHT" />
+    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Makefile" />
+    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\README" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\ciFaceTracker\ciFaceTracker.cpp" />
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\CLM.cc" />
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\FCheck.cc" />
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\FDet.cc" />
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\IO.cc" />
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\Patch.cc" />
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\PAW.cc" />
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\PDM.cc" />
-    <ClCompile Include="..\src\ciFaceTracker\FaceTracker\Tracker.cc" />
     <ClCompile Include="..\src\Clone.cpp" />
     <ClCompile Include="..\src\FaceOffApp.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\DistortionHelper.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\MiniConfig.cpp" />
+    <ClCompile Include="..\src\IFaceTracker\IFaceTracker.cpp" />
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.cpp" />
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\CLM.cc" />
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FCheck.cc" />
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FDet.cc" />
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\IO.cc" />
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Patch.cc" />
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PAW.cc" />
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PDM.cc" />
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.h" />
@@ -131,16 +135,17 @@
     <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\TextureHelper.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h" />
-    <ClInclude Include="..\src\ciFaceTracker\ciFaceTracker.h" />
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\CLM.h" />
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\FCheck.h" />
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\FDet.h" />
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\IO.h" />
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\Patch.h" />
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\PAW.h" />
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\PDM.h" />
-    <ClInclude Include="..\src\ciFaceTracker\FaceTracker\Tracker.h" />
     <ClInclude Include="..\src\Clone.h" />
+    <ClInclude Include="..\src\IFaceTracker\IFaceTracker.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\CLM.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FCheck.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FDet.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\IO.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Patch.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PAW.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PDM.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
