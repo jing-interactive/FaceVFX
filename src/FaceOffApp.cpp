@@ -307,7 +307,7 @@ void FaceOff::update()
             mFaceMesh.appendPosition(vec3(mOnlineTracker->getImagePoint(i), 0));
         }
 
-        if (FACE_SUB_VISIBLE && mRefTex)
+        if (FACE_VFX_VISIBLE && mRefTex)
         {
             //gl::setMatricesWindow(getWindowSize(), false);
             // TODO: merge these two passes w/ MRTs
@@ -369,7 +369,7 @@ void FaceOff::draw()
         APP_H * 0.5f + adaptiveCamH * 0.5f
     };
 
-    if (FACE_SUB_VISIBLE)
+    if (FACE_VFX_VISIBLE)
     {
         //        gl::ScopedModelMatrix modelMatrix;
         //        gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
@@ -380,6 +380,10 @@ void FaceOff::draw()
         else if (mOnlineTracker->getFound())
         {
             gl::draw(mClone.getResultTexture(), srcArea, dstRect);
+        }
+        else
+        {
+            gl::draw(mCapture.texture, srcArea, dstRect);
         }
     }
     else
