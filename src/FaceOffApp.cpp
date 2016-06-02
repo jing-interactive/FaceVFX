@@ -49,7 +49,7 @@ public:
         settings->setWindowSize(APP_W, APP_H);
         settings->setFrameRate(60.0f);
         settings->setFullScreen(false);
-        settings->setTitle("face-switcher");
+        settings->setTitle("FaceVFX");
     }
 
     void keyUp(KeyEvent event)

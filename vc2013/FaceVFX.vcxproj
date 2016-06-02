@@ -12,8 +12,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FEBA1BC7-4A0A-4389-9D01-D087DC2D31B3}</ProjectGuid>
-    <RootNamespace>FaceOff</RootNamespace>
+    <RootNamespace>FaceVFX</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>FaceVFX</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

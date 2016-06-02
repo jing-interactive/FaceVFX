@@ -13,8 +13,8 @@
  there is no expression applied to the mesh.
  */
 
-//translated to Cinder version by
-//vinjn (vinjn.z@gmail.com)
+// Ported to Cinder version by
+// vinjn (vinjn.z@gmail.com)
 
 #pragma once
 

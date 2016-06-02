@@ -1,4 +1,4 @@
-# face-swapper
+# FaceVFX
 
 Experimental project to showcase realtime face swap effects. 
 
@@ -7,7 +7,9 @@ Depends on
 * Cinder
 * Cinder-OpenCV3
 * Cinder-VNM
-* ciFaceTracker
+* Jason Saragih's FaceTracker library
+* Cinder-WMFVideo
+* Cinder-Warping
 
 Tools used
 
