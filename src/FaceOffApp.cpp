@@ -294,9 +294,11 @@ void FaceOff::update()
         int nPoints = mOnlineTracker->size();
         if (mFaceMesh.getBufferTexCoords0().empty())
         {
+            auto imgSize = mOfflineTracker->getImageSize();
             for (int i = 0; i < nPoints; i++)
             {
-                mFaceMesh.appendTexCoord(mOfflineTracker->getImagePoint(i) / mOfflineTracker->getImageSize());
+                vec3 point = mOfflineTracker->getImagePoint(i);
+                mFaceMesh.appendTexCoord({ point.x / imgSize.x, point.y / imgSize.y });
             }
             mOnlineTracker->addTriangleIndices(mFaceMesh);
         }
@@ -304,7 +306,7 @@ void FaceOff::update()
         mFaceMesh.getBufferPositions().clear();
         for (int i = 0; i < nPoints; i++)
         {
-            mFaceMesh.appendPosition(vec3(mOnlineTracker->getImagePoint(i), 0));
+            mFaceMesh.appendPosition(mOnlineTracker->getImagePoint(i));
         }
 
         if (FACE_VFX_VISIBLE && mRefTex)
@@ -407,7 +409,7 @@ void FaceOff::draw()
         gl::ScopedModelMatrix modelMatrix;
         gl::ScopedColor color(ColorA(0, 1.0f, 0, 1.0f));
         gl::translate(APP_W * 0.5f - adaptiveCamW * 0.5f, APP_H * 0.5f - adaptiveCamH * 0.5f);
-        gl::draw(mOnlineTracker->getImageMesh());
+        gl::draw(mFaceMesh);
 
         if (REF_VISIBLE)
         {

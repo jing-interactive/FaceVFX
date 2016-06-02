@@ -27,7 +27,7 @@ namespace ft
         virtual void reset() = 0;
         virtual int size() const = 0;
         virtual bool getFound() const = 0;
-        virtual ci::vec2 getImagePoint(int i) const = 0;
+        virtual ci::vec3 getImagePoint(int i) const = 0;
         virtual ci::TriMesh getImageMesh() const = 0;
         virtual const ci::vec2 getImageSize() const = 0;
         virtual void addTriangleIndices(ci::TriMesh& mesh) const = 0;
