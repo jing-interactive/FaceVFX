@@ -178,10 +178,15 @@ void FaceOff::trackerThreadFn()
     mOfflineTracker = ft::IFaceTracker::create();
     mOnlineTracker = ft::IFaceTracker::create(option);
 
+    bool shouldInitFaceMesh = false;
+
     while (!mShouldQuit)
     {
         // TODO: more robust with update_signal
-        if (!mCapture.checkNewFrame()) continue;
+        if (!mCapture.checkNewFrame())
+        {
+            continue;
+        }
 
         if (mDoesCaptureNeedsInit)
         {
@@ -221,17 +226,22 @@ void FaceOff::trackerThreadFn()
                 dispatchAsync(loadTexFn);
             }
 
-            mFaceMesh.getBufferTexCoords0().clear();
+            shouldInitFaceMesh = true;
         }
 
         mOnlineTracker->update(mCapture.surface);
 
         if (!mOnlineTracker->getFound())
+        {
             continue;
+        }
 
         int nPoints = mOnlineTracker->size();
-        if (mFaceMesh.getBufferTexCoords0().empty())
+        if (shouldInitFaceMesh)
         {
+            shouldInitFaceMesh = false;
+            mFaceMesh.getBufferTexCoords0().clear();
+
             auto imgSize = mOfflineTracker->getImageSize();
             for (int i = 0; i < nPoints; i++)
             {
@@ -372,7 +382,7 @@ void FaceOff::draw()
 {
     gl::clear(ColorA::black(), false);
 
-    if (!mOnlineTracker || !mCapture.isReady())
+    if (!mCapture.isReady())
         return;
 
     gl::setMatricesWindow(getWindowSize());
@@ -401,6 +411,12 @@ void FaceOff::draw()
         APP_W * 0.5f + adaptiveCamW * 0.5f,
         APP_H * 0.5f + adaptiveCamH * 0.5f
     };
+
+    if (!mOnlineTracker)
+    {
+        gl::draw(mCapture.texture, srcArea, dstRect);
+        return;
+    }
 
     gl::Texture2dRef fullscreenTex;
     if (VFX_VISIBLE && mOnlineTracker->getFound())
