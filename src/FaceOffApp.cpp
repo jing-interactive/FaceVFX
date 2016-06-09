@@ -2,6 +2,7 @@
 #include "cinder/Capture.h"
 #include "cinder/Utilities.h"
 #include "cinder/ImageIo.h"
+#include "cinder/Thread.h"
 
 #include "cinder/app/RendererGl.h" 
 #include "cinder/gl/Texture.h"
@@ -59,8 +60,7 @@ public:
         case 'f':
         {
             setFullScreen(!isFullScreen());
-            APP_W = getWindowBounds().getWidth();
-            APP_H = getWindowBounds().getHeight();
+            resize();
         }
             break;
         case KeyEvent::KEY_ESCAPE:
@@ -92,15 +92,18 @@ public:
     }
 
     void setup();
-    void update();
-    void draw();
-
     void shutdown()
     {
-
+        mTrackerThread->join();
     }
 
+    void update();
+    void draw();
+    void resize();
+
 private:
+
+    void trackerThreadFn();
 
     TriMesh         mFaceMesh;
 
@@ -114,14 +117,14 @@ private:
     vector<Capture::DeviceRef>  mDevices;
     vector<string>              mDeviceNames;
     CaptureHelper   mCapture;
+    shared_ptr<thread> mTrackerThread;
 
     vector<string>              mPeopleNames;
 
     params::InterfaceGlRef mParam;
 
-    gl::TextureRef mRefTex;
-    gl::TextureRef mRenderedRefTex;
-    gl::FboRef     mSrcFbo, mMaskFbo;
+    gl::TextureRef mOfflineFaceTex;
+    gl::FboRef     mRenderedOfflineFaceFbo, mFaceMaskFbo;
     Clone       mClone;
 
     //  param
@@ -130,10 +133,19 @@ private:
     bool        mDoesCaptureNeedsInit;
 };
 
-void FaceOff::setup()
+void FaceOff::resize()
 {
     APP_W = getWindowWidth();
     APP_H = getWindowHeight();
+}
+
+void FaceOff::trackerThreadFn()
+{
+}
+
+void FaceOff::setup()
+{
+    resize();
 
     // list out the devices
     vector<Capture::DeviceRef> devices(Capture::getDevices());
@@ -202,15 +214,16 @@ void FaceOff::update()
         if (!mMovie)
         {
             fs::path moviePath = getAssetPath(MOVIE_PATH);
-            try {
+            try
+            {
                 // load up the movie, set it to loop, and begin playing
                 mMovie = qtime::MovieSurface::create(moviePath);
                 mMovie->setLoop();
                 mMovie->play();
-                mRefTex.reset();
-                mRenderedRefTex.reset();
+                mOfflineFaceTex.reset();
             }
-            catch (ci::Exception &exc) {
+            catch (ci::Exception &exc)
+            {
                 console() << "Exception caught trying to load the movie from path: " << MOVIE_PATH << ", what: " << exc.what() << std::endl;
                 mMovie.reset();
             }
@@ -220,24 +233,21 @@ void FaceOff::update()
             if (mMovie->checkNewFrame())
             {
                 auto surface = mMovie->getSurface();
-                if (!mRefTex)
+                if (!mOfflineFaceTex)
                 {
-                    mRefTex = gl::Texture2d::create(*surface, gl::Texture::Format().loadTopDown());
+                    mOfflineFaceTex = gl::Texture2d::create(*surface, gl::Texture::Format().loadTopDown());
                 }
                 else
                 {
-                    mRefTex->update(*surface);
+                    mOfflineFaceTex->update(*surface);
                 }
             }
         }
     }
     else
     {
-        if (mMovie)
-        {
-            mMovie.reset();
-        }
-        mRefTex = mPhotoTex;
+        mMovie.reset();
+        mOfflineFaceTex = mPhotoTex;
     }
 
     if (mDeviceId != DEVICE_ID)
@@ -247,40 +257,38 @@ void FaceOff::update()
         mCapture.setup(CAM_W, CAM_H, mDevices[DEVICE_ID]);
     }
 
+    mCapture.flip = CAM_FLIP;
+
     if (mPeopleId != PEOPLE_ID)
     {
         mPeopleId = PEOPLE_ID;
         mOfflineTracker->reset();
 
-        //mOfflineTracker->setRescale(0.5f);
         ImageSourceRef img = loadImage(loadAsset("people/" + mPeopleNames[PEOPLE_ID]));
         if (img)
         {
-            mRefTex = mPhotoTex = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+            mOfflineFaceTex = mPhotoTex = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+            mOfflineTracker->update(img);
         }
-        mOfflineTracker->update(img);
 
         mFaceMesh.getBufferTexCoords0().clear();
     }
 
-    // TODO: more robust
-    // use signal?
-    if (mCapture.isDirty())
+    // TODO: more robust with update_signal
+    if (mCapture.checkNewFrame())
     {
         if (mDoesCaptureNeedsInit)
         {
+            // TODO: more robust with setup_signal
             mDoesCaptureNeedsInit = false;
 
-            // TODO: more robust
-            // use signal?
             CAM_W = mCapture.size.x;
             CAM_H = mCapture.size.y;
 
             gl::Fbo::Format fboFormat;
-            //fboFormat.setColorTextureFormat(texFormat);
             fboFormat.enableDepthBuffer(false);
-            mSrcFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
-            mMaskFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
+            mRenderedOfflineFaceFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
+            mFaceMaskFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
 
             mClone.setup(CAM_W, CAM_H);
             mClone.setStrength(16);
@@ -309,29 +317,31 @@ void FaceOff::update()
             mFaceMesh.appendPosition(mOnlineTracker->getImagePoint(i));
         }
 
-        if (FACE_VFX_VISIBLE && mRefTex)
+        if (VFX_VISIBLE && mOfflineFaceTex)
         {
-            //gl::setMatricesWindow(getWindowSize(), false);
+            gl::ScopedMatrices mvp;
+            gl::setMatricesWindow(mRenderedOfflineFaceFbo->getSize());
+            gl::ScopedViewport viewport(0, 0, mRenderedOfflineFaceFbo->getWidth(), mRenderedOfflineFaceFbo->getHeight());
+            
             // TODO: merge these two passes w/ MRTs
             {
-                gl::ScopedFramebuffer fbo(mSrcFbo);
+                gl::ScopedFramebuffer fbo(mRenderedOfflineFaceFbo);
                 gl::ScopedGlslProg glsl(gl::getStockShader(gl::ShaderDef().texture()));
-                gl::ScopedTextureBind t0(mRefTex, 0);
+                gl::ScopedTextureBind t0(mOfflineFaceTex, 0);
                 gl::clear(ColorA::black(), false);
                 gl::draw(mFaceMesh);
-                mRenderedRefTex = mSrcFbo->getColorTexture();
             }
 
             if (!MOVIE_MODE)
             {
                 {
-                    gl::ScopedFramebuffer fbo(mMaskFbo);
+                    gl::ScopedFramebuffer fbo(mFaceMaskFbo);
                     gl::clear(ColorA::black(), false);
-                    mRefTex->unbind();
                     gl::draw(mFaceMesh);
                 }
 
-                mClone.update(mRenderedRefTex, mCapture.texture, mMaskFbo->getColorTexture());
+                // TODO: add gl::ScopedMatrices in mClone.update()
+                mClone.update(mRenderedOfflineFaceFbo->getColorTexture(), mCapture.texture, mFaceMaskFbo->getColorTexture());
             }
         }
     }
@@ -371,31 +381,24 @@ void FaceOff::draw()
         APP_H * 0.5f + adaptiveCamH * 0.5f
     };
 
-    if (FACE_VFX_VISIBLE)
+    gl::Texture2dRef fullscreenTex;
+    if (VFX_VISIBLE && mOnlineTracker->getFound())
     {
-        //        gl::ScopedModelMatrix modelMatrix;
-        //        gl::scale(APP_W / (float)CAM_W, APP_H / (float)CAM_H);
-        if (MOVIE_MODE)
-        {
-            gl::draw(mRenderedRefTex, srcArea, dstRect);
-        }
-        else if (mOnlineTracker->getFound())
-        {
-            gl::draw(mClone.getResultTexture(), srcArea, dstRect);
-        }
-        else
-        {
-            gl::draw(mCapture.texture, srcArea, dstRect);
-        }
+        fullscreenTex = mClone.getResultTexture();
+    }
+    else if (VFX_VISIBLE && MOVIE_MODE)
+    {
+        fullscreenTex = mRenderedOfflineFaceFbo->getColorTexture();
     }
     else
     {
-        gl::draw(mCapture.texture, srcArea, dstRect);
+        fullscreenTex = mCapture.texture;
     }
+    gl::draw(fullscreenTex, srcArea, dstRect);
 
-    if (REF_VISIBLE)
+    if (OFFLINE_VISIBLE)
     {
-        gl::draw(mRefTex);
+        gl::draw(mOfflineFaceTex);
     }
 
     FPS = getAverageFps();
@@ -408,10 +411,11 @@ void FaceOff::draw()
 
         gl::ScopedModelMatrix modelMatrix;
         gl::ScopedColor color(ColorA(0, 1.0f, 0, 1.0f));
-        gl::translate(APP_W * 0.5f - adaptiveCamW * 0.5f, APP_H * 0.5f - adaptiveCamH * 0.5f);
+        gl::translate(dstRect.x1, dstRect.y1);
+        gl::scale(adaptiveCamW / CAM_W, adaptiveCamH / CAM_H);
         gl::draw(mFaceMesh);
 
-        if (REF_VISIBLE)
+        if (OFFLINE_VISIBLE)
         {
             gl::draw(mOfflineTracker->getImageMesh());
         }
