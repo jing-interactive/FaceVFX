@@ -62,7 +62,7 @@ public:
             setFullScreen(!isFullScreen());
             resize();
         }
-            break;
+        break;
         case KeyEvent::KEY_ESCAPE:
             quit();
             break;
@@ -92,8 +92,9 @@ public:
     }
 
     void setup();
-    void shutdown()
+    ~FaceOff()
     {
+        mShouldQuit = true;
         mTrackerThread->join();
     }
 
@@ -104,6 +105,7 @@ public:
 private:
 
     void trackerThreadFn();
+    void updateClone();
 
     TriMesh         mFaceMesh;
 
@@ -131,6 +133,8 @@ private:
     int         mDeviceId;
     int         mPeopleId;
     bool        mDoesCaptureNeedsInit;
+
+    bool        mShouldQuit = false;
 };
 
 void FaceOff::resize()
@@ -139,13 +143,122 @@ void FaceOff::resize()
     APP_H = getWindowHeight();
 }
 
+void FaceOff::updateClone()
+{
+    gl::ScopedMatrices mvp;
+    gl::setMatricesWindow(mRenderedOfflineFaceFbo->getSize());
+    gl::ScopedViewport viewport(0, 0, mRenderedOfflineFaceFbo->getWidth(), mRenderedOfflineFaceFbo->getHeight());
+
+    // TODO: merge these two passes w/ MRTs
+    {
+        gl::ScopedFramebuffer fbo(mRenderedOfflineFaceFbo);
+        gl::ScopedGlslProg glsl(gl::getStockShader(gl::ShaderDef().texture()));
+        gl::ScopedTextureBind t0(mOfflineFaceTex, 0);
+        gl::clear(ColorA::black(), false);
+        gl::draw(mFaceMesh);
+    }
+
+    if (!MOVIE_MODE)
+    {
+        {
+            gl::ScopedFramebuffer fbo(mFaceMaskFbo);
+            gl::clear(ColorA::black(), false);
+            gl::draw(mFaceMesh);
+        }
+
+        // TODO: add gl::ScopedMatrices in mClone.update()
+        mClone.update(mRenderedOfflineFaceFbo->getColorTexture(), mCapture.texture, mFaceMaskFbo->getColorTexture());
+    }
+}
+
 void FaceOff::trackerThreadFn()
 {
+    ft::Option option;
+    option.scale = 0.5f;
+    mOfflineTracker = ft::IFaceTracker::create();
+    mOnlineTracker = ft::IFaceTracker::create(option);
+
+    while (!mShouldQuit)
+    {
+        // TODO: more robust with update_signal
+        if (!mCapture.checkNewFrame()) continue;
+
+        if (mDoesCaptureNeedsInit)
+        {
+            // TODO: more robust with setup_signal
+            mDoesCaptureNeedsInit = false;
+
+            CAM_W = mCapture.size.x;
+            CAM_H = mCapture.size.y;
+
+            auto createFboFn = [this]
+            {
+                gl::Fbo::Format fboFormat;
+                fboFormat.enableDepthBuffer(false);
+                mRenderedOfflineFaceFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
+                mFaceMaskFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
+
+                mClone.setup(CAM_W, CAM_H);
+                mClone.setStrength(16);
+            };
+            dispatchAsync(createFboFn);
+        }
+
+        if (mPeopleId != PEOPLE_ID)
+        {
+            mPeopleId = PEOPLE_ID;
+            mOfflineTracker->reset();
+
+            ImageSourceRef img = loadImage(loadAsset("people/" + mPeopleNames[PEOPLE_ID]));
+            if (img)
+            {
+                mOfflineTracker->update(img);
+
+                auto loadTexFn = [this, img]
+                {
+                    mOfflineFaceTex = mPhotoTex = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+                };
+                dispatchAsync(loadTexFn);
+            }
+
+            mFaceMesh.getBufferTexCoords0().clear();
+        }
+
+        mOnlineTracker->update(mCapture.surface);
+
+        if (!mOnlineTracker->getFound())
+            continue;
+
+        int nPoints = mOnlineTracker->size();
+        if (mFaceMesh.getBufferTexCoords0().empty())
+        {
+            auto imgSize = mOfflineTracker->getImageSize();
+            for (int i = 0; i < nPoints; i++)
+            {
+                vec3 point = mOfflineTracker->getImagePoint(i);
+                mFaceMesh.appendTexCoord({ point.x / imgSize.x, point.y / imgSize.y });
+            }
+            mOnlineTracker->addTriangleIndices(mFaceMesh);
+        }
+
+        mFaceMesh.getBufferPositions().clear();
+        for (int i = 0; i < nPoints; i++)
+        {
+            mFaceMesh.appendPosition(mOnlineTracker->getImagePoint(i));
+        }
+
+        if (VFX_VISIBLE && mOfflineFaceTex)
+        {
+            dispatchAsync(bind(&FaceOff::updateClone, this));
+        }
+    }
 }
 
 void FaceOff::setup()
 {
     resize();
+
+    mTrackerThread = make_shared<thread>(bind(&FaceOff::trackerThreadFn, this));
 
     // list out the devices
     vector<Capture::DeviceRef> devices(Capture::getDevices());
@@ -166,11 +279,6 @@ void FaceOff::setup()
             mDeviceNames.push_back(device->getName());
         }
     }
-
-    ft::Option option;
-    option.scale = 0.5f;
-    mOnlineTracker = ft::IFaceTracker::create(option);
-    mOfflineTracker = ft::IFaceTracker::create();
 
     // TODO: assert
     fs::directory_iterator kEnd;
@@ -258,100 +366,13 @@ void FaceOff::update()
     }
 
     mCapture.flip = CAM_FLIP;
-
-    if (mPeopleId != PEOPLE_ID)
-    {
-        mPeopleId = PEOPLE_ID;
-        mOfflineTracker->reset();
-
-        ImageSourceRef img = loadImage(loadAsset("people/" + mPeopleNames[PEOPLE_ID]));
-        if (img)
-        {
-            mOfflineFaceTex = mPhotoTex = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
-            mOfflineTracker->update(img);
-        }
-
-        mFaceMesh.getBufferTexCoords0().clear();
-    }
-
-    // TODO: more robust with update_signal
-    if (mCapture.checkNewFrame())
-    {
-        if (mDoesCaptureNeedsInit)
-        {
-            // TODO: more robust with setup_signal
-            mDoesCaptureNeedsInit = false;
-
-            CAM_W = mCapture.size.x;
-            CAM_H = mCapture.size.y;
-
-            gl::Fbo::Format fboFormat;
-            fboFormat.enableDepthBuffer(false);
-            mRenderedOfflineFaceFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
-            mFaceMaskFbo = gl::Fbo::create(CAM_W, CAM_H, fboFormat);
-
-            mClone.setup(CAM_W, CAM_H);
-            mClone.setStrength(16);
-        }
-
-        mOnlineTracker->update(mCapture.surface);
-
-        if (!mOnlineTracker->getFound())
-            return;
-
-        int nPoints = mOnlineTracker->size();
-        if (mFaceMesh.getBufferTexCoords0().empty())
-        {
-            auto imgSize = mOfflineTracker->getImageSize();
-            for (int i = 0; i < nPoints; i++)
-            {
-                vec3 point = mOfflineTracker->getImagePoint(i);
-                mFaceMesh.appendTexCoord({ point.x / imgSize.x, point.y / imgSize.y });
-            }
-            mOnlineTracker->addTriangleIndices(mFaceMesh);
-        }
-
-        mFaceMesh.getBufferPositions().clear();
-        for (int i = 0; i < nPoints; i++)
-        {
-            mFaceMesh.appendPosition(mOnlineTracker->getImagePoint(i));
-        }
-
-        if (VFX_VISIBLE && mOfflineFaceTex)
-        {
-            gl::ScopedMatrices mvp;
-            gl::setMatricesWindow(mRenderedOfflineFaceFbo->getSize());
-            gl::ScopedViewport viewport(0, 0, mRenderedOfflineFaceFbo->getWidth(), mRenderedOfflineFaceFbo->getHeight());
-            
-            // TODO: merge these two passes w/ MRTs
-            {
-                gl::ScopedFramebuffer fbo(mRenderedOfflineFaceFbo);
-                gl::ScopedGlslProg glsl(gl::getStockShader(gl::ShaderDef().texture()));
-                gl::ScopedTextureBind t0(mOfflineFaceTex, 0);
-                gl::clear(ColorA::black(), false);
-                gl::draw(mFaceMesh);
-            }
-
-            if (!MOVIE_MODE)
-            {
-                {
-                    gl::ScopedFramebuffer fbo(mFaceMaskFbo);
-                    gl::clear(ColorA::black(), false);
-                    gl::draw(mFaceMesh);
-                }
-
-                // TODO: add gl::ScopedMatrices in mClone.update()
-                mClone.update(mRenderedOfflineFaceFbo->getColorTexture(), mCapture.texture, mFaceMaskFbo->getColorTexture());
-            }
-        }
-    }
 }
 
 void FaceOff::draw()
 {
     gl::clear(ColorA::black(), false);
 
-    if (!mCapture.isReady())
+    if (!mOnlineTracker || !mCapture.isReady())
         return;
 
     gl::setMatricesWindow(getWindowSize());
