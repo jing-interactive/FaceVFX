@@ -17,18 +17,19 @@
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		586989F1497D423B904455D5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD8BB986F7E449E89284CB72 /* LaunchScreen.xib */; };
-		74A547921CFAE7B300C05CAC /* ciFaceTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A5477A1CFAE7B300C05CAC /* ciFaceTracker.cpp */; };
-		74A547931CFAE7B300C05CAC /* CLM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A5477D1CFAE7B300C05CAC /* CLM.cc */; };
-		74A547941CFAE7B300C05CAC /* COPYRIGHT in Resources */ = {isa = PBXBuildFile; fileRef = 74A5477F1CFAE7B300C05CAC /* COPYRIGHT */; };
-		74A547951CFAE7B300C05CAC /* FCheck.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547801CFAE7B300C05CAC /* FCheck.cc */; };
-		74A547961CFAE7B300C05CAC /* FDet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547821CFAE7B300C05CAC /* FDet.cc */; };
-		74A547971CFAE7B300C05CAC /* IO.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547841CFAE7B300C05CAC /* IO.cc */; };
-		74A547981CFAE7B300C05CAC /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 74A547861CFAE7B300C05CAC /* Makefile */; };
-		74A547991CFAE7B300C05CAC /* Patch.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547871CFAE7B300C05CAC /* Patch.cc */; };
-		74A5479A1CFAE7B300C05CAC /* PAW.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A547891CFAE7B300C05CAC /* PAW.cc */; };
-		74A5479B1CFAE7B300C05CAC /* PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A5478B1CFAE7B300C05CAC /* PDM.cc */; };
-		74A5479C1CFAE7B300C05CAC /* README in Resources */ = {isa = PBXBuildFile; fileRef = 74A5478D1CFAE7B300C05CAC /* README */; };
-		74A5479D1CFAE7B300C05CAC /* Tracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74A5478E1CFAE7B300C05CAC /* Tracker.cc */; };
+		742513D51D09B5630073FBCA /* IFaceTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742513BC1D09B5630073FBCA /* IFaceTracker.cpp */; };
+		742513D61D09B5630073FBCA /* ciFaceTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742513BF1D09B5630073FBCA /* ciFaceTracker.cpp */; };
+		742513D71D09B5630073FBCA /* CLM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513C21D09B5630073FBCA /* CLM.cc */; };
+		742513D81D09B5630073FBCA /* COPYRIGHT in Resources */ = {isa = PBXBuildFile; fileRef = 742513C41D09B5630073FBCA /* COPYRIGHT */; };
+		742513D91D09B5630073FBCA /* FCheck.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513C51D09B5630073FBCA /* FCheck.cc */; };
+		742513DA1D09B5630073FBCA /* FDet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513C71D09B5630073FBCA /* FDet.cc */; };
+		742513DB1D09B5630073FBCA /* IO.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513C91D09B5630073FBCA /* IO.cc */; };
+		742513DC1D09B5630073FBCA /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 742513CB1D09B5630073FBCA /* Makefile */; };
+		742513DD1D09B5630073FBCA /* Patch.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513CC1D09B5630073FBCA /* Patch.cc */; };
+		742513DE1D09B5630073FBCA /* PAW.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513CE1D09B5630073FBCA /* PAW.cc */; };
+		742513DF1D09B5630073FBCA /* PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513D01D09B5630073FBCA /* PDM.cc */; };
+		742513E01D09B5630073FBCA /* README in Resources */ = {isa = PBXBuildFile; fileRef = 742513D21D09B5630073FBCA /* README */; };
+		742513E11D09B5630073FBCA /* Tracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513D31D09B5630073FBCA /* Tracker.cc */; };
 		74A5479E1CFAE7B300C05CAC /* Clone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A547901CFAE7B300C05CAC /* Clone.cpp */; };
 		74A547A01CFAE7BD00C05CAC /* item.def in Resources */ = {isa = PBXBuildFile; fileRef = 74A5479F1CFAE7BD00C05CAC /* item.def */; };
 		81C2F7C7FCCD4858863E412E /* DistortionHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */; };
@@ -60,32 +61,34 @@
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60539AFC2081411DBB11E9D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = Images.xcassets; sourceTree = "<group>"; };
 		720A519E19DA44CEAB1B3D2D /* FaceOffApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = FaceOffApp.cpp; path = ../src/FaceOffApp.cpp; sourceTree = "<group>"; };
+		742513BC1D09B5630073FBCA /* IFaceTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IFaceTracker.cpp; sourceTree = "<group>"; };
+		742513BD1D09B5630073FBCA /* IFaceTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFaceTracker.h; sourceTree = "<group>"; };
+		742513BF1D09B5630073FBCA /* ciFaceTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ciFaceTracker.cpp; sourceTree = "<group>"; };
+		742513C01D09B5630073FBCA /* ciFaceTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ciFaceTracker.h; sourceTree = "<group>"; };
+		742513C21D09B5630073FBCA /* CLM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLM.cc; sourceTree = "<group>"; };
+		742513C31D09B5630073FBCA /* CLM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLM.h; sourceTree = "<group>"; };
+		742513C41D09B5630073FBCA /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
+		742513C51D09B5630073FBCA /* FCheck.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FCheck.cc; sourceTree = "<group>"; };
+		742513C61D09B5630073FBCA /* FCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCheck.h; sourceTree = "<group>"; };
+		742513C71D09B5630073FBCA /* FDet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FDet.cc; sourceTree = "<group>"; };
+		742513C81D09B5630073FBCA /* FDet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDet.h; sourceTree = "<group>"; };
+		742513C91D09B5630073FBCA /* IO.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IO.cc; sourceTree = "<group>"; };
+		742513CA1D09B5630073FBCA /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IO.h; sourceTree = "<group>"; };
+		742513CB1D09B5630073FBCA /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		742513CC1D09B5630073FBCA /* Patch.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Patch.cc; sourceTree = "<group>"; };
+		742513CD1D09B5630073FBCA /* Patch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch.h; sourceTree = "<group>"; };
+		742513CE1D09B5630073FBCA /* PAW.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PAW.cc; sourceTree = "<group>"; };
+		742513CF1D09B5630073FBCA /* PAW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAW.h; sourceTree = "<group>"; };
+		742513D01D09B5630073FBCA /* PDM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PDM.cc; sourceTree = "<group>"; };
+		742513D11D09B5630073FBCA /* PDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDM.h; sourceTree = "<group>"; };
+		742513D21D09B5630073FBCA /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		742513D31D09B5630073FBCA /* Tracker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tracker.cc; sourceTree = "<group>"; };
+		742513D41D09B5630073FBCA /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 		744B67261CFC7492006BE21C /* CaptureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CaptureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/CaptureHelper.h"; sourceTree = "<group>"; };
 		744B67271CFC749C006BE21C /* MiniConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MiniConfig.h; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.h"; sourceTree = "<group>"; };
 		744B67281CFC749C006BE21C /* MotionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MotionHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/MotionHelper.h"; sourceTree = "<group>"; };
 		744B67291CFC749C006BE21C /* StateMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StateMachine.h; path = "../../Cinder/blocks/Cinder-VNM/src/StateMachine.h"; sourceTree = "<group>"; };
 		744B672A1CFC749C006BE21C /* TextureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/TextureHelper.h"; sourceTree = "<group>"; };
-		74A5477A1CFAE7B300C05CAC /* ciFaceTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ciFaceTracker.cpp; sourceTree = "<group>"; };
-		74A5477B1CFAE7B300C05CAC /* ciFaceTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ciFaceTracker.h; sourceTree = "<group>"; };
-		74A5477D1CFAE7B300C05CAC /* CLM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLM.cc; sourceTree = "<group>"; };
-		74A5477E1CFAE7B300C05CAC /* CLM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLM.h; sourceTree = "<group>"; };
-		74A5477F1CFAE7B300C05CAC /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
-		74A547801CFAE7B300C05CAC /* FCheck.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FCheck.cc; sourceTree = "<group>"; };
-		74A547811CFAE7B300C05CAC /* FCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCheck.h; sourceTree = "<group>"; };
-		74A547821CFAE7B300C05CAC /* FDet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FDet.cc; sourceTree = "<group>"; };
-		74A547831CFAE7B300C05CAC /* FDet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDet.h; sourceTree = "<group>"; };
-		74A547841CFAE7B300C05CAC /* IO.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IO.cc; sourceTree = "<group>"; };
-		74A547851CFAE7B300C05CAC /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IO.h; sourceTree = "<group>"; };
-		74A547861CFAE7B300C05CAC /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		74A547871CFAE7B300C05CAC /* Patch.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Patch.cc; sourceTree = "<group>"; };
-		74A547881CFAE7B300C05CAC /* Patch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch.h; sourceTree = "<group>"; };
-		74A547891CFAE7B300C05CAC /* PAW.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PAW.cc; sourceTree = "<group>"; };
-		74A5478A1CFAE7B300C05CAC /* PAW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAW.h; sourceTree = "<group>"; };
-		74A5478B1CFAE7B300C05CAC /* PDM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PDM.cc; sourceTree = "<group>"; };
-		74A5478C1CFAE7B300C05CAC /* PDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDM.h; sourceTree = "<group>"; };
-		74A5478D1CFAE7B300C05CAC /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		74A5478E1CFAE7B300C05CAC /* Tracker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tracker.cc; sourceTree = "<group>"; };
-		74A5478F1CFAE7B300C05CAC /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 		74A547901CFAE7B300C05CAC /* Clone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clone.cpp; path = ../src/Clone.cpp; sourceTree = "<group>"; };
 		74A547911CFAE7B300C05CAC /* Clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clone.h; path = ../src/Clone.h; sourceTree = "<group>"; };
 		74A5479F1CFAE7BD00C05CAC /* item.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = item.def; path = ../include/item.def; sourceTree = "<group>"; };
@@ -169,7 +172,7 @@
 		00692BD914FF149000D0A05E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				74A547791CFAE7B300C05CAC /* ciFaceTracker */,
+				742513BB1D09B5630073FBCA /* IFaceTracker */,
 				74A547901CFAE7B300C05CAC /* Clone.cpp */,
 				74A547911CFAE7B300C05CAC /* Clone.h */,
 				720A519E19DA44CEAB1B3D2D /* FaceOffApp.cpp */,
@@ -220,41 +223,51 @@
 			name = include;
 			sourceTree = "<group>";
 		};
-		74A547791CFAE7B300C05CAC /* ciFaceTracker */ = {
+		742513BB1D09B5630073FBCA /* IFaceTracker */ = {
 			isa = PBXGroup;
 			children = (
-				74A5477A1CFAE7B300C05CAC /* ciFaceTracker.cpp */,
-				74A5477B1CFAE7B300C05CAC /* ciFaceTracker.h */,
-				74A5477C1CFAE7B300C05CAC /* FaceTracker */,
+				742513BC1D09B5630073FBCA /* IFaceTracker.cpp */,
+				742513BD1D09B5630073FBCA /* IFaceTracker.h */,
+				742513BE1D09B5630073FBCA /* jason_saragih_tracker */,
 			);
-			name = ciFaceTracker;
-			path = ../src/ciFaceTracker;
+			name = IFaceTracker;
+			path = ../src/IFaceTracker;
 			sourceTree = "<group>";
 		};
-		74A5477C1CFAE7B300C05CAC /* FaceTracker */ = {
+		742513BE1D09B5630073FBCA /* jason_saragih_tracker */ = {
 			isa = PBXGroup;
 			children = (
-				74A5477D1CFAE7B300C05CAC /* CLM.cc */,
-				74A5477E1CFAE7B300C05CAC /* CLM.h */,
-				74A5477F1CFAE7B300C05CAC /* COPYRIGHT */,
-				74A547801CFAE7B300C05CAC /* FCheck.cc */,
-				74A547811CFAE7B300C05CAC /* FCheck.h */,
-				74A547821CFAE7B300C05CAC /* FDet.cc */,
-				74A547831CFAE7B300C05CAC /* FDet.h */,
-				74A547841CFAE7B300C05CAC /* IO.cc */,
-				74A547851CFAE7B300C05CAC /* IO.h */,
-				74A547861CFAE7B300C05CAC /* Makefile */,
-				74A547871CFAE7B300C05CAC /* Patch.cc */,
-				74A547881CFAE7B300C05CAC /* Patch.h */,
-				74A547891CFAE7B300C05CAC /* PAW.cc */,
-				74A5478A1CFAE7B300C05CAC /* PAW.h */,
-				74A5478B1CFAE7B300C05CAC /* PDM.cc */,
-				74A5478C1CFAE7B300C05CAC /* PDM.h */,
-				74A5478D1CFAE7B300C05CAC /* README */,
-				74A5478E1CFAE7B300C05CAC /* Tracker.cc */,
-				74A5478F1CFAE7B300C05CAC /* Tracker.h */,
+				742513BF1D09B5630073FBCA /* ciFaceTracker.cpp */,
+				742513C01D09B5630073FBCA /* ciFaceTracker.h */,
+				742513C11D09B5630073FBCA /* lib */,
 			);
-			path = FaceTracker;
+			path = jason_saragih_tracker;
+			sourceTree = "<group>";
+		};
+		742513C11D09B5630073FBCA /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				742513C21D09B5630073FBCA /* CLM.cc */,
+				742513C31D09B5630073FBCA /* CLM.h */,
+				742513C41D09B5630073FBCA /* COPYRIGHT */,
+				742513C51D09B5630073FBCA /* FCheck.cc */,
+				742513C61D09B5630073FBCA /* FCheck.h */,
+				742513C71D09B5630073FBCA /* FDet.cc */,
+				742513C81D09B5630073FBCA /* FDet.h */,
+				742513C91D09B5630073FBCA /* IO.cc */,
+				742513CA1D09B5630073FBCA /* IO.h */,
+				742513CB1D09B5630073FBCA /* Makefile */,
+				742513CC1D09B5630073FBCA /* Patch.cc */,
+				742513CD1D09B5630073FBCA /* Patch.h */,
+				742513CE1D09B5630073FBCA /* PAW.cc */,
+				742513CF1D09B5630073FBCA /* PAW.h */,
+				742513D01D09B5630073FBCA /* PDM.cc */,
+				742513D11D09B5630073FBCA /* PDM.h */,
+				742513D21D09B5630073FBCA /* README */,
+				742513D31D09B5630073FBCA /* Tracker.cc */,
+				742513D41D09B5630073FBCA /* Tracker.h */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 		8619BF3C33DA4E79AB6E2634 /* OpenCV3 */ = {
@@ -333,13 +346,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74A5479C1CFAE7B300C05CAC /* README in Resources */,
-				74A547941CFAE7B300C05CAC /* COPYRIGHT in Resources */,
 				00748058165D41390024B57A /* assets in Resources */,
 				9714D3E08F884AA59720284D /* CinderApp_ios.png in Resources */,
+				742513D81D09B5630073FBCA /* COPYRIGHT in Resources */,
 				C8A7432F173A4C2B8B13BE85 /* Images.xcassets in Resources */,
 				74A547A01CFAE7BD00C05CAC /* item.def in Resources */,
 				586989F1497D423B904455D5 /* LaunchScreen.xib in Resources */,
+				742513E01D09B5630073FBCA /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,21 +363,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74A5479B1CFAE7B300C05CAC /* PDM.cc in Sources */,
-				74A547981CFAE7B300C05CAC /* Makefile in Sources */,
+				742513DB1D09B5630073FBCA /* IO.cc in Sources */,
+				742513D61D09B5630073FBCA /* ciFaceTracker.cpp in Sources */,
 				83B21AE6FC5A4F9DBE9F2252 /* FaceOffApp.cpp in Sources */,
-				74A5479A1CFAE7B300C05CAC /* PAW.cc in Sources */,
 				03959E52CE154A2B9842A31A /* AssetManager.cpp in Sources */,
 				81C2F7C7FCCD4858863E412E /* DistortionHelper.cpp in Sources */,
-				74A547921CFAE7B300C05CAC /* ciFaceTracker.cpp in Sources */,
-				74A547931CFAE7B300C05CAC /* CLM.cc in Sources */,
-				74A5479D1CFAE7B300C05CAC /* Tracker.cc in Sources */,
-				74A547991CFAE7B300C05CAC /* Patch.cc in Sources */,
-				74A547951CFAE7B300C05CAC /* FCheck.cc in Sources */,
-				74A547971CFAE7B300C05CAC /* IO.cc in Sources */,
-				74A547961CFAE7B300C05CAC /* FDet.cc in Sources */,
+				742513DA1D09B5630073FBCA /* FDet.cc in Sources */,
+				742513DC1D09B5630073FBCA /* Makefile in Sources */,
 				74A5479E1CFAE7B300C05CAC /* Clone.cpp in Sources */,
 				A901921565DA41FF88833CC0 /* MiniConfig.cpp in Sources */,
+				742513DD1D09B5630073FBCA /* Patch.cc in Sources */,
+				742513E11D09B5630073FBCA /* Tracker.cc in Sources */,
+				742513DF1D09B5630073FBCA /* PDM.cc in Sources */,
+				742513DE1D09B5630073FBCA /* PAW.cc in Sources */,
+				742513D71D09B5630073FBCA /* CLM.cc in Sources */,
+				742513D51D09B5630073FBCA /* IFaceTracker.cpp in Sources */,
+				742513D91D09B5630073FBCA /* FCheck.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

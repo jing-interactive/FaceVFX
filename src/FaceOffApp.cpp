@@ -17,6 +17,8 @@
 
 #include "IFaceTracker/IFaceTracker.h"
 #include "MiniConfig.h"
+#include "AssetManager.h"
+
 #include "Clone.h"
 
 #if 0 // defined (CINDER_MSW)
@@ -290,13 +292,7 @@ void FaceOff::setup()
         }
     }
 
-    // TODO: assert
-    fs::directory_iterator kEnd;
-    fs::path peopleFolder = getAssetPath("people");
-    for (fs::directory_iterator it(peopleFolder); it != kEnd; ++it)
-    {
-        mPeopleNames.push_back(it->path().filename().string());
-    }
+    mPeopleNames = am::shortPaths("people");
 
 #if !defined( CINDER_GL_ES )
     mParam = params::InterfaceGl::create("param", ivec2(300, getConfigUIHeight()));
