@@ -71,25 +71,14 @@ public:
         }
     }
 
-    void fileDrop_DISABLED(FileDropEvent event)
+    void fileDrop(FileDropEvent event)
     {
         if (event.getNumFiles() > 0)
         {
             console() << event.getFile(0);
-            try
-            {
-                ImageSourceRef img = loadImage(event.getFile(0));
-                gl::Texture2dRef newTex;
-                if (img) newTex = gl::Texture::create(img);
 
-                mOfflineTracker->reset();
-                mOfflineTracker->update(img);
-                mPhotoTex = newTex;
-            }
-            catch (...)
-            {
-
-            }
+            ImageSourceRef img = loadImage(event.getFile(0));
+            updateOfflineImage(img);
         }
     }
 
@@ -106,6 +95,20 @@ public:
 
 private:
 
+    void updateOfflineImage(ImageSourceRef img)
+    {
+        if (!img) return;
+        
+        mOfflineTracker->reset();
+        mOfflineTracker->update(img);
+        
+        auto loadTexFn = [this, img]
+        {
+            mOfflineFaceTex = mPhotoTex = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
+        };
+        dispatchAsync(loadTexFn);
+    }
+    
     void trackerThreadFn();
     void updateClone();
 
@@ -187,9 +190,10 @@ void FaceOff::trackerThreadFn()
         // TODO: more robust with update_signal
         if (!mCapture.checkNewFrame())
         {
+            sleep(1.0f);
             continue;
         }
-
+        
         if (mDoesCaptureNeedsInit)
         {
             // TODO: more robust with setup_signal
@@ -214,19 +218,9 @@ void FaceOff::trackerThreadFn()
         if (mPeopleId != PEOPLE_ID)
         {
             mPeopleId = PEOPLE_ID;
-            mOfflineTracker->reset();
 
             ImageSourceRef img = loadImage(loadAsset("people/" + mPeopleNames[PEOPLE_ID]));
-            if (img)
-            {
-                mOfflineTracker->update(img);
-
-                auto loadTexFn = [this, img]
-                {
-                    mOfflineFaceTex = mPhotoTex = gl::Texture::create(img, gl::Texture::Format().loadTopDown());
-                };
-                dispatchAsync(loadTexFn);
-            }
+            updateOfflineImage(img);
 
             shouldInitFaceMesh = true;
         }
@@ -269,7 +263,7 @@ void FaceOff::trackerThreadFn()
 void FaceOff::setup()
 {
     resize();
-
+    
     mTrackerThread = make_shared<thread>(bind(&FaceOff::trackerThreadFn, this));
 
     // list out the devices
