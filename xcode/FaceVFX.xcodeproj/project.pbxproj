@@ -54,7 +54,7 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		43D69D8FA4E34C0FB4DACE3F /* FaceOff_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = FaceOff_Prefix.pch; sourceTree = "<group>"; };
+		43D69D8FA4E34C0FB4DACE3F /* FaceVFX_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceVFX_Prefix.pch; sourceTree = "<group>"; };
 		440B1FEF603A4D35BA33F977 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		69A4FBA3522946C68C0A7236 /* AssetManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = AssetManager.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/AssetManager.cpp"; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		74A547511CFADFF900C05CAC /* item.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = item.def; path = ../include/item.def; sourceTree = "<group>"; };
 		74A547531CFAE06300C05CAC /* Clone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clone.cpp; path = ../src/Clone.cpp; sourceTree = "<group>"; };
 		74A547541CFAE06300C05CAC /* Clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clone.h; path = ../src/Clone.h; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* FaceOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* FaceVFX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceVFX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93812A7424014D02859096D6 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		9551DDA29DEC456CA2BC86FB /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 		A44AB67F244B4B00A3E2038E /* CinderOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CinderOpenCV.h; path = "../../Cinder/blocks/Cinder-OpenCV3/include/CinderOpenCV.h"; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* FaceOff.app */,
+				8D1107320486CEB800E47090 /* FaceVFX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			children = (
 				74A547511CFADFF900C05CAC /* item.def */,
 				93812A7424014D02859096D6 /* Resources.h */,
-				43D69D8FA4E34C0FB4DACE3F /* FaceOff_Prefix.pch */,
+				43D69D8FA4E34C0FB4DACE3F /* FaceVFX_Prefix.pch */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -312,9 +312,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* FaceOff */ = {
+		8D1107260486CEB800E47090 /* FaceVFX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "FaceOff" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "FaceVFX" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -324,10 +324,10 @@
 			);
 			dependencies = (
 			);
-			name = FaceOff;
+			name = FaceVFX;
 			productInstallPath = "$(HOME)/Applications";
 			productName = FaceOff;
-			productReference = 8D1107320486CEB800E47090 /* FaceOff.app */;
+			productReference = 8D1107320486CEB800E47090 /* FaceVFX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -337,7 +337,7 @@
 			isa = PBXProject;
 			attributes = {
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FaceOff" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FaceVFX" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -351,7 +351,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* FaceOff */,
+				8D1107260486CEB800E47090 /* FaceVFX */,
 			);
 		};
 /* End PBXProject section */
@@ -407,7 +407,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FaceOff_Prefix.pch;
+				GCC_PREFIX_HEADER = FaceVFX_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -437,7 +437,7 @@
 					"\"-lz\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FaceOff;
+				PRODUCT_NAME = FaceVFX;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
 			};
@@ -454,7 +454,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FaceOff_Prefix.pch;
+				GCC_PREFIX_HEADER = FaceVFX_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG=1",
 					"$(inherited)",
@@ -484,7 +484,7 @@
 					"\"-lz\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FaceOff;
+				PRODUCT_NAME = FaceVFX;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
 				WRAPPER_EXTENSION = app;
@@ -528,7 +528,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "FaceOff" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "FaceVFX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -537,7 +537,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FaceOff" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FaceVFX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
