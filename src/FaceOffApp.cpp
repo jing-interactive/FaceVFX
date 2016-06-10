@@ -132,9 +132,9 @@ private:
     Clone       mClone;
 
     //  param
-    int         mDeviceId;
-    int         mPeopleId;
-    bool        mDoesCaptureNeedsInit;
+    int         mDeviceId = -1;
+    int         mPeopleId = -1;
+    bool        mDoesCaptureNeedsInit = false;
 
     bool        mShouldQuit = false;
 };
@@ -304,7 +304,6 @@ void FaceOff::setup()
         DEVICE_ID = 0;
     }
     ADD_ENUM_TO_INT(mParam, DEVICE_ID, mDeviceNames);
-    mDeviceId = -1;
 
     if (PEOPLE_ID > mPeopleNames.size() - 1)
     {
@@ -314,8 +313,6 @@ void FaceOff::setup()
 #else
     DEVICE_ID = 1; // pick front camera for mobile devices
 #endif
-
-    mPeopleId = -1;
 
     gl::disableDepthRead();
     gl::disableDepthWrite();
@@ -367,8 +364,8 @@ void FaceOff::update()
     if (mDeviceId != DEVICE_ID)
     {
         mDeviceId = DEVICE_ID;
-        mDoesCaptureNeedsInit = true;
         mCapture.setup(CAM_W, CAM_H, mDevices[DEVICE_ID]);
+        mDoesCaptureNeedsInit = true;
     }
 
     mCapture.flip = CAM_FLIP;
