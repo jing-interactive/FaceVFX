@@ -133,6 +133,7 @@ private:
     gl::TextureRef mOfflineFaceTex;
     gl::FboRef     mRenderedOfflineFaceFbo, mFaceMaskFbo;
     Clone       mClone;
+    bool           mHasNewRenderedFace = false;
 
     //  param
     int         mDeviceId = -1;
@@ -173,6 +174,7 @@ void FaceOff::updateClone()
 
         // TODO: add gl::ScopedMatrices in mClone.update()
         mClone.update(mRenderedOfflineFaceFbo->getColorTexture(), mCapture.texture, mFaceMaskFbo->getColorTexture());
+        mHasNewRenderedFace = true;
     }
 }
 
@@ -229,6 +231,7 @@ void FaceOff::trackerThreadFn()
 
         if (!mOnlineTracker->getFound())
         {
+            mHasNewRenderedFace = false;
             continue;
         }
 
@@ -406,7 +409,7 @@ void FaceOff::draw()
     }
 
     gl::Texture2dRef fullscreenTex;
-    if (VFX_VISIBLE && mOnlineTracker->getFound())
+    if (VFX_VISIBLE && mHasNewRenderedFace)
     {
         fullscreenTex = mClone.getResultTexture();
     }
@@ -429,7 +432,7 @@ void FaceOff::draw()
 
     gl::disableAlphaBlending();
 
-    if (WIREFRAME_MODE && (MOVIE_MODE || mOnlineTracker->getFound()))
+    if (WIREFRAME_MODE && (MOVIE_MODE || mHasNewRenderedFace))
     {
         gl::enableWireframe();
 
