@@ -10,7 +10,7 @@ Supported platforms
 
 Depends on
 
-* [Cinder](https://github.com/cinder/Cinder)
+* [Cinder](https://github.com/vnm-interactive/Cinder)
 * [Cinder-OpenCV3](https://github.com/cinder/Cinder-OpenCV3)
 * [Cinder-VNM](https://github.com/vnm-interactive/Cinder-VNM)
 * Jason Saragih's FaceTracker library, contained in the project.
