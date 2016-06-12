@@ -14,7 +14,7 @@ Depends on
 * [Cinder-OpenCV3](https://github.com/cinder/Cinder-OpenCV3) for Computer Vision routines.
 * [Cinder-VNM](https://github.com/vnm-interactive/Cinder-VNM) for my own utilities based on Cinder.
 * Jason Saragih's FaceTracker library, contained in the project.
-* [NanoguiBlock](https://github.com/vnm-interactive/NanoguiBlock) for cross-platform GUI.
+* [Cinder-ImGui](https://github.com/vnm-interactive/Cinder-ImGui) for cross-platform GUI.
 * [Cinder-WMFVideo](https://github.com/vnm-interactive/Cinder-WMFVideo) for playing video on Windows. [Optional]
 * [Cinder-Warping](https://github.com/paulhoux/Cinder-Warping) for projective mapping. [Optional]
 
