@@ -30,6 +30,14 @@
 		742513DF1D09B5630073FBCA /* PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513D01D09B5630073FBCA /* PDM.cc */; };
 		742513E01D09B5630073FBCA /* README in Resources */ = {isa = PBXBuildFile; fileRef = 742513D21D09B5630073FBCA /* README */; };
 		742513E11D09B5630073FBCA /* Tracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513D31D09B5630073FBCA /* Tracker.cc */; };
+		74265F7D1D11AC77002EE405 /* MiniConfigImgui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74265F7B1D11AC77002EE405 /* MiniConfigImgui.cpp */; };
+		74727EEB1D0F0AF200EF7B50 /* imgui_user.inl in Resources */ = {isa = PBXBuildFile; fileRef = 74727D5F1D0F0AF200EF7B50 /* imgui_user.inl */; };
+		7472800B1D0F0AF200EF7B50 /* imgui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74727EDF1D0F0AF200EF7B50 /* imgui.cpp */; };
+		7472800C1D0F0AF200EF7B50 /* imgui_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74727EE11D0F0AF200EF7B50 /* imgui_demo.cpp */; };
+		7472800D1D0F0AF200EF7B50 /* imgui_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74727EE21D0F0AF200EF7B50 /* imgui_draw.cpp */; };
+		7472800E1D0F0AF200EF7B50 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 74727EE41D0F0AF200EF7B50 /* LICENSE */; };
+		7472800F1D0F0AF200EF7B50 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 74727EE51D0F0AF200EF7B50 /* README.md */; };
+		747280101D0F0AF200EF7B50 /* CinderImGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74727EEA1D0F0AF200EF7B50 /* CinderImGui.cpp */; };
 		74A5479E1CFAE7B300C05CAC /* Clone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A547901CFAE7B300C05CAC /* Clone.cpp */; };
 		74A547A01CFAE7BD00C05CAC /* item.def in Resources */ = {isa = PBXBuildFile; fileRef = 74A5479F1CFAE7BD00C05CAC /* item.def */; };
 		81C2F7C7FCCD4858863E412E /* DistortionHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */; };
@@ -84,11 +92,28 @@
 		742513D21D09B5630073FBCA /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		742513D31D09B5630073FBCA /* Tracker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tracker.cc; sourceTree = "<group>"; };
 		742513D41D09B5630073FBCA /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
+		74265F7B1D11AC77002EE405 /* MiniConfigImgui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniConfigImgui.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfigImgui.cpp"; sourceTree = "<group>"; };
+		74265F7C1D11AC77002EE405 /* MiniConfigImgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniConfigImgui.h; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfigImgui.h"; sourceTree = "<group>"; };
 		744B67261CFC7492006BE21C /* CaptureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CaptureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/CaptureHelper.h"; sourceTree = "<group>"; };
 		744B67271CFC749C006BE21C /* MiniConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MiniConfig.h; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.h"; sourceTree = "<group>"; };
 		744B67281CFC749C006BE21C /* MotionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MotionHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/MotionHelper.h"; sourceTree = "<group>"; };
 		744B67291CFC749C006BE21C /* StateMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StateMachine.h; path = "../../Cinder/blocks/Cinder-VNM/src/StateMachine.h"; sourceTree = "<group>"; };
 		744B672A1CFC749C006BE21C /* TextureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/TextureHelper.h"; sourceTree = "<group>"; };
+		74727D5D1D0F0AF200EF7B50 /* CinderImGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderImGui.h; sourceTree = "<group>"; };
+		74727D5E1D0F0AF200EF7B50 /* imgui_user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_user.h; sourceTree = "<group>"; };
+		74727D5F1D0F0AF200EF7B50 /* imgui_user.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = imgui_user.inl; sourceTree = "<group>"; };
+		74727EDE1D0F0AF200EF7B50 /* imconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imconfig.h; sourceTree = "<group>"; };
+		74727EDF1D0F0AF200EF7B50 /* imgui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui.cpp; sourceTree = "<group>"; };
+		74727EE01D0F0AF200EF7B50 /* imgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui.h; sourceTree = "<group>"; };
+		74727EE11D0F0AF200EF7B50 /* imgui_demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_demo.cpp; sourceTree = "<group>"; };
+		74727EE21D0F0AF200EF7B50 /* imgui_draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_draw.cpp; sourceTree = "<group>"; };
+		74727EE31D0F0AF200EF7B50 /* imgui_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_internal.h; sourceTree = "<group>"; };
+		74727EE41D0F0AF200EF7B50 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		74727EE51D0F0AF200EF7B50 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		74727EE61D0F0AF200EF7B50 /* stb_rect_pack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_rect_pack.h; sourceTree = "<group>"; };
+		74727EE71D0F0AF200EF7B50 /* stb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_textedit.h; sourceTree = "<group>"; };
+		74727EE81D0F0AF200EF7B50 /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
+		74727EEA1D0F0AF200EF7B50 /* CinderImGui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CinderImGui.cpp; sourceTree = "<group>"; };
 		74A547901CFAE7B300C05CAC /* Clone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clone.cpp; path = ../src/Clone.cpp; sourceTree = "<group>"; };
 		74A547911CFAE7B300C05CAC /* Clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clone.h; path = ../src/Clone.h; sourceTree = "<group>"; };
 		74A5479F1CFAE7BD00C05CAC /* item.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = item.def; path = ../include/item.def; sourceTree = "<group>"; };
@@ -208,6 +233,8 @@
 				15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */,
 				744B67271CFC749C006BE21C /* MiniConfig.h */,
 				744B67281CFC749C006BE21C /* MotionHelper.h */,
+				74265F7B1D11AC77002EE405 /* MiniConfigImgui.cpp */,
+				74265F7C1D11AC77002EE405 /* MiniConfigImgui.h */,
 				744B67291CFC749C006BE21C /* StateMachine.h */,
 				744B672A1CFC749C006BE21C /* TextureHelper.h */,
 				246C662365EC42C290CF175C /* MiniConfig.cpp */,
@@ -270,6 +297,63 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		74727D5B1D0F0AE400EF7B50 /* imgui */ = {
+			isa = PBXGroup;
+			children = (
+				74727D5C1D0F0AF200EF7B50 /* include */,
+				74727D601D0F0AF200EF7B50 /* lib */,
+				74727EE91D0F0AF200EF7B50 /* src */,
+			);
+			name = imgui;
+			sourceTree = "<group>";
+		};
+		74727D5C1D0F0AF200EF7B50 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				74727D5D1D0F0AF200EF7B50 /* CinderImGui.h */,
+				74727D5E1D0F0AF200EF7B50 /* imgui_user.h */,
+				74727D5F1D0F0AF200EF7B50 /* imgui_user.inl */,
+			);
+			name = include;
+			path = "../../Cinder/blocks/Cinder-ImGui/include";
+			sourceTree = "<group>";
+		};
+		74727D601D0F0AF200EF7B50 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				74727D611D0F0AF200EF7B50 /* imgui */,
+			);
+			name = lib;
+			path = "../../Cinder/blocks/Cinder-ImGui/lib";
+			sourceTree = "<group>";
+		};
+		74727D611D0F0AF200EF7B50 /* imgui */ = {
+			isa = PBXGroup;
+			children = (
+				74727EDE1D0F0AF200EF7B50 /* imconfig.h */,
+				74727EDF1D0F0AF200EF7B50 /* imgui.cpp */,
+				74727EE01D0F0AF200EF7B50 /* imgui.h */,
+				74727EE11D0F0AF200EF7B50 /* imgui_demo.cpp */,
+				74727EE21D0F0AF200EF7B50 /* imgui_draw.cpp */,
+				74727EE31D0F0AF200EF7B50 /* imgui_internal.h */,
+				74727EE41D0F0AF200EF7B50 /* LICENSE */,
+				74727EE51D0F0AF200EF7B50 /* README.md */,
+				74727EE61D0F0AF200EF7B50 /* stb_rect_pack.h */,
+				74727EE71D0F0AF200EF7B50 /* stb_textedit.h */,
+				74727EE81D0F0AF200EF7B50 /* stb_truetype.h */,
+			);
+			path = imgui;
+			sourceTree = "<group>";
+		};
+		74727EE91D0F0AF200EF7B50 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				74727EEA1D0F0AF200EF7B50 /* CinderImGui.cpp */,
+			);
+			name = src;
+			path = "../../Cinder/blocks/Cinder-ImGui/src";
+			sourceTree = "<group>";
+		};
 		8619BF3C33DA4E79AB6E2634 /* OpenCV3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +375,7 @@
 		99692BD914FF149000DFFFFF /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
+				74727D5B1D0F0AE400EF7B50 /* imgui */,
 				8619BF3C33DA4E79AB6E2634 /* OpenCV3 */,
 				272978287C264DF8A94E4C14 /* vnm */,
 			);
@@ -331,6 +416,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 00692BC414FF149000D0A05E;
 			productRefGroup = 00692BD014FF149000D0A05E /* Products */;
@@ -347,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74727EEB1D0F0AF200EF7B50 /* imgui_user.inl in Resources */,
 				00748058165D41390024B57A /* assets in Resources */,
 				9714D3E08F884AA59720284D /* CinderApp_ios.png in Resources */,
 				742513D81D09B5630073FBCA /* COPYRIGHT in Resources */,
@@ -354,6 +441,7 @@
 				74A547A01CFAE7BD00C05CAC /* item.def in Resources */,
 				586989F1497D423B904455D5 /* LaunchScreen.xib in Resources */,
 				742513E01D09B5630073FBCA /* README in Resources */,
+				7472800E1D0F0AF200EF7B50 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,20 +454,26 @@
 			files = (
 				742513DB1D09B5630073FBCA /* IO.cc in Sources */,
 				742513D61D09B5630073FBCA /* ciFaceTracker.cpp in Sources */,
+				747280101D0F0AF200EF7B50 /* CinderImGui.cpp in Sources */,
 				83B21AE6FC5A4F9DBE9F2252 /* FaceOffApp.cpp in Sources */,
+				7472800F1D0F0AF200EF7B50 /* README.md in Sources */,
 				03959E52CE154A2B9842A31A /* AssetManager.cpp in Sources */,
 				81C2F7C7FCCD4858863E412E /* DistortionHelper.cpp in Sources */,
 				742513DA1D09B5630073FBCA /* FDet.cc in Sources */,
+				74265F7D1D11AC77002EE405 /* MiniConfigImgui.cpp in Sources */,
+				7472800C1D0F0AF200EF7B50 /* imgui_demo.cpp in Sources */,
 				742513DC1D09B5630073FBCA /* Makefile in Sources */,
 				74A5479E1CFAE7B300C05CAC /* Clone.cpp in Sources */,
 				A901921565DA41FF88833CC0 /* MiniConfig.cpp in Sources */,
 				742513DD1D09B5630073FBCA /* Patch.cc in Sources */,
+				7472800D1D0F0AF200EF7B50 /* imgui_draw.cpp in Sources */,
 				742513E11D09B5630073FBCA /* Tracker.cc in Sources */,
 				742513DF1D09B5630073FBCA /* PDM.cc in Sources */,
 				742513DE1D09B5630073FBCA /* PAW.cc in Sources */,
 				742513D71D09B5630073FBCA /* CLM.cc in Sources */,
 				742513D51D09B5630073FBCA /* IFaceTracker.cpp in Sources */,
 				742513D91D09B5630073FBCA /* FCheck.cc in Sources */,
+				7472800B1D0F0AF200EF7B50 /* imgui.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

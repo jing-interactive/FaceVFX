@@ -16,8 +16,10 @@
 #include "CaptureHelper.h"
 
 #include "IFaceTracker/IFaceTracker.h"
-#include "MiniConfig.h"
+#include "MiniConfigImgui.h"
 #include "AssetManager.h"
+
+#include "CinderImGui.h"
 
 #include "Clone.h"
 
@@ -50,6 +52,7 @@ public:
         readConfig();
 
         settings->setWindowSize(APP_W, APP_H);
+        settings->setMultiTouchEnabled(false);
         settings->setFrameRate(60.0f);
         settings->setFullScreen(false);
         settings->setTitle("FaceVFX");
@@ -127,8 +130,6 @@ private:
     shared_ptr<thread> mTrackerThread;
 
     vector<string>              mPeopleNames;
-
-    params::InterfaceGlRef mParam;
 
     gl::TextureRef mOfflineFaceTex;
     gl::FboRef     mRenderedOfflineFaceFbo, mFaceMaskFbo;
@@ -265,6 +266,8 @@ void FaceOff::trackerThreadFn()
 
 void FaceOff::setup()
 {
+    ui::initialize(ui::Options().fontGlobalScale(getWindowContentScale()));
+
     resize();
     
     mTrackerThread = make_shared<thread>(bind(&FaceOff::trackerThreadFn, this));
@@ -291,25 +294,23 @@ void FaceOff::setup()
 
     mPeopleNames = am::shortPaths("people");
 
-#if !defined( CINDER_GL_ES )
-    mParam = params::InterfaceGl::create("param", ivec2(300, getConfigUIHeight()));
-    setupConfigUI(mParam.get());
+    setupConfigImgui();
 
     // TODO: assert
     if (DEVICE_ID > mDeviceNames.size() - 1)
     {
         DEVICE_ID = 0;
     }
-    ADD_ENUM_TO_INT(mParam, DEVICE_ID, mDeviceNames);
+#ifdef CINDER_COCOA_TOUCH
+    DEVICE_ID = 1;
+#endif
+//    ADD_ENUM_TO_INT(mParam, DEVICE_ID, mDeviceNames);
 
     if (PEOPLE_ID > mPeopleNames.size() - 1)
     {
         PEOPLE_ID = 0;
     }
-    ADD_ENUM_TO_INT(mParam, PEOPLE_ID, mPeopleNames);
-#else
-    DEVICE_ID = 1; // pick front camera for mobile devices
-#endif
+//    ADD_ENUM_TO_INT(mParam, PEOPLE_ID, mPeopleNames);
 
     gl::disableDepthRead();
     gl::disableDepthWrite();
