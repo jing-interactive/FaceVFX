@@ -93,12 +93,14 @@
 		742513D31D09B5630073FBCA /* Tracker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tracker.cc; sourceTree = "<group>"; };
 		742513D41D09B5630073FBCA /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 		74265F7B1D11AC77002EE405 /* MiniConfigImgui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniConfigImgui.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfigImgui.cpp"; sourceTree = "<group>"; };
-		74265F7C1D11AC77002EE405 /* MiniConfigImgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniConfigImgui.h; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfigImgui.h"; sourceTree = "<group>"; };
-		744B67261CFC7492006BE21C /* CaptureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CaptureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/CaptureHelper.h"; sourceTree = "<group>"; };
-		744B67271CFC749C006BE21C /* MiniConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MiniConfig.h; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.h"; sourceTree = "<group>"; };
-		744B67281CFC749C006BE21C /* MotionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MotionHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/MotionHelper.h"; sourceTree = "<group>"; };
-		744B67291CFC749C006BE21C /* StateMachine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StateMachine.h; path = "../../Cinder/blocks/Cinder-VNM/src/StateMachine.h"; sourceTree = "<group>"; };
-		744B672A1CFC749C006BE21C /* TextureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TextureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/TextureHelper.h"; sourceTree = "<group>"; };
+		7462E21B1D12F3710064F40D /* AssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
+		7462E21C1D12F3710064F40D /* CaptureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureHelper.h; sourceTree = "<group>"; };
+		7462E21D1D12F3710064F40D /* DistortionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistortionHelper.h; sourceTree = "<group>"; };
+		7462E21E1D12F3710064F40D /* MiniConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniConfig.h; sourceTree = "<group>"; };
+		7462E21F1D12F3710064F40D /* MiniConfigImgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniConfigImgui.h; sourceTree = "<group>"; };
+		7462E2201D12F3710064F40D /* MotionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionHelper.h; sourceTree = "<group>"; };
+		7462E2211D12F3710064F40D /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateMachine.h; sourceTree = "<group>"; };
+		7462E2221D12F3710064F40D /* TextureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureHelper.h; sourceTree = "<group>"; };
 		74727D5D1D0F0AF200EF7B50 /* CinderImGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderImGui.h; sourceTree = "<group>"; };
 		74727D5E1D0F0AF200EF7B50 /* imgui_user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_user.h; sourceTree = "<group>"; };
 		74727D5F1D0F0AF200EF7B50 /* imgui_user.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = imgui_user.inl; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		272978287C264DF8A94E4C14 /* vnm */ = {
 			isa = PBXGroup;
 			children = (
+				7462E21A1D12F3710064F40D /* include */,
 				39106A9A0F1349D4A7B27389 /* src */,
 			);
 			name = vnm;
@@ -228,15 +231,9 @@
 		39106A9A0F1349D4A7B27389 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				744B67261CFC7492006BE21C /* CaptureHelper.h */,
 				048283C8EC88493DAE215FC7 /* AssetManager.cpp */,
 				15A5109E1C0245ABAF5B25D7 /* DistortionHelper.cpp */,
-				744B67271CFC749C006BE21C /* MiniConfig.h */,
-				744B67281CFC749C006BE21C /* MotionHelper.h */,
 				74265F7B1D11AC77002EE405 /* MiniConfigImgui.cpp */,
-				74265F7C1D11AC77002EE405 /* MiniConfigImgui.h */,
-				744B67291CFC749C006BE21C /* StateMachine.h */,
-				744B672A1CFC749C006BE21C /* TextureHelper.h */,
 				246C662365EC42C290CF175C /* MiniConfig.cpp */,
 			);
 			name = src;
@@ -295,6 +292,22 @@
 				742513D41D09B5630073FBCA /* Tracker.h */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		7462E21A1D12F3710064F40D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7462E21B1D12F3710064F40D /* AssetManager.h */,
+				7462E21C1D12F3710064F40D /* CaptureHelper.h */,
+				7462E21D1D12F3710064F40D /* DistortionHelper.h */,
+				7462E21E1D12F3710064F40D /* MiniConfig.h */,
+				7462E21F1D12F3710064F40D /* MiniConfigImgui.h */,
+				7462E2201D12F3710064F40D /* MotionHelper.h */,
+				7462E2211D12F3710064F40D /* StateMachine.h */,
+				7462E2221D12F3710064F40D /* TextureHelper.h */,
+			);
+			name = include;
+			path = "../../Cinder/blocks/Cinder-VNM/include";
 			sourceTree = "<group>";
 		};
 		74727D5B1D0F0AE400EF7B50 /* imgui */ = {
@@ -522,7 +535,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks/Cinder-VNM/src\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks\"";
 			};
 			name = Debug;
 		};
@@ -564,7 +577,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks/Cinder-VNM/src\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks\"";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

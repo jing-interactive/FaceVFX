@@ -88,16 +88,16 @@
 		742513AC1D09B4D10073FBCA /* Tracker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tracker.cc; sourceTree = "<group>"; };
 		742513AD1D09B4D10073FBCA /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 		74265F751D11420F002EE405 /* MiniConfigImgui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniConfigImgui.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfigImgui.cpp"; sourceTree = "<group>"; };
-		74265F761D11420F002EE405 /* MiniConfigImgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniConfigImgui.h; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfigImgui.h"; sourceTree = "<group>"; };
 		74265F781D1173E8002EE405 /* MiniConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniConfig.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.cpp"; sourceTree = "<group>"; };
-		74265F791D1173E8002EE405 /* MiniConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MiniConfig.h; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.h"; sourceTree = "<group>"; };
-		744B672C1CFC8945006BE21C /* AssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetManager.h; path = "../../Cinder/blocks/Cinder-VNM/src/AssetManager.h"; sourceTree = "<group>"; };
-		744B672D1CFC8945006BE21C /* CaptureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/CaptureHelper.h"; sourceTree = "<group>"; };
 		744B672E1CFC8945006BE21C /* DistortionHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DistortionHelper.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/DistortionHelper.cpp"; sourceTree = "<group>"; };
-		744B672F1CFC8945006BE21C /* DistortionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DistortionHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/DistortionHelper.h"; sourceTree = "<group>"; };
-		744B67321CFC8945006BE21C /* MotionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/MotionHelper.h"; sourceTree = "<group>"; };
-		744B67331CFC8945006BE21C /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StateMachine.h; path = "../../Cinder/blocks/Cinder-VNM/src/StateMachine.h"; sourceTree = "<group>"; };
-		744B67341CFC8945006BE21C /* TextureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextureHelper.h; path = "../../Cinder/blocks/Cinder-VNM/src/TextureHelper.h"; sourceTree = "<group>"; };
+		7462E2241D12F39B0064F40D /* AssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
+		7462E2251D12F39B0064F40D /* CaptureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureHelper.h; sourceTree = "<group>"; };
+		7462E2261D12F39B0064F40D /* DistortionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistortionHelper.h; sourceTree = "<group>"; };
+		7462E2271D12F39B0064F40D /* MiniConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniConfig.h; sourceTree = "<group>"; };
+		7462E2281D12F39B0064F40D /* MiniConfigImgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiniConfigImgui.h; sourceTree = "<group>"; };
+		7462E2291D12F39B0064F40D /* MotionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionHelper.h; sourceTree = "<group>"; };
+		7462E22A1D12F39B0064F40D /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateMachine.h; sourceTree = "<group>"; };
+		7462E22B1D12F39B0064F40D /* TextureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureHelper.h; sourceTree = "<group>"; };
 		74727AA11D0F001B00EF7B50 /* CinderImGui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderImGui.h; sourceTree = "<group>"; };
 		74727AA21D0F001B00EF7B50 /* imgui_user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_user.h; sourceTree = "<group>"; };
 		74727AA31D0F001B00EF7B50 /* imgui_user.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = imgui_user.inl; sourceTree = "<group>"; };
@@ -255,17 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				69A4FBA3522946C68C0A7236 /* AssetManager.cpp */,
-				744B672C1CFC8945006BE21C /* AssetManager.h */,
-				744B672D1CFC8945006BE21C /* CaptureHelper.h */,
 				744B672E1CFC8945006BE21C /* DistortionHelper.cpp */,
 				74265F751D11420F002EE405 /* MiniConfigImgui.cpp */,
-				74265F761D11420F002EE405 /* MiniConfigImgui.h */,
 				74265F781D1173E8002EE405 /* MiniConfig.cpp */,
-				74265F791D1173E8002EE405 /* MiniConfig.h */,
-				744B672F1CFC8945006BE21C /* DistortionHelper.h */,
-				744B67321CFC8945006BE21C /* MotionHelper.h */,
-				744B67331CFC8945006BE21C /* StateMachine.h */,
-				744B67341CFC8945006BE21C /* TextureHelper.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -315,6 +307,22 @@
 				742513AD1D09B4D10073FBCA /* Tracker.h */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		7462E2231D12F39B0064F40D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7462E2241D12F39B0064F40D /* AssetManager.h */,
+				7462E2251D12F39B0064F40D /* CaptureHelper.h */,
+				7462E2261D12F39B0064F40D /* DistortionHelper.h */,
+				7462E2271D12F39B0064F40D /* MiniConfig.h */,
+				7462E2281D12F39B0064F40D /* MiniConfigImgui.h */,
+				7462E2291D12F39B0064F40D /* MotionHelper.h */,
+				7462E22A1D12F39B0064F40D /* StateMachine.h */,
+				7462E22B1D12F39B0064F40D /* TextureHelper.h */,
+			);
+			name = include;
+			path = "../../Cinder/blocks/Cinder-VNM/include";
 			sourceTree = "<group>";
 		};
 		74727A9F1D0F000A00EF7B50 /* imgui */ = {
@@ -383,6 +391,7 @@
 		AA9D270917BD4575954DD719 /* vnm */ = {
 			isa = PBXGroup;
 			children = (
+				7462E2231D12F39B0064F40D /* include */,
 				6CC284E6A9F24C3B97CC02EE /* src */,
 			);
 			name = vnm;
@@ -525,7 +534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = FaceVFX;
 				SYMROOT = ./build;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks/Cinder-VNM/src\" \"../../Cinder/blocks/Cinder-ImGui/include\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -574,7 +583,7 @@
 				PRODUCT_NAME = FaceVFX;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks/Cinder-VNM/src\" \"../../Cinder/blocks/Cinder-ImGui/include\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks\"";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
