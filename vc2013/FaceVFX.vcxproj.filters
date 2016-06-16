@@ -46,6 +46,18 @@
     <Filter Include="Blocks\WMFVideo\src\presenter">
       <UniqueIdentifier>{7aa89ff6-b45d-45d7-beff-f9e30946543f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Blocks\imgui">
+      <UniqueIdentifier>{e71c4c9e-444b-4468-a17e-30346df64610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\imgui\include">
+      <UniqueIdentifier>{dbad8737-b818-4d3c-a94a-5cbef1fe9915}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\imgui\src">
+      <UniqueIdentifier>{0601e6c7-79ab-4121-b5d7-064fb56566fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\imgui\lib">
+      <UniqueIdentifier>{0a218ccb-c9fd-4287-9770-1cf94fbb201b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\FaceOffApp.cpp">
@@ -116,6 +128,21 @@
     </ClCompile>
     <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresentEngine.cpp">
       <Filter>Blocks\WMFVideo\src\presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\src\CinderImGui.cpp">
+      <Filter>Blocks\imgui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui.cpp">
+      <Filter>Blocks\imgui\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_demo.cpp">
+      <Filter>Blocks\imgui\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_draw.cpp">
+      <Filter>Blocks\imgui\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\MiniConfigImgui.cpp">
+      <Filter>Blocks\vnm\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +215,30 @@
     <ClInclude Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\EVRPresenter.h">
       <Filter>Blocks\WMFVideo\src\presenter</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\CinderImGui.h">
+      <Filter>Blocks\imgui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\imgui_user.h">
+      <Filter>Blocks\imgui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\stb_truetype.h">
+      <Filter>Blocks\imgui\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui.h">
+      <Filter>Blocks\imgui\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\stb_textedit.h">
+      <Filter>Blocks\imgui\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_internal.h">
+      <Filter>Blocks\imgui\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\stb_rect_pack.h">
+      <Filter>Blocks\imgui\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imconfig.h">
+      <Filter>Blocks\imgui\lib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc">
@@ -206,6 +257,9 @@
     </None>
     <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\README">
       <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
+    </None>
+    <None Include="..\..\Cinder\blocks\Cinder-ImGui\include\imgui_user.inl">
+      <Filter>Blocks\imgui\include</Filter>
     </None>
   </ItemGroup>
 </Project>

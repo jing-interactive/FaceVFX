@@ -2,8 +2,9 @@
 #include "cinder/app/App.h"
 #include "cinder/gl/draw.h"
 #include "cinder/gl/scoped.h"
-#include "AssetManager.h"
 #include "cinder/gl/shader.h"
+
+#include "Cinder-VNM/include/AssetManager.h"
 
 using namespace ci;
 

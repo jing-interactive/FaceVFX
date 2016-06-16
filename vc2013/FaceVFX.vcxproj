@@ -51,7 +51,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\blocks\Cinder-OpenCV3\include;..\..\Cinder\blocks\Cinder-VNM\src;..\..\Cinder\blocks\Cinder-WMFVideo\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -77,7 +77,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\blocks\Cinder-OpenCV3\include;..\..\Cinder\blocks\Cinder-VNM\src;..\..\Cinder\blocks\Cinder-WMFVideo\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
@@ -108,12 +108,18 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Cinder\blocks\Cinder-ImGui\include\imgui_user.inl" />
     <None Include="..\include\item.def" />
     <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\COPYRIGHT" />
     <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Makefile" />
     <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\README" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui.cpp" />
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\src\CinderImGui.cpp" />
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\MiniConfigImgui.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayer.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\ciWMFVideoPlayerUtils.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-WMFVideo\src\presenter\PresentEngine.cpp" />
@@ -137,6 +143,14 @@
     <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.cc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\CinderImGui.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\imgui_user.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imconfig.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_internal.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\stb_rect_pack.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\stb_textedit.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\stb_truetype.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\CaptureHelper.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-VNM\src\TextureHelper.h" />

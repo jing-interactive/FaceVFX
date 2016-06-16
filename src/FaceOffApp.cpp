@@ -12,14 +12,14 @@
 #include "cinder/gl/scoped.h"
 #include "cinder/params/Params.h"
 
-#include "TextureHelper.h"
-#include "CaptureHelper.h"
-
 #include "IFaceTracker/IFaceTracker.h"
-#include "MiniConfigImgui.h"
-#include "AssetManager.h"
 
-#include "CinderImGui.h"
+#include "Cinder-VNM/include/TextureHelper.h"
+#include "Cinder-VNM/include/CaptureHelper.h"
+#include "Cinder-VNM/include/MiniConfigImgui.h"
+#include "Cinder-VNM/include/AssetManager.h"
+
+#include "Cinder-ImGui/include/CinderImGui.h"
 
 #include "Clone.h"
 
