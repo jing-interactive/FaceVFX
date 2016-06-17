@@ -16,7 +16,7 @@
 
 #include "Cinder-VNM/include/TextureHelper.h"
 #include "Cinder-VNM/include/CaptureHelper.h"
-#include "Cinder-VNM/include/MiniConfigImgui.h"
+#include "Cinder-VNM/include/MiniConfig.h"
 #include "Cinder-VNM/include/AssetManager.h"
 
 #include "Cinder-ImGui/include/CinderImGui.h"
@@ -97,6 +97,8 @@ public:
     void resize();
 
 private:
+    
+    void updateGui();
 
     void updateOfflineImage(ImageSourceRef img)
     {
@@ -294,23 +296,19 @@ void FaceOff::setup()
 
     mPeopleNames = am::shortPaths("people");
 
-    setupConfigImgui();
-
     // TODO: assert
     if (DEVICE_ID > mDeviceNames.size() - 1)
     {
         DEVICE_ID = 0;
     }
 #ifdef CINDER_COCOA_TOUCH
-    DEVICE_ID = 1;
+    DEVICE_ID = 1; // select selfie camera
 #endif
-//    ADD_ENUM_TO_INT(mParam, DEVICE_ID, mDeviceNames);
 
     if (PEOPLE_ID > mPeopleNames.size() - 1)
     {
         PEOPLE_ID = 0;
     }
-//    ADD_ENUM_TO_INT(mParam, PEOPLE_ID, mPeopleNames);
 
     gl::disableDepthRead();
     gl::disableDepthWrite();
@@ -365,8 +363,49 @@ void FaceOff::update()
         mCapture.setup(CAM_W, CAM_H, mDevices[DEVICE_ID]);
         mDoesCaptureNeedsInit = true;
     }
+    
+    if (mCapture.isFrontCamera)
+        mCapture.flip = CAM_FLIP;
+    else
+        mCapture.flip = false;
+}
 
-    mCapture.flip = CAM_FLIP;
+void FaceOff::updateGui()
+{
+    ui::ScopedWindow window("Settings", {toPixels(getWindowWidth() / 2), toPixels(getWindowHeight() / 2)}, 0.5f);
+    
+    if (ui::Button("Save Config"))
+    {
+        writeConfig();
+    }
+    
+    if (ui::Button("Save Image"))
+    {
+        auto windowSurf = copyWindowSurface();
+#ifdef CINDER_COCOA_TOUCH
+        cocoa::writeToSavedPhotosAlbum(windowSurf);
+#else
+        fs::path writePath = getAppPath() / ("screenshot_" + toString(getElapsedFrames()) + ".png");
+        writeImage(writePath, windowSurf);
+#endif
+    }
+    
+    if (ui::Button("Quit"))
+    {
+        App::get()->quit();
+    }
+    
+    ui::Text("FPS: %d", FPS);
+    ui::Checkbox("CAM_FLIP", &CAM_FLIP);
+    ui::Checkbox("OFFLINE_VISIBLE", &OFFLINE_VISIBLE);
+    ui::Checkbox("VFX_VISIBLE", &VFX_VISIBLE);
+    ui::Checkbox("WIREFRAME_MODE", &WIREFRAME_MODE);
+
+    ui::Checkbox("MOVIE_MODE", &MOVIE_MODE);
+    ui::InputText("MOVIE_PATH", &MOVIE_PATH);
+
+    ui::Combo("DEVICE_ID", &DEVICE_ID, mDeviceNames);
+    ui::Combo("PEOPLE_ID", &PEOPLE_ID, mPeopleNames);
 }
 
 void FaceOff::draw()
@@ -450,6 +489,8 @@ void FaceOff::draw()
 
         gl::disableWireframe();
     }
+    
+    updateGui();
 }
 
 CINDER_APP(FaceOff, RendererGl, &FaceOff::prepareSettings)
