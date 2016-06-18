@@ -364,10 +364,10 @@ void FaceOff::update()
         mDoesCaptureNeedsInit = true;
     }
     
-    if (mCapture.isFrontCamera)
-        mCapture.flip = CAM_FLIP;
-    else
+    if (mCapture.isBackCamera)
         mCapture.flip = false;
+    else
+        mCapture.flip = CAM_FLIP;
 }
 
 void FaceOff::updateGui()
