@@ -12,6 +12,8 @@
 #include "cinder/gl/scoped.h"
 #include "cinder/params/Params.h"
 
+#include "cinder/qtime/QuickTimeGl.h"
+
 #include "IFaceTracker/IFaceTracker.h"
 
 #include "Cinder-VNM/include/TextureHelper.h"
@@ -23,13 +25,6 @@
 
 #include "Clone.h"
 
-#if 0 // defined (CINDER_MSW)
-#include "ciWMFVideoPlayer.h"
-typedef ciWMFVideoPlayer CiMovieType;
-#else
-#include "cinder/qtime/QuickTimeGl.h"
-typedef qtime::MovieSurfaceRef CiMovieType;
-#endif
 
 using namespace ci;
 using namespace app;
@@ -123,7 +118,7 @@ private:
     ft::FaceTrackerRef   mOfflineTracker;
     gl::TextureRef mPhotoTex;
 
-    CiMovieType   mMovie;
+    qtime::MovieSurfaceRef   mMovie;
 
     //
     vector<Capture::DeviceRef>  mDevices;
