@@ -495,7 +495,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
-					"\"$(CINDER_PATH)/lib/libcinder_d.a\"",
+					"\"$(CINDER_PATH)/lib/macosx/Debug/libcinder.a\"",
 					"\"../../Cinder/blocks/Cinder-OpenCV3/lib/macosx/libopencv_calib3d.a\"",
 					"\"../../Cinder/blocks/Cinder-OpenCV3/lib/macosx/libopencv_core.a\"",
 					"\"../../Cinder/blocks/Cinder-OpenCV3/lib/macosx/libopencv_features2d.a\"",
@@ -543,7 +543,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
-					"\"$(CINDER_PATH)/lib/libcinder.a\"",
+					"\"$(CINDER_PATH)/lib/macosx/Release/libcinder.a\"",
 					"\"../../Cinder/blocks/Cinder-OpenCV3/lib/macosx/libopencv_calib3d.a\"",
 					"\"../../Cinder/blocks/Cinder-OpenCV3/lib/macosx/libopencv_core.a\"",
 					"\"../../Cinder/blocks/Cinder-OpenCV3/lib/macosx/libopencv_features2d.a\"",

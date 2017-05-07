@@ -25,6 +25,10 @@
 
 using std::vector;
 
+namespace cinder {
+    typedef PolyLineT<vec3> PolyLine3;
+}
+
 #ifdef _MSC_VER
 #	pragma warning(disable:4244)  //conversion from 'const double' to 'float'
 #	pragma warning(disable:4018)  //signed/unsigned mismatch
