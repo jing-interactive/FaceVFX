@@ -39,9 +39,12 @@
 		74727D541D0F001C00EF7B50 /* CinderImGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74727C2E1D0F001C00EF7B50 /* CinderImGui.cpp */; };
 		74A547521CFADFF900C05CAC /* item.def in Resources */ = {isa = PBXBuildFile; fileRef = 74A547511CFADFF900C05CAC /* item.def */; };
 		74A547551CFAE06300C05CAC /* Clone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A547531CFAE06300C05CAC /* Clone.cpp */; };
+		74FDA6041EBF744C004A3A0B /* ImGuizmo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74FDA6001EBF744C004A3A0B /* ImGuizmo.cpp */; };
+		74FDA6051EBF744C004A3A0B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 74FDA6021EBF744C004A3A0B /* LICENSE */; };
+		74FDA6061EBF744C004A3A0B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 74FDA6031EBF744C004A3A0B /* README.md */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C59DFB1955294C3DA7C9882F /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9551DDA29DEC456CA2BC86FB /* OpenCL.framework */; };
-		D5701A71C9844149A33FDA8C /* FaceOffApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B93F7ABE481247C2AA97F074 /* FaceOffApp.cpp */; };
+		D5701A71C9844149A33FDA8C /* FaceVFXApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B93F7ABE481247C2AA97F074 /* FaceVFXApp.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,11 +109,15 @@
 		74A547511CFADFF900C05CAC /* item.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = item.def; path = ../include/item.def; sourceTree = "<group>"; };
 		74A547531CFAE06300C05CAC /* Clone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clone.cpp; path = ../src/Clone.cpp; sourceTree = "<group>"; };
 		74A547541CFAE06300C05CAC /* Clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clone.h; path = ../src/Clone.h; sourceTree = "<group>"; };
+		74FDA6001EBF744C004A3A0B /* ImGuizmo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImGuizmo.cpp; sourceTree = "<group>"; };
+		74FDA6011EBF744C004A3A0B /* ImGuizmo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImGuizmo.h; sourceTree = "<group>"; };
+		74FDA6021EBF744C004A3A0B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		74FDA6031EBF744C004A3A0B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* FaceVFX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceVFX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93812A7424014D02859096D6 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		9551DDA29DEC456CA2BC86FB /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 		A44AB67F244B4B00A3E2038E /* CinderOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CinderOpenCV.h; path = "../../Cinder/blocks/Cinder-OpenCV3/include/CinderOpenCV.h"; sourceTree = "<group>"; };
-		B93F7ABE481247C2AA97F074 /* FaceOffApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = FaceOffApp.cpp; path = ../src/FaceOffApp.cpp; sourceTree = "<group>"; };
+		B93F7ABE481247C2AA97F074 /* FaceVFXApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = FaceVFXApp.cpp; path = ../src/FaceVFXApp.cpp; sourceTree = "<group>"; };
 		E9259CF2A3C140388B1E0ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +160,7 @@
 				742513941D09B4D10073FBCA /* IFaceTracker */,
 				74A547531CFAE06300C05CAC /* Clone.cpp */,
 				74A547541CFAE06300C05CAC /* Clone.h */,
-				B93F7ABE481247C2AA97F074 /* FaceOffApp.cpp */,
+				B93F7ABE481247C2AA97F074 /* FaceVFXApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 		74727AA41D0F001B00EF7B50 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				74FDA5FF1EBF744C004A3A0B /* ImGuizmo */,
 				74727AA51D0F001B00EF7B50 /* imgui */,
 			);
 			name = lib;
@@ -365,6 +373,17 @@
 			);
 			name = src;
 			path = "../../Cinder/blocks/Cinder-ImGui/src";
+			sourceTree = "<group>";
+		};
+		74FDA5FF1EBF744C004A3A0B /* ImGuizmo */ = {
+			isa = PBXGroup;
+			children = (
+				74FDA6001EBF744C004A3A0B /* ImGuizmo.cpp */,
+				74FDA6011EBF744C004A3A0B /* ImGuizmo.h */,
+				74FDA6021EBF744C004A3A0B /* LICENSE */,
+				74FDA6031EBF744C004A3A0B /* README.md */,
+			);
+			path = ImGuizmo;
 			sourceTree = "<group>";
 		};
 		A3417550AB87473486B10D67 /* include */ = {
@@ -441,6 +460,7 @@
 				74A547521CFADFF900C05CAC /* item.def in Resources */,
 				2237EEE8588B43DBA8E48E7A /* CinderApp.icns in Resources */,
 				742513B11D09B4D10073FBCA /* COPYRIGHT in Resources */,
+				74FDA6051EBF744C004A3A0B /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,13 +474,15 @@
 				74265F7A1D1173E8002EE405 /* MiniConfig.cpp in Sources */,
 				742513B41D09B4D10073FBCA /* IO.cc in Sources */,
 				742513AF1D09B4D10073FBCA /* ciFaceTracker.cpp in Sources */,
+				74FDA6061EBF744C004A3A0B /* README.md in Sources */,
 				74727D541D0F001C00EF7B50 /* CinderImGui.cpp in Sources */,
-				D5701A71C9844149A33FDA8C /* FaceOffApp.cpp in Sources */,
+				D5701A71C9844149A33FDA8C /* FaceVFXApp.cpp in Sources */,
 				742513B31D09B4D10073FBCA /* FDet.cc in Sources */,
 				74727D501D0F001C00EF7B50 /* imgui_demo.cpp in Sources */,
 				742513B51D09B4D10073FBCA /* Makefile in Sources */,
 				38FBF0514EEB4923B74FC5B0 /* AssetManager.cpp in Sources */,
 				74A547551CFAE06300C05CAC /* Clone.cpp in Sources */,
+				74FDA6041EBF744C004A3A0B /* ImGuizmo.cpp in Sources */,
 				742513B61D09B4D10073FBCA /* Patch.cc in Sources */,
 				74727D511D0F001C00EF7B50 /* imgui_draw.cpp in Sources */,
 				742513BA1D09B4D10073FBCA /* Tracker.cc in Sources */,
