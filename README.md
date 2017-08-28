@@ -10,14 +10,25 @@ Supported platforms
 
 Depends on
 
-* [Cinder](https://github.com/vnm-interactive/Cinder) as the cross-platform creative coding framework.
+* [Cinder](https://github.com/cinder/Cinder) as the cross-platform creative coding framework.
 * [Cinder-OpenCV3](https://github.com/cinder/Cinder-OpenCV3) for Computer Vision routines.
 * [Cinder-VNM](https://github.com/vnm-interactive/Cinder-VNM) for my own utilities based on Cinder.
-* Jason Saragih's FaceTracker library, contained in the project.
+* Jason Saragih's FaceTracker library, self-contained in the project.
 * [Cinder-ImGui](https://github.com/vnm-interactive/Cinder-ImGui) for cross-platform GUI.
-* [Cinder-Warping](https://github.com/paulhoux/Cinder-Warping) for projective mapping. [Optional]
 
-Tools used
+Layout of the complete solution
+
+	Cinder/
+		blocks/
+			Cinder-ImGui/
+			Cinder-OpenCV3/
+			Cinder-VNM/
+		include/
+		src/
+	FaceVFX/
+
+
+Tools used during development
 
 * apitrace
 * glintercept
