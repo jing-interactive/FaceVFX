@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -20,14 +20,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -65,8 +65,8 @@
       <AdditionalIncludeDirectories>"..\..\Cinder\include";..\include</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>cinder-$(PlatformToolset)_d.lib;OpenGL32.lib;%(AdditionalDependencies);..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_calib3d300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_core300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_features2d300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_flann300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_hal300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_imgproc300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_ml300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_objdetect300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_photo300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_shape300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_stitching300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_superres300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_ts300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_video300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_videostab300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\ippicvmt.lib;..\..\Cinder\blocks\QuickTime\lib\msw\x86\CVClient.lib;..\..\Cinder\blocks\QuickTime\lib\msw\x86\QTMLClient.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"..\..\Cinder\lib\msw\$(PlatformTarget)"</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies);..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_calib3d300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_core300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_features2d300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_flann300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_hal300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_imgproc300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_ml300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_objdetect300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_photo300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_shape300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_stitching300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_superres300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_ts300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_video300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_videostab300d.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\ippicvmt.lib;..\..\Cinder\blocks\QuickTime\lib\msw\x86\CVClient.lib;..\..\Cinder\blocks\QuickTime\lib\msw\x86\QTMLClient.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"..\..\Cinder\lib\msw\$(PlatformTarget)";..\..\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -92,8 +92,8 @@
       <AdditionalIncludeDirectories>"..\..\Cinder\include";..\include</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>cinder-$(PlatformToolset).lib;OpenGL32.lib;%(AdditionalDependencies);..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_calib3d300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_core300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_features2d300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_flann300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_hal300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_imgproc300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_ml300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_objdetect300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_photo300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_shape300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_stitching300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_superres300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_ts300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_video300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_videostab300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\ippicvmt.lib;..\..\Cinder\blocks\QuickTime\lib\msw\x86\CVClient.lib;..\..\Cinder\blocks\QuickTime\lib\msw\x86\QTMLClient.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>"..\..\Cinder\lib\msw\$(PlatformTarget)"</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cinder.lib;OpenGL32.lib;%(AdditionalDependencies);..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_calib3d300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_core300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_features2d300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_flann300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_hal300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_imgproc300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_ml300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_objdetect300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_photo300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_shape300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_stitching300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_superres300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_ts300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_video300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\opencv_videostab300.lib;..\..\Cinder\blocks\Cinder-OpenCV3\lib\vc2013\x86\ippicvmt.lib;..\..\Cinder\blocks\QuickTime\lib\msw\x86\CVClient.lib;..\..\Cinder\blocks\QuickTime\lib\msw\x86\QTMLClient.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>"..\..\Cinder\lib\msw\$(PlatformTarget)";..\..\Cinder\lib\msw\$(PlatformTarget)\$(Configuration)\$(PlatformToolset)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <GenerateMapFile>true</GenerateMapFile>
       <SubSystem>Windows</SubSystem>
@@ -115,14 +115,15 @@
     <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\README" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\ImGuizmo\ImGuizmo.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_demo.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\src\CinderImGui.cpp" />
     <ClCompile Include="..\src\Clone.cpp" />
-    <ClCompile Include="..\src\FaceOffApp.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\MiniConfig.cpp" />
+    <ClCompile Include="..\src\FaceVFXApp.cpp" />
     <ClCompile Include="..\src\IFaceTracker\IFaceTracker.cpp" />
     <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.cpp" />
     <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\CLM.cc" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\CinderImGui.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\imgui_user.h" />
+    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\ImGuizmo\ImGuizmo.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imconfig.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_internal.h" />
