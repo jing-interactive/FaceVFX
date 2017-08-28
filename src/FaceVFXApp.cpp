@@ -12,7 +12,14 @@
 #include "cinder/gl/scoped.h"
 #include "cinder/params/Params.h"
 
+#define QUICKTIME_ENABLED
+#if defined(CINDER_MSW) && defined(_WIN64)
+#undef QUICKTIME_ENABLED
+#endif
+
+#ifdef QUICKTIME_ENABLED
 #include "cinder/qtime/QuickTimeGl.h"
+#endif
 
 #include "IFaceTracker/IFaceTracker.h"
 
@@ -118,8 +125,9 @@ private:
     ft::FaceTrackerRef   mOfflineTracker;
     gl::TextureRef mPhotoTex;
 
+#ifdef QUICKTIME_ENABLED
     qtime::MovieSurfaceRef   mMovie;
-
+#endif
     //
     vector<Capture::DeviceRef>  mDevices;
     vector<string>              mDeviceNames;
@@ -311,6 +319,7 @@ void FaceOff::setup()
 
 void FaceOff::update()
 {
+#ifdef QUICKTIME_ENABLED
     if (MOVIE_MODE)
     {
         if (!mMovie)
@@ -351,6 +360,7 @@ void FaceOff::update()
         mMovie.reset();
         mOfflineFaceTex = mPhotoTex;
     }
+#endif
 
     if (mDeviceId != DEVICE_ID)
     {
