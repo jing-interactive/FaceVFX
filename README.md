@@ -16,16 +16,16 @@ Depends on
 * Jason Saragih's FaceTracker library, self-contained in the project.
 * [Cinder-ImGui](https://github.com/vnm-interactive/Cinder-ImGui) for cross-platform GUI.
 
-Layout of the complete solution
+Layout of the project and its dependency
 
-	Cinder/
-		blocks/
-			Cinder-ImGui/
-			Cinder-OpenCV3/
-			Cinder-VNM/
-		include/
-		src/
-	FaceVFX/
+    Cinder/
+        blocks/
+            Cinder-ImGui/
+            Cinder-OpenCV3/
+            Cinder-VNM/
+        include/
+        src/
+    FaceVFX/
 
 
 Tools used during development
