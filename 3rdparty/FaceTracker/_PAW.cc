@@ -43,7 +43,7 @@
 using namespace FACETRACKER;
 using namespace std;
 //=============================================================================
-bool sameSide(double x0, double y0, double x1, double y1,
+bool _sameSide(double x0, double y0, double x1, double y1,
 	      double x2, double y2, double x3, double y3)
 {
   double x = (x3-x2)*(y0-y2) - (x0-x2)*(y3-y2);
@@ -58,9 +58,9 @@ int isWithinTri(double x,double y,cv::Mat &tri,cv::Mat &shape)
     i = tri.it(t,0); j = tri.it(t,1); k = tri.it(t,2);
     s11 = shape.db(i  ,0); s21 = shape.db(j  ,0); s31 = shape.db(k  ,0);
     s12 = shape.db(i+p,0); s22 = shape.db(j+p,0); s32 = shape.db(k+p,0);
-    if(sameSide(x,y,s11,s12,s21,s22,s31,s32) &&
-       sameSide(x,y,s21,s22,s11,s12,s31,s32) &&
-       sameSide(x,y,s31,s32,s11,s12,s21,s22))return t;
+    if(_sameSide(x,y,s11,s12,s21,s22,s31,s32) &&
+       _sameSide(x,y,s21,s22,s11,s12,s31,s32) &&
+       _sameSide(x,y,s31,s32,s11,s12,s21,s22))return t;
   }return -1;
 }
 //===========================================================================

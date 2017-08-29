@@ -81,7 +81,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;..\3rdparty\OpenFace\LandmarkDetector\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -108,7 +108,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;..\3rdparty\OpenFace\LandmarkDetector\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -134,7 +134,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;..\3rdparty\OpenFace\LandmarkDetector\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
@@ -163,7 +163,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\include;..\..\Cinder\include;..\..\Cinder\Blocks;..\..\Cinder\blocks\Cinder-OpenCV3\include;..\3rdparty\OpenFace\LandmarkDetector\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>
@@ -197,10 +197,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Cinder\blocks\Cinder-ImGui\include\imgui_user.inl" />
+    <None Include="..\3rdparty\FaceTracker\COPYRIGHT" />
+    <None Include="..\3rdparty\FaceTracker\README" />
     <None Include="..\include\item.def" />
-    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\COPYRIGHT" />
-    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Makefile" />
-    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\README" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\ImGuizmo\ImGuizmo.cpp" />
@@ -208,20 +207,31 @@
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_demo.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\src\CinderImGui.cpp" />
+    <ClCompile Include="..\3rdparty\FaceTracker\CLM.cc" />
+    <ClCompile Include="..\3rdparty\FaceTracker\FCheck.cc" />
+    <ClCompile Include="..\3rdparty\FaceTracker\FDet.cc" />
+    <ClCompile Include="..\3rdparty\FaceTracker\IO.cc" />
+    <ClCompile Include="..\3rdparty\FaceTracker\Patch.cc" />
+    <ClCompile Include="..\3rdparty\FaceTracker\_PAW.cc" />
+    <ClCompile Include="..\3rdparty\FaceTracker\_PDM.cc" />
+    <ClCompile Include="..\3rdparty\FaceTracker\Tracker.cc" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\CCNF_patch_expert.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectionValidator.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectorFunc.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectorModel.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectorParameters.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectorUtils.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\Patch_experts.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\PAW.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\PDM.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\stdafx.cpp" />
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\SVR_patch_expert.cpp" />
     <ClCompile Include="..\src\Clone.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\MiniConfig.cpp" />
     <ClCompile Include="..\src\FaceVFXApp.cpp" />
     <ClCompile Include="..\src\IFaceTracker\IFaceTracker.cpp" />
     <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.cpp" />
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\CLM.cc" />
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FCheck.cc" />
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FDet.cc" />
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\IO.cc" />
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Patch.cc" />
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PAW.cc" />
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PDM.cc" />
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\CinderImGui.h" />
@@ -233,19 +243,31 @@
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\stb_rect_pack.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\stb_textedit.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\stb_truetype.h" />
+    <ClInclude Include="..\3rdparty\FaceTracker\CLM.h" />
+    <ClInclude Include="..\3rdparty\FaceTracker\FCheck.h" />
+    <ClInclude Include="..\3rdparty\FaceTracker\FDet.h" />
+    <ClInclude Include="..\3rdparty\FaceTracker\IO.h" />
+    <ClInclude Include="..\3rdparty\FaceTracker\Patch.h" />
+    <ClInclude Include="..\3rdparty\FaceTracker\PAW.h" />
+    <ClInclude Include="..\3rdparty\FaceTracker\PDM.h" />
+    <ClInclude Include="..\3rdparty\FaceTracker\Tracker.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\CCNF_patch_expert.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkCoreIncludes.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectionValidator.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectorFunc.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectorModel.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectorParameters.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectorUtils.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\Patch_experts.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\PAW.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\PDM.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\stdafx.h" />
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\SVR_patch_expert.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h" />
     <ClInclude Include="..\src\Clone.h" />
     <ClInclude Include="..\src\IFaceTracker\IFaceTracker.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\CLM.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FCheck.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FDet.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\IO.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Patch.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PAW.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PDM.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.h" />
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\ciFacetracker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

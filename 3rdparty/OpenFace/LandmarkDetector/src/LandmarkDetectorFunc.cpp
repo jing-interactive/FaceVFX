@@ -330,7 +330,7 @@ bool LandmarkDetector::DetectLandmarksInVideo(const cv::Mat_<uchar> &grayscale_i
 		if(params.curr_face_detector == FaceModelParameters::HOG_SVM_DETECTOR)
 		{
 			double confidence;
-			face_detection_success = LandmarkDetector::DetectSingleFaceHOG(bounding_box, grayscale_image, clnf_model.face_detector_HOG, confidence, preference_det);
+			//face_detection_success = LandmarkDetector::DetectSingleFaceHOG(bounding_box, grayscale_image, clnf_model.face_detector_HOG, confidence, preference_det);
 		}
 		else if(params.curr_face_detector == FaceModelParameters::HAAR_DETECTOR)
 		{
@@ -537,7 +537,7 @@ bool LandmarkDetector::DetectLandmarksInImage(const cv::Mat_<uchar> &grayscale_i
 	if(params.curr_face_detector == FaceModelParameters::HOG_SVM_DETECTOR)
 	{
 		double confidence;
-		LandmarkDetector::DetectSingleFaceHOG(bounding_box, grayscale_image, clnf_model.face_detector_HOG, confidence);
+		//LandmarkDetector::DetectSingleFaceHOG(bounding_box, grayscale_image, clnf_model.face_detector_HOG, confidence);
 	}
 	else if(params.curr_face_detector == FaceModelParameters::HAAR_DETECTOR)
 	{

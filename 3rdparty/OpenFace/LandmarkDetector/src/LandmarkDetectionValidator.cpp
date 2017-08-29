@@ -65,7 +65,7 @@
 #include <opencv2/imgproc.hpp>
 
 // TBB includes
-#include <tbb/tbb.h>
+//#include <tbb/tbb.h>
 
 // System includes
 #include <fstream>
@@ -887,9 +887,12 @@ double DetectionValidator::CheckCNN_tbb(const cv::Mat_<double>& warped_img, int 
 					outputs[0] = outputs[0] + output;
 				}
 
-
+#ifdef _OPENMP
+#pragma omp parallel for
+#endif
+                for (int k = 1; k < (int)cnn_convolutional_layers[view_id][cnn_layer][in].size(); k++)
 				// TBB pass for the remaining kernels, empirically helps with layers with more kernels
-				tbb::parallel_for(1, (int)cnn_convolutional_layers[view_id][cnn_layer][in].size(), [&](int k) {
+				//tbb::parallel_for(1, (int)cnn_convolutional_layers[view_id][cnn_layer][in].size(), [&](int k) {
 				{
 					cv::Mat_<float> kernel = cnn_convolutional_layers[view_id][cnn_layer][in][k];
 
@@ -921,7 +924,7 @@ double DetectionValidator::CheckCNN_tbb(const cv::Mat_<double>& warped_img, int 
 						outputs[k] = outputs[k] + output;
 					}
 				}
-				});
+				//});
 				
 			}
 

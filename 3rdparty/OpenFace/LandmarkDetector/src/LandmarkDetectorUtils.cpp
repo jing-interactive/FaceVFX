@@ -42,10 +42,11 @@
 #include <opencv2/calib3d.hpp>
 
 // Boost includes
-#include <filesystem.hpp>
-#include <filesystem/fstream.hpp>
+#include "cinder/Filesystem.h"
 
-using namespace boost::filesystem;
+#include <iterator>
+
+using namespace ci::fs;
 
 using namespace std;
 
@@ -66,9 +67,9 @@ void create_directory_from_file(string output_path)
 	// First get rid of the file
 	auto p = path(path(output_path).parent_path());
 
-	if(!p.empty() && !boost::filesystem::exists(p))		
+	if(!p.empty() && !ci::fs::exists(p))		
 	{
-		bool success = boost::filesystem::create_directories(p);
+		bool success = ci::fs::create_directories(p);
 		if(!success)
 		{
 			cout << "Failed to create a directory... " << p.string() << endl;
@@ -85,9 +86,9 @@ void create_directories(string output_path)
 	// First get rid of the file
 	auto p = path(output_path);
 
-	if(!p.empty() && !boost::filesystem::exists(p))		
+	if(!p.empty() && !ci::fs::exists(p))		
 	{
-		bool success = boost::filesystem::create_directories(p);
+		bool success = ci::fs::create_directories(p);
 		if(!success)
 		{
 			cout << "Failed to create a directory... " << p.string() << endl;
@@ -115,7 +116,7 @@ void get_video_input_output_params(vector<string> &input_video_files, vector<str
 	string input_root = "";
 	string output_root = "";
 
-	string separator = string(1, boost::filesystem::path::preferred_separator);
+	string separator = string(1, ci::fs::path::preferred_separator);
 
 	// First check if there is a root argument (so that videos and outputs could be defined more easilly)
 	for(size_t i = 0; i < arguments.size(); ++i)
@@ -254,7 +255,7 @@ void get_image_input_output_params(vector<string> &input_image_files, vector<str
 	string input_root = "";
 	string output_root = "";
 
-	string separator = string(1, boost::filesystem::path::preferred_separator);
+	string separator = string(1, ci::fs::path::preferred_separator);
 
 	// First check if there is a root argument (so that videos and outputs could be defined more easilly)
 	for (size_t i = 0; i < arguments.size(); ++i)
@@ -1361,6 +1362,7 @@ bool DetectSingleFace(cv::Rect_<double>& o_region, const cv::Mat_<uchar>& intens
 	return detect_success;
 }
 
+#if 0
 bool DetectFacesHOG(vector<cv::Rect_<double> >& o_regions, const cv::Mat_<uchar>& intensity, std::vector<double>& confidences)
 {
 	dlib::frontal_face_detector detector = dlib::get_frontal_face_detector();
@@ -1473,6 +1475,8 @@ bool DetectSingleFaceHOG(cv::Rect_<double>& o_region, const cv::Mat_<uchar>& int
 	}
 	return detect_success;
 }
+
+#endif
 
 //============================================================================
 // Matrix reading functionality

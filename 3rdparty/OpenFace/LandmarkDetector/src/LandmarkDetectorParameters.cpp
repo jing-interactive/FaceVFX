@@ -37,8 +37,7 @@
 #include "LandmarkDetectorParameters.h"
 
 // Boost includes
-#include <filesystem.hpp>
-#include <filesystem/fstream.hpp>
+#include "cinder/Filesystem.h"
 
 // System includes
 #include <sstream>
@@ -65,7 +64,7 @@ FaceModelParameters::FaceModelParameters(vector<string> &arguments)
 	init();
 
 	// First element is reserved for the executable location (useful for finding relative model locs)
-	boost::filesystem::path root = boost::filesystem::path(arguments[0]).parent_path();
+	ci::fs::path root = ci::fs::path(arguments[0]).parent_path();
 
 	bool* valid = new bool[arguments.size()];
 	valid[0] = true;
@@ -191,17 +190,17 @@ FaceModelParameters::FaceModelParameters(vector<string> &arguments)
 
 	// Make sure model_location is valid
 	// First check working directory, then the executable's directory, then the config path set by the build process.
-	boost::filesystem::path config_path = boost::filesystem::path(CONFIG_DIR);
-	boost::filesystem::path model_path = boost::filesystem::path(model_location);
-	if (boost::filesystem::exists(model_path))
+	ci::fs::path config_path = ci::fs::path(CONFIG_DIR);
+	ci::fs::path model_path = ci::fs::path(model_location);
+	if (ci::fs::exists(model_path))
 	{
 		model_location = model_path.string();
 	}
-	else if (boost::filesystem::exists(root/model_path))
+	else if (ci::fs::exists(root/model_path))
 	{
 		model_location = (root/model_path).string();
 	}
-	else if (boost::filesystem::exists(config_path/model_path))
+	else if (ci::fs::exists(config_path/model_path))
 	{
 		model_location = (config_path/model_path).string();
 	}
@@ -265,8 +264,8 @@ void FaceModelParameters::init()
 	face_detector_location = "classifiers/haarcascade_frontalface_alt.xml";
 	quiet_mode = false;
 
-	// By default use HOG SVM
-	curr_face_detector = HOG_SVM_DETECTOR;
+	// By default use HAAR
+	curr_face_detector = HAAR_DETECTOR;
 
 	// The gaze tracking has to be explicitly initialised
 	track_gaze = false;

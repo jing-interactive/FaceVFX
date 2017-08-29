@@ -40,8 +40,8 @@
 #include <opencv2/objdetect.hpp>
 
 // dlib dependencies for face detection
-#include <dlib/image_processing/frontal_face_detector.h>
-#include <dlib/opencv.h>
+//#include <dlib/image_processing/frontal_face_detector.h>
+//#include <dlib/opencv.h>
 
 #include "PDM.h"
 #include "Patch_experts.h"
@@ -90,7 +90,7 @@ public:
 	string                  face_detector_location;
 
 	// A HOG SVM-struct based face detector
-	dlib::frontal_face_detector face_detector_HOG;
+	//dlib::frontal_face_detector face_detector_HOG;
 
 
 	// Validate if the detected landmarks are correct using an SVR regressor

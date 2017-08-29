@@ -31,12 +31,6 @@
     <Filter Include="Source Files\IFaceTracker">
       <UniqueIdentifier>{bc79f5e3-a52c-4e55-b3af-c23260eced81}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\IFaceTracker\jason_saragih_tracker">
-      <UniqueIdentifier>{c7cf9fff-ef8e-4ba4-aa00-0945c98cc72c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\IFaceTracker\jason_saragih_tracker\lib">
-      <UniqueIdentifier>{311b048d-7ebc-4e5e-a50b-28e23c0754ac}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Blocks\imgui">
       <UniqueIdentifier>{e71c4c9e-444b-4468-a17e-30346df64610}</UniqueIdentifier>
     </Filter>
@@ -48,6 +42,12 @@
     </Filter>
     <Filter Include="Blocks\imgui\lib">
       <UniqueIdentifier>{0a218ccb-c9fd-4287-9770-1cf94fbb201b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenFace">
+      <UniqueIdentifier>{9ae1c9bc-9ee1-4b59-9729-a3ba3cac98d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FaceTracker">
+      <UniqueIdentifier>{daacb2f6-1c33-4fb9-adca-0d7e062da290}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,33 +69,6 @@
     <ClCompile Include="..\src\IFaceTracker\IFaceTracker.cpp">
       <Filter>Source Files\IFaceTracker</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.cpp">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\CLM.cc">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FCheck.cc">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FDet.cc">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\IO.cc">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Patch.cc">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PAW.cc">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PDM.cc">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.cc">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\src\CinderImGui.cpp">
       <Filter>Blocks\imgui\src</Filter>
     </ClCompile>
@@ -111,6 +84,69 @@
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\ImGuizmo\ImGuizmo.h">
       <Filter>Blocks\imgui\lib</Filter>
     </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\CCNF_patch_expert.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkCoreIncludes.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectionValidator.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectorFunc.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectorModel.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectorParameters.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\LandmarkDetectorUtils.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\Patch_experts.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\PAW.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\PDM.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\stdafx.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\SVR_patch_expert.h">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\FaceTracker\CLM.h">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\FaceTracker\FCheck.h">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\FaceTracker\FDet.h">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\FaceTracker\IO.h">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\FaceTracker\Patch.h">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\FaceTracker\PAW.h">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\FaceTracker\PDM.h">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdparty\FaceTracker\Tracker.h">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\ciFacetracker.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h">
@@ -121,33 +157,6 @@
     </ClInclude>
     <ClInclude Include="..\src\IFaceTracker\IFaceTracker.h">
       <Filter>Source Files\IFaceTracker</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.h">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\CLM.h">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FCheck.h">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\FDet.h">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\IO.h">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Patch.h">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PAW.h">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\PDM.h">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Tracker.h">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\CinderImGui.h">
       <Filter>Blocks\imgui\include</Filter>
@@ -183,17 +192,14 @@
     <None Include="..\include\item.def">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\COPYRIGHT">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </None>
-    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\Makefile">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </None>
-    <None Include="..\src\IFaceTracker\jason_saragih_tracker\lib\README">
-      <Filter>Source Files\IFaceTracker\jason_saragih_tracker\lib</Filter>
-    </None>
     <None Include="..\..\Cinder\blocks\Cinder-ImGui\include\imgui_user.inl">
       <Filter>Blocks\imgui\include</Filter>
+    </None>
+    <None Include="..\3rdparty\FaceTracker\COPYRIGHT">
+      <Filter>Source Files\FaceTracker</Filter>
+    </None>
+    <None Include="..\3rdparty\FaceTracker\README">
+      <Filter>Source Files\FaceTracker</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +208,66 @@
     </ClCompile>
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\ImGuizmo\ImGuizmo.cpp">
       <Filter>Blocks\imgui\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\CCNF_patch_expert.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectionValidator.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectorFunc.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectorModel.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectorParameters.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\LandmarkDetectorUtils.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\Patch_experts.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\PAW.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\PDM.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\stdafx.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\SVR_patch_expert.cpp">
+      <Filter>Source Files\OpenFace</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\FaceTracker\CLM.cc">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\FaceTracker\FCheck.cc">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\FaceTracker\FDet.cc">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\FaceTracker\IO.cc">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\FaceTracker\Patch.cc">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\FaceTracker\Tracker.cc">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\FaceTracker\_PAW.cc">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdparty\FaceTracker\_PDM.cc">
+      <Filter>Source Files\FaceTracker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

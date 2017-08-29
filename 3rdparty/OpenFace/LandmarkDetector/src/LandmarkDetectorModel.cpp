@@ -37,11 +37,12 @@
 #include <LandmarkDetectorModel.h>
 
 // Boost includes
-#include <filesystem.hpp>
-#include <filesystem/fstream.hpp>
+#include "cinder/Filesystem.h"
+
+//#include <filesystem/fstream.hpp>
 
 // TBB includes
-#include <tbb/tbb.h>
+//#include <tbb/tbb.h>
 
 // Local includes
 #include <LandmarkDetectorUtils.h>
@@ -97,7 +98,7 @@ CLNF::CLNF(const CLNF& other): pdm(other.pdm), params_local(other.params_local.c
 		this->kde_resp_precalc.insert(std::pair<int, cv::Mat_<float>>(it->first, it->second.clone()));
 	}
 
-	this->face_detector_HOG = dlib::get_frontal_face_detector();
+	//this->face_detector_HOG = dlib::get_frontal_face_detector();
 
 }
 
@@ -151,7 +152,7 @@ CLNF & CLNF::operator= (const CLNF& other)
 		this->hierarchical_params = other.hierarchical_params;
 	}
 
-	face_detector_HOG = dlib::get_frontal_face_detector();
+	//face_detector_HOG = dlib::get_frontal_face_detector();
 
 	return *this;
 }
@@ -179,7 +180,7 @@ CLNF::CLNF(const CLNF&& other)
 	triangulations = other.triangulations;
 	kde_resp_precalc = other.kde_resp_precalc;
 
-	face_detector_HOG = dlib::get_frontal_face_detector();
+	//face_detector_HOG = dlib::get_frontal_face_detector();
 
 	// Copy over the hierarchical models
 	this->hierarchical_mapping = other.hierarchical_mapping;
@@ -214,7 +215,7 @@ CLNF & CLNF::operator= (const CLNF&& other)
 	triangulations = other.triangulations;
 	kde_resp_precalc = other.kde_resp_precalc;
 
-	face_detector_HOG = dlib::get_frontal_face_detector();
+	//face_detector_HOG = dlib::get_frontal_face_detector();
 
 	// Copy over the hierarchical models
 	this->hierarchical_mapping = other.hierarchical_mapping;
@@ -246,7 +247,7 @@ void CLNF::Read_CLNF(string clnf_location)
 	vector<string> ccnf_expert_locations;
 
 	// The other module locations should be defined as relative paths from the main model
-	boost::filesystem::path root = boost::filesystem::path(clnf_location).parent_path();
+	ci::fs::path root = ci::fs::path(clnf_location).parent_path();
 
 	// The main file contains the references to other files
 	while (!locations.eof())
@@ -317,7 +318,7 @@ void CLNF::Read_CLNF(string clnf_location)
 	patch_experts.Read(intensity_expert_locations, ccnf_expert_locations);
 
 	// Read in a face detector
-	face_detector_HOG = dlib::get_frontal_face_detector();
+	//face_detector_HOG = dlib::get_frontal_face_detector();
 
 }
 
@@ -335,7 +336,7 @@ void CLNF::Read(string main_location)
 	string line;
 	
 	// The other module locations should be defined as relative paths from the main model
-	boost::filesystem::path root = boost::filesystem::path(main_location).parent_path();	
+	ci::fs::path root = ci::fs::path(main_location).parent_path();	
 
 	// Assume no eye model, unless read-in
 	eye_model = false;
@@ -572,8 +573,12 @@ bool CLNF::DetectLandmarks(const cv::Mat_<uchar> &image, FaceModelParameters& pa
 	{
 		bool parts_used = false;		
 
-		// Do the hierarchical models in parallel
-		tbb::parallel_for(0, (int)hierarchical_models.size(), [&](int part_model){
+#ifdef _OPENMP
+#pragma omp parallel for
+#endif
+        // Do the hierarchical models in parallel
+        for (int part_model = 0; part_model<hierarchical_models.size(); part_model++)
+		//tbb::parallel_for(0, (int)hierarchical_models.size(), [&](int part_model){
 		{
 			// Only do the synthetic eye models if we're doing gaze
 			if (!((hierarchical_model_names[part_model].compare("right_eye_28") == 0 ||
@@ -614,7 +619,7 @@ bool CLNF::DetectLandmarks(const cv::Mat_<uchar> &image, FaceModelParameters& pa
 				}
 			}
 		}
-		});
+//		});
 
 		// Recompute main model based on the fit part models
 		if(parts_used)

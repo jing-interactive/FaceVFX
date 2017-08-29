@@ -20,7 +20,7 @@
 
 #include "cinder/TriMesh.h"
 #include "cinder/PolyLine.h"
-#include "lib/Tracker.h"
+#include "../3rdparty/FaceTracker/Tracker.h"
 #include "../IFaceTracker.h"
 
 using std::vector;

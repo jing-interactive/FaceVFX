@@ -41,7 +41,6 @@
 #include <cmath>
 
 // Boost stuff
-#include <filesystem.hpp>
-#include <filesystem/fstream.hpp>
+#include "cinder/Filesystem.h"
 
 #endif
