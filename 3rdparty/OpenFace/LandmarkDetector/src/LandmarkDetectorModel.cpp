@@ -573,53 +573,50 @@ bool CLNF::DetectLandmarks(const cv::Mat_<uchar> &image, FaceModelParameters& pa
 	{
 		bool parts_used = false;		
 
-#ifdef _OPENMP
-#pragma omp parallel for
-#endif
         // Do the hierarchical models in parallel
-        for (int part_model = 0; part_model<hierarchical_models.size(); part_model++)
-		//tbb::parallel_for(0, (int)hierarchical_models.size(), [&](int part_model){
-		{
-			// Only do the synthetic eye models if we're doing gaze
-			if (!((hierarchical_model_names[part_model].compare("right_eye_28") == 0 ||
-			hierarchical_model_names[part_model].compare("left_eye_28") == 0)
-			&& !params.track_gaze))
-			{
+        parallel_for(cv::Range(0, (int)hierarchical_models.size()), [&](const cv::Range& range) {
+           for (int part_model = range.start; part_model<range.end; part_model++)
+           {
+               // Only do the synthetic eye models if we're doing gaze
+               if (!((hierarchical_model_names[part_model].compare("right_eye_28") == 0 ||
+                   hierarchical_model_names[part_model].compare("left_eye_28") == 0)
+                   && !params.track_gaze))
+               {
 
-				int n_part_points = hierarchical_models[part_model].pdm.NumberOfPoints();
+                   int n_part_points = hierarchical_models[part_model].pdm.NumberOfPoints();
 
-				vector<pair<int, int>> mappings = this->hierarchical_mapping[part_model];
+                   vector<pair<int, int>> mappings = this->hierarchical_mapping[part_model];
 
-				cv::Mat_<double> part_model_locs(n_part_points * 2, 1, 0.0);
+                   cv::Mat_<double> part_model_locs(n_part_points * 2, 1, 0.0);
 
-				// Extract the corresponding landmarks
-				for (size_t mapping_ind = 0; mapping_ind < mappings.size(); ++mapping_ind)
-				{
-					part_model_locs.at<double>(mappings[mapping_ind].second) = detected_landmarks.at<double>(mappings[mapping_ind].first);
-					part_model_locs.at<double>(mappings[mapping_ind].second + n_part_points) = detected_landmarks.at<double>(mappings[mapping_ind].first + this->pdm.NumberOfPoints());
-				}
+                   // Extract the corresponding landmarks
+                   for (size_t mapping_ind = 0; mapping_ind < mappings.size(); ++mapping_ind)
+                   {
+                       part_model_locs.at<double>(mappings[mapping_ind].second) = detected_landmarks.at<double>(mappings[mapping_ind].first);
+                       part_model_locs.at<double>(mappings[mapping_ind].second + n_part_points) = detected_landmarks.at<double>(mappings[mapping_ind].first + this->pdm.NumberOfPoints());
+                   }
 
-				// Fit the part based model PDM
-				hierarchical_models[part_model].pdm.CalcParams(hierarchical_models[part_model].params_global, hierarchical_models[part_model].params_local, part_model_locs);
+                   // Fit the part based model PDM
+                   hierarchical_models[part_model].pdm.CalcParams(hierarchical_models[part_model].params_global, hierarchical_models[part_model].params_local, part_model_locs);
 
-				// Only do this if we don't need to upsample
-				if (params_global[0] > 0.9 * hierarchical_models[part_model].patch_experts.patch_scaling[0])
-				{
-					parts_used = true;
+                   // Only do this if we don't need to upsample
+                   if (params_global[0] > 0.9 * hierarchical_models[part_model].patch_experts.patch_scaling[0])
+                   {
+                       parts_used = true;
 
-					this->hierarchical_params[part_model].window_sizes_current = this->hierarchical_params[part_model].window_sizes_init;
+                       this->hierarchical_params[part_model].window_sizes_current = this->hierarchical_params[part_model].window_sizes_init;
 
-					// Do the actual landmark detection
-					hierarchical_models[part_model].DetectLandmarks(image, hierarchical_params[part_model]);
+                       // Do the actual landmark detection
+                       hierarchical_models[part_model].DetectLandmarks(image, hierarchical_params[part_model]);
 
-				}
-				else
-				{
-					hierarchical_models[part_model].pdm.CalcShape2D(hierarchical_models[part_model].detected_landmarks, hierarchical_models[part_model].params_local, hierarchical_models[part_model].params_global);
-				}
-			}
-		}
-//		});
+                   }
+                   else
+                   {
+                       hierarchical_models[part_model].pdm.CalcShape2D(hierarchical_models[part_model].detected_landmarks, hierarchical_models[part_model].params_local, hierarchical_models[part_model].params_global);
+                   }
+               }
+           }
+		});
 
 		// Recompute main model based on the fit part models
 		if(parts_used)

@@ -887,45 +887,40 @@ double DetectionValidator::CheckCNN_tbb(const cv::Mat_<double>& warped_img, int 
 					outputs[0] = outputs[0] + output;
 				}
 
-#ifdef _OPENMP
-#pragma omp parallel for
-#endif
-                for (int k = 1; k < (int)cnn_convolutional_layers[view_id][cnn_layer][in].size(); k++)
-				// TBB pass for the remaining kernels, empirically helps with layers with more kernels
-				//tbb::parallel_for(1, (int)cnn_convolutional_layers[view_id][cnn_layer][in].size(), [&](int k) {
-				{
-					cv::Mat_<float> kernel = cnn_convolutional_layers[view_id][cnn_layer][in][k];
+                parallel_for(cv::Range(1, (int)cnn_convolutional_layers[view_id][cnn_layer][in].size()), [&](const cv::Range& range) {
+                    for (int k = range.start; k < range.end; k++)
+                    {
+                        cv::Mat_<float> kernel = cnn_convolutional_layers[view_id][cnn_layer][in][k];
 
-					// The convolution (with precomputation)
-					cv::Mat_<float> output;
-					if (cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].second.empty()) // This will only be needed during the first pass
-					{
-						std::map<int, cv::Mat_<double> > precomputed_dft;
+                        // The convolution (with precomputation)
+                        cv::Mat_<float> output;
+                        if (cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].second.empty()) // This will only be needed during the first pass
+                        {
+                            std::map<int, cv::Mat_<double> > precomputed_dft;
 
-						LandmarkDetector::matchTemplate_m(input_image, input_image_dft, integral_image, integral_image_sq, kernel, precomputed_dft, output, CV_TM_CCORR);
+                            LandmarkDetector::matchTemplate_m(input_image, input_image_dft, integral_image, integral_image_sq, kernel, precomputed_dft, output, CV_TM_CCORR);
 
-						cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].first = precomputed_dft.begin()->first;
-						cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].second = precomputed_dft.begin()->second;
-					}
-					else
-					{
-						std::map<int, cv::Mat_<double> > precomputed_dft;
-						precomputed_dft[cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].first] = cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].second;
-						LandmarkDetector::matchTemplate_m(input_image, input_image_dft, integral_image, integral_image_sq, kernel, precomputed_dft, output, CV_TM_CCORR);
-					}
+                            cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].first = precomputed_dft.begin()->first;
+                            cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].second = precomputed_dft.begin()->second;
+                        }
+                        else
+                        {
+                            std::map<int, cv::Mat_<double> > precomputed_dft;
+                            precomputed_dft[cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].first] = cnn_convolutional_layers_dft[view_id][cnn_layer][in][k].second;
+                            LandmarkDetector::matchTemplate_m(input_image, input_image_dft, integral_image, integral_image_sq, kernel, precomputed_dft, output, CV_TM_CCORR);
+                        }
 
-					// Combining the maps
-					if (in == 0)
-					{
-						outputs[k] = output;
-					}
-					else
-					{
-						outputs[k] = outputs[k] + output;
-					}
-				}
-				//});
-				
+                        // Combining the maps
+                        if (in == 0)
+                        {
+                            outputs[k] = output;
+                        }
+                        else
+                        {
+                            outputs[k] = outputs[k] + output;
+                        }
+                    }
+				});
 			}
 
 			for (size_t k = 0; k < cnn_convolutional_layers[view_id][cnn_layer][0].size(); ++k)

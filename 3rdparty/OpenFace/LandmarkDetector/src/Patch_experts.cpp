@@ -160,63 +160,60 @@ void Patch_experts::Response(vector<cv::Mat_<float> >& patch_expert_responses, c
 
 	// calculate the patch responses for every landmark, Actual work happens here. If openMP is turned on it is possible to do this in parallel,
 	// this might work well on some machines, while potentially have an adverse effect on others
-#ifdef _OPENMP
-#pragma omp parallel for
-#endif
-	//tbb::parallel_for(0, (int)n, [&](int i){
-	for(int i = 0; i < n; i++)
-	{
-		if(visibilities[scale][view_id].rows == n)
-		{
-			if(visibilities[scale][view_id].at<int>(i,0) != 0)
-			{
 
-				// Work out how big the area of interest has to be to get a response of window size
-				int area_of_interest_width;
-				int area_of_interest_height;
+    parallel_for(cv::Range(0, (int)n), [&](const cv::Range& range) {
+        for (int i = range.start; i<range.end; i++)
+        {
+            if (visibilities[scale][view_id].rows == n)
+            {
+                if (visibilities[scale][view_id].at<int>(i, 0) != 0)
+                {
 
-				if(use_ccnf)
-				{
-					area_of_interest_width = window_size + ccnf_expert_intensity[scale][view_id][i].width - 1; 
-					area_of_interest_height = window_size + ccnf_expert_intensity[scale][view_id][i].height - 1;				
-				}
-				else
-				{
-					area_of_interest_width = window_size + svr_expert_intensity[scale][view_id][i].width - 1; 
-					area_of_interest_height = window_size + svr_expert_intensity[scale][view_id][i].height - 1;
-				}
-			
-				// scale and rotate to mean shape to reference frame
-				cv::Mat sim = (cv::Mat_<float>(2,3) << a1, -b1, landmark_locations.at<double>(i,0), b1, a1, landmark_locations.at<double>(i+n,0));
+                    // Work out how big the area of interest has to be to get a response of window size
+                    int area_of_interest_width;
+                    int area_of_interest_height;
 
-				// Extract the region of interest around the current landmark location
-				cv::Mat_<float> area_of_interest(area_of_interest_height, area_of_interest_width);
+                    if (use_ccnf)
+                    {
+                        area_of_interest_width = window_size + ccnf_expert_intensity[scale][view_id][i].width - 1;
+                        area_of_interest_height = window_size + ccnf_expert_intensity[scale][view_id][i].height - 1;
+                    }
+                    else
+                    {
+                        area_of_interest_width = window_size + svr_expert_intensity[scale][view_id][i].width - 1;
+                        area_of_interest_height = window_size + svr_expert_intensity[scale][view_id][i].height - 1;
+                    }
 
-				// Using C style openCV as it does what we need
-				CvMat area_of_interest_o = area_of_interest;
-				CvMat sim_o = sim;
-				IplImage im_o = grayscale_image;			
-				cvGetQuadrangleSubPix(&im_o, &area_of_interest_o, &sim_o);
-			
-				// get the correct size response window			
-				patch_expert_responses[i] = cv::Mat_<float>(window_size, window_size);
+                    // scale and rotate to mean shape to reference frame
+                    cv::Mat sim = (cv::Mat_<float>(2, 3) << a1, -b1, landmark_locations.at<double>(i, 0), b1, a1, landmark_locations.at<double>(i + n, 0));
 
-				// Get intensity response either from the SVR or CCNF patch experts (prefer CCNF)
-				if(!ccnf_expert_intensity.empty())
-				{				
+                    // Extract the region of interest around the current landmark location
+                    cv::Mat_<float> area_of_interest(area_of_interest_height, area_of_interest_width);
 
-					ccnf_expert_intensity[scale][view_id][i].Response(area_of_interest, patch_expert_responses[i]);
-				}
-				else
-				{
-					svr_expert_intensity[scale][view_id][i].Response(area_of_interest, patch_expert_responses[i]);
-				}
-			
-			}
-		}
-	}
-	//});
+                    // Using C style openCV as it does what we need
+                    CvMat area_of_interest_o = area_of_interest;
+                    CvMat sim_o = sim;
+                    IplImage im_o = grayscale_image;
+                    cvGetQuadrangleSubPix(&im_o, &area_of_interest_o, &sim_o);
 
+                    // get the correct size response window			
+                    patch_expert_responses[i] = cv::Mat_<float>(window_size, window_size);
+
+                    // Get intensity response either from the SVR or CCNF patch experts (prefer CCNF)
+                    if (!ccnf_expert_intensity.empty())
+                    {
+
+                        ccnf_expert_intensity[scale][view_id][i].Response(area_of_interest, patch_expert_responses[i]);
+                    }
+                    else
+                    {
+                        svr_expert_intensity[scale][view_id][i].Response(area_of_interest, patch_expert_responses[i]);
+                    }
+
+                }
+            }
+        }
+	});
 }
 
 //=============================================================================
