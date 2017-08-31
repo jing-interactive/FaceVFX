@@ -36,7 +36,7 @@
 #define __PDM_h_
 
 // OpenCV includes
-#include <opencv2/core/core.hpp>
+#include "opencv2/core/core.hpp"
 
 #include "LandmarkDetectorParameters.h"
 

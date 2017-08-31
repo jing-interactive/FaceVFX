@@ -21,17 +21,6 @@
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		742513AE1D09B4D10073FBCA /* IFaceTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742513951D09B4D10073FBCA /* IFaceTracker.cpp */; };
 		742513AF1D09B4D10073FBCA /* ciFaceTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742513981D09B4D10073FBCA /* ciFaceTracker.cpp */; };
-		742513B01D09B4D10073FBCA /* CLM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 7425139B1D09B4D10073FBCA /* CLM.cc */; };
-		742513B11D09B4D10073FBCA /* COPYRIGHT in Resources */ = {isa = PBXBuildFile; fileRef = 7425139D1D09B4D10073FBCA /* COPYRIGHT */; };
-		742513B21D09B4D10073FBCA /* FCheck.cc in Sources */ = {isa = PBXBuildFile; fileRef = 7425139E1D09B4D10073FBCA /* FCheck.cc */; };
-		742513B31D09B4D10073FBCA /* FDet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513A01D09B4D10073FBCA /* FDet.cc */; };
-		742513B41D09B4D10073FBCA /* IO.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513A21D09B4D10073FBCA /* IO.cc */; };
-		742513B51D09B4D10073FBCA /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 742513A41D09B4D10073FBCA /* Makefile */; };
-		742513B61D09B4D10073FBCA /* Patch.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513A51D09B4D10073FBCA /* Patch.cc */; };
-		742513B71D09B4D10073FBCA /* PAW.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513A71D09B4D10073FBCA /* PAW.cc */; };
-		742513B81D09B4D10073FBCA /* PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513A91D09B4D10073FBCA /* PDM.cc */; };
-		742513B91D09B4D10073FBCA /* README in Resources */ = {isa = PBXBuildFile; fileRef = 742513AB1D09B4D10073FBCA /* README */; };
-		742513BA1D09B4D10073FBCA /* Tracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 742513AC1D09B4D10073FBCA /* Tracker.cc */; };
 		74265F7A1D1173E8002EE405 /* MiniConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74265F781D1173E8002EE405 /* MiniConfig.cpp */; };
 		74727D4F1D0F001C00EF7B50 /* imgui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74727C231D0F001C00EF7B50 /* imgui.cpp */; };
 		74727D501D0F001C00EF7B50 /* imgui_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74727C251D0F001C00EF7B50 /* imgui_demo.cpp */; };
@@ -39,6 +28,75 @@
 		74727D541D0F001C00EF7B50 /* CinderImGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74727C2E1D0F001C00EF7B50 /* CinderImGui.cpp */; };
 		74A547521CFADFF900C05CAC /* item.def in Resources */ = {isa = PBXBuildFile; fileRef = 74A547511CFADFF900C05CAC /* item.def */; };
 		74A547551CFAE06300C05CAC /* Clone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74A547531CFAE06300C05CAC /* Clone.cpp */; };
+		74E49D8D1F578FF90067A532 /* _PAW.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74E49CCD1F578FF90067A532 /* _PAW.cc */; };
+		74E49D8E1F578FF90067A532 /* _PDM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74E49CCE1F578FF90067A532 /* _PDM.cc */; };
+		74E49D8F1F578FF90067A532 /* CLM.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74E49CCF1F578FF90067A532 /* CLM.cc */; };
+		74E49D901F578FF90067A532 /* COPYRIGHT in Resources */ = {isa = PBXBuildFile; fileRef = 74E49CD11F578FF90067A532 /* COPYRIGHT */; };
+		74E49D911F578FF90067A532 /* FCheck.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74E49CD21F578FF90067A532 /* FCheck.cc */; };
+		74E49D921F578FF90067A532 /* FDet.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74E49CD41F578FF90067A532 /* FDet.cc */; };
+		74E49D931F578FF90067A532 /* IO.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74E49CD61F578FF90067A532 /* IO.cc */; };
+		74E49D941F578FF90067A532 /* Patch.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74E49CD81F578FF90067A532 /* Patch.cc */; };
+		74E49D951F578FF90067A532 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 74E49CDC1F578FF90067A532 /* README */; };
+		74E49D961F578FF90067A532 /* Tracker.cc in Sources */ = {isa = PBXBuildFile; fileRef = 74E49CDD1F578FF90067A532 /* Tracker.cc */; };
+		74E49D971F578FF90067A532 /* Copyright.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49CE01F578FF90067A532 /* Copyright.txt */; };
+		74E49DE41F578FF90067A532 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D3B1F578FF90067A532 /* CMakeLists.txt */; };
+		74E49DE51F578FF90067A532 /* LandmarkDetector.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D491F578FF90067A532 /* LandmarkDetector.vcxproj */; };
+		74E49DE61F578FF90067A532 /* LandmarkDetector.vcxproj.filters in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D4A1F578FF90067A532 /* LandmarkDetector.vcxproj.filters */; };
+		74E49DE71F578FF90067A532 /* clm_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D4C1F578FF90067A532 /* clm_general.txt */; };
+		74E49DE81F578FF90067A532 /* clm_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D4D1F578FF90067A532 /* clm_wild.txt */; };
+		74E49DE91F578FF90067A532 /* clnf_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D4E1F578FF90067A532 /* clnf_general.txt */; };
+		74E49DEA1F578FF90067A532 /* clnf_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D4F1F578FF90067A532 /* clnf_wild.txt */; };
+		74E49DEB1F578FF90067A532 /* validator_cnn.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D511F578FF90067A532 /* validator_cnn.txt */; };
+		74E49DEC1F578FF90067A532 /* validator_general_68.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D521F578FF90067A532 /* validator_general_68.txt */; };
+		74E49DED1F578FF90067A532 /* haarAlign.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D531F578FF90067A532 /* haarAlign.txt */; };
+		74E49DEE1F578FF90067A532 /* main_clm_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D541F578FF90067A532 /* main_clm_general.txt */; };
+		74E49DEF1F578FF90067A532 /* main_clm_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D551F578FF90067A532 /* main_clm_wild.txt */; };
+		74E49DF01F578FF90067A532 /* main_clnf_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D561F578FF90067A532 /* main_clnf_general.txt */; };
+		74E49DF11F578FF90067A532 /* main_clnf_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D571F578FF90067A532 /* main_clnf_wild.txt */; };
+		74E49DF21F578FF90067A532 /* clnf_left_synth.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D591F578FF90067A532 /* clnf_left_synth.txt */; };
+		74E49DF31F578FF90067A532 /* clnf_right_synth.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D5A1F578FF90067A532 /* clnf_right_synth.txt */; };
+		74E49DF41F578FF90067A532 /* main_clnf_synth_left.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D5B1F578FF90067A532 /* main_clnf_synth_left.txt */; };
+		74E49DF51F578FF90067A532 /* main_clnf_synth_right.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D5C1F578FF90067A532 /* main_clnf_synth_right.txt */; };
+		74E49DF61F578FF90067A532 /* ccnf_patches_1.00_synth_lid_.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D5E1F578FF90067A532 /* ccnf_patches_1.00_synth_lid_.txt */; };
+		74E49DF71F578FF90067A532 /* ccnf_patches_1.50_synth_lid_.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D5F1F578FF90067A532 /* ccnf_patches_1.50_synth_lid_.txt */; };
+		74E49DF81F578FF90067A532 /* left_ccnf_patches_1.00_synth_lid_.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D601F578FF90067A532 /* left_ccnf_patches_1.00_synth_lid_.txt */; };
+		74E49DF91F578FF90067A532 /* left_ccnf_patches_1.50_synth_lid_.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D611F578FF90067A532 /* left_ccnf_patches_1.50_synth_lid_.txt */; };
+		74E49DFA1F578FF90067A532 /* pdm_28_eye_3D_closed.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D631F578FF90067A532 /* pdm_28_eye_3D_closed.txt */; };
+		74E49DFB1F578FF90067A532 /* pdm_28_l_eye_3D_closed.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D641F578FF90067A532 /* pdm_28_l_eye_3D_closed.txt */; };
+		74E49DFC1F578FF90067A532 /* clnf_inner.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D661F578FF90067A532 /* clnf_inner.txt */; };
+		74E49DFD1F578FF90067A532 /* main_clnf_inner.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D671F578FF90067A532 /* main_clnf_inner.txt */; };
+		74E49DFE1F578FF90067A532 /* ccnf_patches_1.00_inner.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D691F578FF90067A532 /* ccnf_patches_1.00_inner.txt */; };
+		74E49DFF1F578FF90067A532 /* pdm_51_inner.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D6B1F578FF90067A532 /* pdm_51_inner.txt */; };
+		74E49E001F578FF90067A532 /* ccnf_patches_0.25_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D6D1F578FF90067A532 /* ccnf_patches_0.25_general.txt */; };
+		74E49E011F578FF90067A532 /* ccnf_patches_0.25_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D6E1F578FF90067A532 /* ccnf_patches_0.25_wild.txt */; };
+		74E49E021F578FF90067A532 /* ccnf_patches_0.35_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D6F1F578FF90067A532 /* ccnf_patches_0.35_general.txt */; };
+		74E49E031F578FF90067A532 /* ccnf_patches_0.35_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D701F578FF90067A532 /* ccnf_patches_0.35_wild.txt */; };
+		74E49E041F578FF90067A532 /* ccnf_patches_0.5_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D711F578FF90067A532 /* ccnf_patches_0.5_general.txt */; };
+		74E49E051F578FF90067A532 /* ccnf_patches_0.5_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D721F578FF90067A532 /* ccnf_patches_0.5_wild.txt */; };
+		74E49E061F578FF90067A532 /* ccnf_patches_1_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D731F578FF90067A532 /* ccnf_patches_1_wild.txt */; };
+		74E49E071F578FF90067A532 /* svr_patches_0.25_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D741F578FF90067A532 /* svr_patches_0.25_general.txt */; };
+		74E49E081F578FF90067A532 /* svr_patches_0.25_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D751F578FF90067A532 /* svr_patches_0.25_wild.txt */; };
+		74E49E091F578FF90067A532 /* svr_patches_0.35_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D761F578FF90067A532 /* svr_patches_0.35_general.txt */; };
+		74E49E0A1F578FF90067A532 /* svr_patches_0.35_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D771F578FF90067A532 /* svr_patches_0.35_wild.txt */; };
+		74E49E0B1F578FF90067A532 /* svr_patches_0.5_general.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D781F578FF90067A532 /* svr_patches_0.5_general.txt */; };
+		74E49E0C1F578FF90067A532 /* svr_patches_0.5_wild.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D791F578FF90067A532 /* svr_patches_0.5_wild.txt */; };
+		74E49E0D1F578FF90067A532 /* In-the-wild_aligned_PDM_68.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D7B1F578FF90067A532 /* In-the-wild_aligned_PDM_68.txt */; };
+		74E49E0E1F578FF90067A532 /* Multi-PIE_aligned_PDM_68.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D7C1F578FF90067A532 /* Multi-PIE_aligned_PDM_68.txt */; };
+		74E49E0F1F578FF90067A532 /* tris_68.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D7D1F578FF90067A532 /* tris_68.txt */; };
+		74E49E101F578FF90067A532 /* tris_68_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D7E1F578FF90067A532 /* tris_68_full.txt */; };
+		74E49E111F578FF90067A532 /* CCNF_patch_expert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D801F578FF90067A532 /* CCNF_patch_expert.cpp */; };
+		74E49E121F578FF90067A532 /* LandmarkDetectionValidator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D811F578FF90067A532 /* LandmarkDetectionValidator.cpp */; };
+		74E49E131F578FF90067A532 /* LandmarkDetectorFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D821F578FF90067A532 /* LandmarkDetectorFunc.cpp */; };
+		74E49E141F578FF90067A532 /* LandmarkDetectorModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D831F578FF90067A532 /* LandmarkDetectorModel.cpp */; };
+		74E49E151F578FF90067A532 /* LandmarkDetectorParameters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D841F578FF90067A532 /* LandmarkDetectorParameters.cpp */; };
+		74E49E161F578FF90067A532 /* LandmarkDetectorUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D851F578FF90067A532 /* LandmarkDetectorUtils.cpp */; };
+		74E49E171F578FF90067A532 /* Patch_experts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D861F578FF90067A532 /* Patch_experts.cpp */; };
+		74E49E181F578FF90067A532 /* PAW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D871F578FF90067A532 /* PAW.cpp */; };
+		74E49E191F578FF90067A532 /* PDM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D881F578FF90067A532 /* PDM.cpp */; };
+		74E49E1A1F578FF90067A532 /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D891F578FF90067A532 /* stdafx.cpp */; };
+		74E49E1B1F578FF90067A532 /* SVR_patch_expert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D8A1F578FF90067A532 /* SVR_patch_expert.cpp */; };
+		74E49E1C1F578FF90067A532 /* OpenFace-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74E49D8B1F578FF90067A532 /* OpenFace-license.txt */; };
+		74E49E1D1F578FF90067A532 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 74E49D8C1F578FF90067A532 /* README.md */; };
 		74FDA6041EBF744C004A3A0B /* ImGuizmo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74FDA6001EBF744C004A3A0B /* ImGuizmo.cpp */; };
 		74FDA6051EBF744C004A3A0B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 74FDA6021EBF744C004A3A0B /* LICENSE */; };
 		74FDA6061EBF744C004A3A0B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 74FDA6031EBF744C004A3A0B /* README.md */; };
@@ -68,25 +126,6 @@
 		742513961D09B4D10073FBCA /* IFaceTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFaceTracker.h; sourceTree = "<group>"; };
 		742513981D09B4D10073FBCA /* ciFaceTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ciFaceTracker.cpp; sourceTree = "<group>"; };
 		742513991D09B4D10073FBCA /* ciFaceTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ciFaceTracker.h; sourceTree = "<group>"; };
-		7425139B1D09B4D10073FBCA /* CLM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLM.cc; sourceTree = "<group>"; };
-		7425139C1D09B4D10073FBCA /* CLM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLM.h; sourceTree = "<group>"; };
-		7425139D1D09B4D10073FBCA /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
-		7425139E1D09B4D10073FBCA /* FCheck.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FCheck.cc; sourceTree = "<group>"; };
-		7425139F1D09B4D10073FBCA /* FCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCheck.h; sourceTree = "<group>"; };
-		742513A01D09B4D10073FBCA /* FDet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FDet.cc; sourceTree = "<group>"; };
-		742513A11D09B4D10073FBCA /* FDet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDet.h; sourceTree = "<group>"; };
-		742513A21D09B4D10073FBCA /* IO.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IO.cc; sourceTree = "<group>"; };
-		742513A31D09B4D10073FBCA /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IO.h; sourceTree = "<group>"; };
-		742513A41D09B4D10073FBCA /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		742513A51D09B4D10073FBCA /* Patch.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Patch.cc; sourceTree = "<group>"; };
-		742513A61D09B4D10073FBCA /* Patch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch.h; sourceTree = "<group>"; };
-		742513A71D09B4D10073FBCA /* PAW.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PAW.cc; sourceTree = "<group>"; };
-		742513A81D09B4D10073FBCA /* PAW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAW.h; sourceTree = "<group>"; };
-		742513A91D09B4D10073FBCA /* PDM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PDM.cc; sourceTree = "<group>"; };
-		742513AA1D09B4D10073FBCA /* PDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDM.h; sourceTree = "<group>"; };
-		742513AB1D09B4D10073FBCA /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		742513AC1D09B4D10073FBCA /* Tracker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tracker.cc; sourceTree = "<group>"; };
-		742513AD1D09B4D10073FBCA /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
 		74265F781D1173E8002EE405 /* MiniConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MiniConfig.cpp; path = "../../Cinder/blocks/Cinder-VNM/src/MiniConfig.cpp"; sourceTree = "<group>"; };
 		7462E2241D12F39B0064F40D /* AssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
 		7462E2251D12F39B0064F40D /* CaptureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureHelper.h; sourceTree = "<group>"; };
@@ -109,6 +148,95 @@
 		74A547511CFADFF900C05CAC /* item.def */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = item.def; path = ../include/item.def; sourceTree = "<group>"; };
 		74A547531CFAE06300C05CAC /* Clone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Clone.cpp; path = ../src/Clone.cpp; sourceTree = "<group>"; };
 		74A547541CFAE06300C05CAC /* Clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Clone.h; path = ../src/Clone.h; sourceTree = "<group>"; };
+		74E49CCD1F578FF90067A532 /* _PAW.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _PAW.cc; sourceTree = "<group>"; };
+		74E49CCE1F578FF90067A532 /* _PDM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = _PDM.cc; sourceTree = "<group>"; };
+		74E49CCF1F578FF90067A532 /* CLM.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLM.cc; sourceTree = "<group>"; };
+		74E49CD01F578FF90067A532 /* CLM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLM.h; sourceTree = "<group>"; };
+		74E49CD11F578FF90067A532 /* COPYRIGHT */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT; sourceTree = "<group>"; };
+		74E49CD21F578FF90067A532 /* FCheck.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FCheck.cc; sourceTree = "<group>"; };
+		74E49CD31F578FF90067A532 /* FCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCheck.h; sourceTree = "<group>"; };
+		74E49CD41F578FF90067A532 /* FDet.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FDet.cc; sourceTree = "<group>"; };
+		74E49CD51F578FF90067A532 /* FDet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDet.h; sourceTree = "<group>"; };
+		74E49CD61F578FF90067A532 /* IO.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IO.cc; sourceTree = "<group>"; };
+		74E49CD71F578FF90067A532 /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IO.h; sourceTree = "<group>"; };
+		74E49CD81F578FF90067A532 /* Patch.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Patch.cc; sourceTree = "<group>"; };
+		74E49CD91F578FF90067A532 /* Patch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch.h; sourceTree = "<group>"; };
+		74E49CDA1F578FF90067A532 /* _PAW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PAW.h; sourceTree = "<group>"; };
+		74E49CDB1F578FF90067A532 /* _PDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PDM.h; sourceTree = "<group>"; };
+		74E49CDC1F578FF90067A532 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		74E49CDD1F578FF90067A532 /* Tracker.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tracker.cc; sourceTree = "<group>"; };
+		74E49CDE1F578FF90067A532 /* Tracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tracker.h; sourceTree = "<group>"; };
+		74E49CE01F578FF90067A532 /* Copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Copyright.txt; sourceTree = "<group>"; };
+		74E49D3B1F578FF90067A532 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		74E49D3D1F578FF90067A532 /* CCNF_patch_expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNF_patch_expert.h; sourceTree = "<group>"; };
+		74E49D3E1F578FF90067A532 /* LandmarkCoreIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkCoreIncludes.h; sourceTree = "<group>"; };
+		74E49D3F1F578FF90067A532 /* LandmarkDetectionValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectionValidator.h; sourceTree = "<group>"; };
+		74E49D401F578FF90067A532 /* LandmarkDetectorFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectorFunc.h; sourceTree = "<group>"; };
+		74E49D411F578FF90067A532 /* LandmarkDetectorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectorModel.h; sourceTree = "<group>"; };
+		74E49D421F578FF90067A532 /* LandmarkDetectorParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectorParameters.h; sourceTree = "<group>"; };
+		74E49D431F578FF90067A532 /* LandmarkDetectorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkDetectorUtils.h; sourceTree = "<group>"; };
+		74E49D441F578FF90067A532 /* Patch_experts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patch_experts.h; sourceTree = "<group>"; };
+		74E49D451F578FF90067A532 /* PAW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAW.h; sourceTree = "<group>"; };
+		74E49D461F578FF90067A532 /* PDM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDM.h; sourceTree = "<group>"; };
+		74E49D471F578FF90067A532 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		74E49D481F578FF90067A532 /* SVR_patch_expert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVR_patch_expert.h; sourceTree = "<group>"; };
+		74E49D491F578FF90067A532 /* LandmarkDetector.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LandmarkDetector.vcxproj; sourceTree = "<group>"; };
+		74E49D4A1F578FF90067A532 /* LandmarkDetector.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LandmarkDetector.vcxproj.filters; sourceTree = "<group>"; };
+		74E49D4C1F578FF90067A532 /* clm_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clm_general.txt; sourceTree = "<group>"; };
+		74E49D4D1F578FF90067A532 /* clm_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clm_wild.txt; sourceTree = "<group>"; };
+		74E49D4E1F578FF90067A532 /* clnf_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clnf_general.txt; sourceTree = "<group>"; };
+		74E49D4F1F578FF90067A532 /* clnf_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clnf_wild.txt; sourceTree = "<group>"; };
+		74E49D511F578FF90067A532 /* validator_cnn.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = validator_cnn.txt; sourceTree = "<group>"; };
+		74E49D521F578FF90067A532 /* validator_general_68.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = validator_general_68.txt; sourceTree = "<group>"; };
+		74E49D531F578FF90067A532 /* haarAlign.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = haarAlign.txt; sourceTree = "<group>"; };
+		74E49D541F578FF90067A532 /* main_clm_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main_clm_general.txt; sourceTree = "<group>"; };
+		74E49D551F578FF90067A532 /* main_clm_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main_clm_wild.txt; sourceTree = "<group>"; };
+		74E49D561F578FF90067A532 /* main_clnf_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main_clnf_general.txt; sourceTree = "<group>"; };
+		74E49D571F578FF90067A532 /* main_clnf_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main_clnf_wild.txt; sourceTree = "<group>"; };
+		74E49D591F578FF90067A532 /* clnf_left_synth.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clnf_left_synth.txt; sourceTree = "<group>"; };
+		74E49D5A1F578FF90067A532 /* clnf_right_synth.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clnf_right_synth.txt; sourceTree = "<group>"; };
+		74E49D5B1F578FF90067A532 /* main_clnf_synth_left.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main_clnf_synth_left.txt; sourceTree = "<group>"; };
+		74E49D5C1F578FF90067A532 /* main_clnf_synth_right.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main_clnf_synth_right.txt; sourceTree = "<group>"; };
+		74E49D5E1F578FF90067A532 /* ccnf_patches_1.00_synth_lid_.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_1.00_synth_lid_.txt; sourceTree = "<group>"; };
+		74E49D5F1F578FF90067A532 /* ccnf_patches_1.50_synth_lid_.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_1.50_synth_lid_.txt; sourceTree = "<group>"; };
+		74E49D601F578FF90067A532 /* left_ccnf_patches_1.00_synth_lid_.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = left_ccnf_patches_1.00_synth_lid_.txt; sourceTree = "<group>"; };
+		74E49D611F578FF90067A532 /* left_ccnf_patches_1.50_synth_lid_.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = left_ccnf_patches_1.50_synth_lid_.txt; sourceTree = "<group>"; };
+		74E49D631F578FF90067A532 /* pdm_28_eye_3D_closed.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pdm_28_eye_3D_closed.txt; sourceTree = "<group>"; };
+		74E49D641F578FF90067A532 /* pdm_28_l_eye_3D_closed.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pdm_28_l_eye_3D_closed.txt; sourceTree = "<group>"; };
+		74E49D661F578FF90067A532 /* clnf_inner.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clnf_inner.txt; sourceTree = "<group>"; };
+		74E49D671F578FF90067A532 /* main_clnf_inner.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main_clnf_inner.txt; sourceTree = "<group>"; };
+		74E49D691F578FF90067A532 /* ccnf_patches_1.00_inner.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_1.00_inner.txt; sourceTree = "<group>"; };
+		74E49D6B1F578FF90067A532 /* pdm_51_inner.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pdm_51_inner.txt; sourceTree = "<group>"; };
+		74E49D6D1F578FF90067A532 /* ccnf_patches_0.25_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_0.25_general.txt; sourceTree = "<group>"; };
+		74E49D6E1F578FF90067A532 /* ccnf_patches_0.25_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_0.25_wild.txt; sourceTree = "<group>"; };
+		74E49D6F1F578FF90067A532 /* ccnf_patches_0.35_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_0.35_general.txt; sourceTree = "<group>"; };
+		74E49D701F578FF90067A532 /* ccnf_patches_0.35_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_0.35_wild.txt; sourceTree = "<group>"; };
+		74E49D711F578FF90067A532 /* ccnf_patches_0.5_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_0.5_general.txt; sourceTree = "<group>"; };
+		74E49D721F578FF90067A532 /* ccnf_patches_0.5_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_0.5_wild.txt; sourceTree = "<group>"; };
+		74E49D731F578FF90067A532 /* ccnf_patches_1_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ccnf_patches_1_wild.txt; sourceTree = "<group>"; };
+		74E49D741F578FF90067A532 /* svr_patches_0.25_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = svr_patches_0.25_general.txt; sourceTree = "<group>"; };
+		74E49D751F578FF90067A532 /* svr_patches_0.25_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = svr_patches_0.25_wild.txt; sourceTree = "<group>"; };
+		74E49D761F578FF90067A532 /* svr_patches_0.35_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = svr_patches_0.35_general.txt; sourceTree = "<group>"; };
+		74E49D771F578FF90067A532 /* svr_patches_0.35_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = svr_patches_0.35_wild.txt; sourceTree = "<group>"; };
+		74E49D781F578FF90067A532 /* svr_patches_0.5_general.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = svr_patches_0.5_general.txt; sourceTree = "<group>"; };
+		74E49D791F578FF90067A532 /* svr_patches_0.5_wild.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = svr_patches_0.5_wild.txt; sourceTree = "<group>"; };
+		74E49D7B1F578FF90067A532 /* In-the-wild_aligned_PDM_68.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "In-the-wild_aligned_PDM_68.txt"; sourceTree = "<group>"; };
+		74E49D7C1F578FF90067A532 /* Multi-PIE_aligned_PDM_68.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Multi-PIE_aligned_PDM_68.txt"; sourceTree = "<group>"; };
+		74E49D7D1F578FF90067A532 /* tris_68.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tris_68.txt; sourceTree = "<group>"; };
+		74E49D7E1F578FF90067A532 /* tris_68_full.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tris_68_full.txt; sourceTree = "<group>"; };
+		74E49D801F578FF90067A532 /* CCNF_patch_expert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCNF_patch_expert.cpp; sourceTree = "<group>"; };
+		74E49D811F578FF90067A532 /* LandmarkDetectionValidator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectionValidator.cpp; sourceTree = "<group>"; };
+		74E49D821F578FF90067A532 /* LandmarkDetectorFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectorFunc.cpp; sourceTree = "<group>"; };
+		74E49D831F578FF90067A532 /* LandmarkDetectorModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectorModel.cpp; sourceTree = "<group>"; };
+		74E49D841F578FF90067A532 /* LandmarkDetectorParameters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectorParameters.cpp; sourceTree = "<group>"; };
+		74E49D851F578FF90067A532 /* LandmarkDetectorUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LandmarkDetectorUtils.cpp; sourceTree = "<group>"; };
+		74E49D861F578FF90067A532 /* Patch_experts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Patch_experts.cpp; sourceTree = "<group>"; };
+		74E49D871F578FF90067A532 /* PAW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PAW.cpp; sourceTree = "<group>"; };
+		74E49D881F578FF90067A532 /* PDM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PDM.cpp; sourceTree = "<group>"; };
+		74E49D891F578FF90067A532 /* stdafx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stdafx.cpp; sourceTree = "<group>"; };
+		74E49D8A1F578FF90067A532 /* SVR_patch_expert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SVR_patch_expert.cpp; sourceTree = "<group>"; };
+		74E49D8B1F578FF90067A532 /* OpenFace-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "OpenFace-license.txt"; sourceTree = "<group>"; };
+		74E49D8C1F578FF90067A532 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		74FDA6001EBF744C004A3A0B /* ImGuizmo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImGuizmo.cpp; sourceTree = "<group>"; };
 		74FDA6011EBF744C004A3A0B /* ImGuizmo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImGuizmo.h; sourceTree = "<group>"; };
 		74FDA6021EBF744C004A3A0B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -157,6 +285,8 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				74E49CCC1F578FF90067A532 /* FaceTracker */,
+				74E49CDF1F578FF90067A532 /* OpenFace */,
 				742513941D09B4D10073FBCA /* IFaceTracker */,
 				74A547531CFAE06300C05CAC /* Clone.cpp */,
 				74A547541CFAE06300C05CAC /* Clone.h */,
@@ -275,35 +405,8 @@
 			children = (
 				742513981D09B4D10073FBCA /* ciFaceTracker.cpp */,
 				742513991D09B4D10073FBCA /* ciFaceTracker.h */,
-				7425139A1D09B4D10073FBCA /* lib */,
 			);
 			path = jason_saragih_tracker;
-			sourceTree = "<group>";
-		};
-		7425139A1D09B4D10073FBCA /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				7425139B1D09B4D10073FBCA /* CLM.cc */,
-				7425139C1D09B4D10073FBCA /* CLM.h */,
-				7425139D1D09B4D10073FBCA /* COPYRIGHT */,
-				7425139E1D09B4D10073FBCA /* FCheck.cc */,
-				7425139F1D09B4D10073FBCA /* FCheck.h */,
-				742513A01D09B4D10073FBCA /* FDet.cc */,
-				742513A11D09B4D10073FBCA /* FDet.h */,
-				742513A21D09B4D10073FBCA /* IO.cc */,
-				742513A31D09B4D10073FBCA /* IO.h */,
-				742513A41D09B4D10073FBCA /* Makefile */,
-				742513A51D09B4D10073FBCA /* Patch.cc */,
-				742513A61D09B4D10073FBCA /* Patch.h */,
-				742513A71D09B4D10073FBCA /* PAW.cc */,
-				742513A81D09B4D10073FBCA /* PAW.h */,
-				742513A91D09B4D10073FBCA /* PDM.cc */,
-				742513AA1D09B4D10073FBCA /* PDM.h */,
-				742513AB1D09B4D10073FBCA /* README */,
-				742513AC1D09B4D10073FBCA /* Tracker.cc */,
-				742513AD1D09B4D10073FBCA /* Tracker.h */,
-			);
-			path = lib;
 			sourceTree = "<group>";
 		};
 		7462E2231D12F39B0064F40D /* include */ = {
@@ -373,6 +476,215 @@
 			);
 			name = src;
 			path = "../../Cinder/blocks/Cinder-ImGui/src";
+			sourceTree = "<group>";
+		};
+		74E49CCC1F578FF90067A532 /* FaceTracker */ = {
+			isa = PBXGroup;
+			children = (
+				74E49CCD1F578FF90067A532 /* _PAW.cc */,
+				74E49CCE1F578FF90067A532 /* _PDM.cc */,
+				74E49CCF1F578FF90067A532 /* CLM.cc */,
+				74E49CD01F578FF90067A532 /* CLM.h */,
+				74E49CD11F578FF90067A532 /* COPYRIGHT */,
+				74E49CD21F578FF90067A532 /* FCheck.cc */,
+				74E49CD31F578FF90067A532 /* FCheck.h */,
+				74E49CD41F578FF90067A532 /* FDet.cc */,
+				74E49CD51F578FF90067A532 /* FDet.h */,
+				74E49CD61F578FF90067A532 /* IO.cc */,
+				74E49CD71F578FF90067A532 /* IO.h */,
+				74E49CD81F578FF90067A532 /* Patch.cc */,
+				74E49CD91F578FF90067A532 /* Patch.h */,
+				74E49CDA1F578FF90067A532 /* _PAW.h */,
+				74E49CDB1F578FF90067A532 /* _PDM.h */,
+				74E49CDC1F578FF90067A532 /* README */,
+				74E49CDD1F578FF90067A532 /* Tracker.cc */,
+				74E49CDE1F578FF90067A532 /* Tracker.h */,
+			);
+			name = FaceTracker;
+			path = ../3rdparty/FaceTracker;
+			sourceTree = "<group>";
+		};
+		74E49CDF1F578FF90067A532 /* OpenFace */ = {
+			isa = PBXGroup;
+			children = (
+				74E49CE01F578FF90067A532 /* Copyright.txt */,
+				74E49D3A1F578FF90067A532 /* LandmarkDetector */,
+				74E49D8B1F578FF90067A532 /* OpenFace-license.txt */,
+				74E49D8C1F578FF90067A532 /* README.md */,
+			);
+			name = OpenFace;
+			path = ../3rdparty/OpenFace;
+			sourceTree = "<group>";
+		};
+		74E49D3A1F578FF90067A532 /* LandmarkDetector */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D3B1F578FF90067A532 /* CMakeLists.txt */,
+				74E49D3C1F578FF90067A532 /* include */,
+				74E49D491F578FF90067A532 /* LandmarkDetector.vcxproj */,
+				74E49D4A1F578FF90067A532 /* LandmarkDetector.vcxproj.filters */,
+				74E49D4B1F578FF90067A532 /* model */,
+				74E49D7F1F578FF90067A532 /* src */,
+			);
+			path = LandmarkDetector;
+			sourceTree = "<group>";
+		};
+		74E49D3C1F578FF90067A532 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D3D1F578FF90067A532 /* CCNF_patch_expert.h */,
+				74E49D3E1F578FF90067A532 /* LandmarkCoreIncludes.h */,
+				74E49D3F1F578FF90067A532 /* LandmarkDetectionValidator.h */,
+				74E49D401F578FF90067A532 /* LandmarkDetectorFunc.h */,
+				74E49D411F578FF90067A532 /* LandmarkDetectorModel.h */,
+				74E49D421F578FF90067A532 /* LandmarkDetectorParameters.h */,
+				74E49D431F578FF90067A532 /* LandmarkDetectorUtils.h */,
+				74E49D441F578FF90067A532 /* Patch_experts.h */,
+				74E49D451F578FF90067A532 /* PAW.h */,
+				74E49D461F578FF90067A532 /* PDM.h */,
+				74E49D471F578FF90067A532 /* stdafx.h */,
+				74E49D481F578FF90067A532 /* SVR_patch_expert.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		74E49D4B1F578FF90067A532 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D4C1F578FF90067A532 /* clm_general.txt */,
+				74E49D4D1F578FF90067A532 /* clm_wild.txt */,
+				74E49D4E1F578FF90067A532 /* clnf_general.txt */,
+				74E49D4F1F578FF90067A532 /* clnf_wild.txt */,
+				74E49D501F578FF90067A532 /* detection_validation */,
+				74E49D531F578FF90067A532 /* haarAlign.txt */,
+				74E49D541F578FF90067A532 /* main_clm_general.txt */,
+				74E49D551F578FF90067A532 /* main_clm_wild.txt */,
+				74E49D561F578FF90067A532 /* main_clnf_general.txt */,
+				74E49D571F578FF90067A532 /* main_clnf_wild.txt */,
+				74E49D581F578FF90067A532 /* model_eye */,
+				74E49D651F578FF90067A532 /* model_inner */,
+				74E49D6C1F578FF90067A532 /* patch_experts */,
+				74E49D7A1F578FF90067A532 /* pdms */,
+				74E49D7D1F578FF90067A532 /* tris_68.txt */,
+				74E49D7E1F578FF90067A532 /* tris_68_full.txt */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		74E49D501F578FF90067A532 /* detection_validation */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D511F578FF90067A532 /* validator_cnn.txt */,
+				74E49D521F578FF90067A532 /* validator_general_68.txt */,
+			);
+			path = detection_validation;
+			sourceTree = "<group>";
+		};
+		74E49D581F578FF90067A532 /* model_eye */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D591F578FF90067A532 /* clnf_left_synth.txt */,
+				74E49D5A1F578FF90067A532 /* clnf_right_synth.txt */,
+				74E49D5B1F578FF90067A532 /* main_clnf_synth_left.txt */,
+				74E49D5C1F578FF90067A532 /* main_clnf_synth_right.txt */,
+				74E49D5D1F578FF90067A532 /* patch_experts */,
+				74E49D621F578FF90067A532 /* pdms */,
+			);
+			path = model_eye;
+			sourceTree = "<group>";
+		};
+		74E49D5D1F578FF90067A532 /* patch_experts */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D5E1F578FF90067A532 /* ccnf_patches_1.00_synth_lid_.txt */,
+				74E49D5F1F578FF90067A532 /* ccnf_patches_1.50_synth_lid_.txt */,
+				74E49D601F578FF90067A532 /* left_ccnf_patches_1.00_synth_lid_.txt */,
+				74E49D611F578FF90067A532 /* left_ccnf_patches_1.50_synth_lid_.txt */,
+			);
+			path = patch_experts;
+			sourceTree = "<group>";
+		};
+		74E49D621F578FF90067A532 /* pdms */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D631F578FF90067A532 /* pdm_28_eye_3D_closed.txt */,
+				74E49D641F578FF90067A532 /* pdm_28_l_eye_3D_closed.txt */,
+			);
+			path = pdms;
+			sourceTree = "<group>";
+		};
+		74E49D651F578FF90067A532 /* model_inner */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D661F578FF90067A532 /* clnf_inner.txt */,
+				74E49D671F578FF90067A532 /* main_clnf_inner.txt */,
+				74E49D681F578FF90067A532 /* patch_experts */,
+				74E49D6A1F578FF90067A532 /* pdms */,
+			);
+			path = model_inner;
+			sourceTree = "<group>";
+		};
+		74E49D681F578FF90067A532 /* patch_experts */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D691F578FF90067A532 /* ccnf_patches_1.00_inner.txt */,
+			);
+			path = patch_experts;
+			sourceTree = "<group>";
+		};
+		74E49D6A1F578FF90067A532 /* pdms */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D6B1F578FF90067A532 /* pdm_51_inner.txt */,
+			);
+			path = pdms;
+			sourceTree = "<group>";
+		};
+		74E49D6C1F578FF90067A532 /* patch_experts */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D6D1F578FF90067A532 /* ccnf_patches_0.25_general.txt */,
+				74E49D6E1F578FF90067A532 /* ccnf_patches_0.25_wild.txt */,
+				74E49D6F1F578FF90067A532 /* ccnf_patches_0.35_general.txt */,
+				74E49D701F578FF90067A532 /* ccnf_patches_0.35_wild.txt */,
+				74E49D711F578FF90067A532 /* ccnf_patches_0.5_general.txt */,
+				74E49D721F578FF90067A532 /* ccnf_patches_0.5_wild.txt */,
+				74E49D731F578FF90067A532 /* ccnf_patches_1_wild.txt */,
+				74E49D741F578FF90067A532 /* svr_patches_0.25_general.txt */,
+				74E49D751F578FF90067A532 /* svr_patches_0.25_wild.txt */,
+				74E49D761F578FF90067A532 /* svr_patches_0.35_general.txt */,
+				74E49D771F578FF90067A532 /* svr_patches_0.35_wild.txt */,
+				74E49D781F578FF90067A532 /* svr_patches_0.5_general.txt */,
+				74E49D791F578FF90067A532 /* svr_patches_0.5_wild.txt */,
+			);
+			path = patch_experts;
+			sourceTree = "<group>";
+		};
+		74E49D7A1F578FF90067A532 /* pdms */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D7B1F578FF90067A532 /* In-the-wild_aligned_PDM_68.txt */,
+				74E49D7C1F578FF90067A532 /* Multi-PIE_aligned_PDM_68.txt */,
+			);
+			path = pdms;
+			sourceTree = "<group>";
+		};
+		74E49D7F1F578FF90067A532 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				74E49D801F578FF90067A532 /* CCNF_patch_expert.cpp */,
+				74E49D811F578FF90067A532 /* LandmarkDetectionValidator.cpp */,
+				74E49D821F578FF90067A532 /* LandmarkDetectorFunc.cpp */,
+				74E49D831F578FF90067A532 /* LandmarkDetectorModel.cpp */,
+				74E49D841F578FF90067A532 /* LandmarkDetectorParameters.cpp */,
+				74E49D851F578FF90067A532 /* LandmarkDetectorUtils.cpp */,
+				74E49D861F578FF90067A532 /* Patch_experts.cpp */,
+				74E49D871F578FF90067A532 /* PAW.cpp */,
+				74E49D881F578FF90067A532 /* PDM.cpp */,
+				74E49D891F578FF90067A532 /* stdafx.cpp */,
+				74E49D8A1F578FF90067A532 /* SVR_patch_expert.cpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		74FDA5FF1EBF744C004A3A0B /* ImGuizmo */ = {
@@ -456,11 +768,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				742513B91D09B4D10073FBCA /* README in Resources */,
+				74E49DFD1F578FF90067A532 /* main_clnf_inner.txt in Resources */,
+				74E49D971F578FF90067A532 /* Copyright.txt in Resources */,
+				74E49E031F578FF90067A532 /* ccnf_patches_0.35_wild.txt in Resources */,
+				74E49DE41F578FF90067A532 /* CMakeLists.txt in Resources */,
+				74E49DFA1F578FF90067A532 /* pdm_28_eye_3D_closed.txt in Resources */,
+				74E49DE51F578FF90067A532 /* LandmarkDetector.vcxproj in Resources */,
+				74E49D951F578FF90067A532 /* README in Resources */,
+				74E49DEB1F578FF90067A532 /* validator_cnn.txt in Resources */,
 				74A547521CFADFF900C05CAC /* item.def in Resources */,
+				74E49E0D1F578FF90067A532 /* In-the-wild_aligned_PDM_68.txt in Resources */,
+				74E49E0C1F578FF90067A532 /* svr_patches_0.5_wild.txt in Resources */,
+				74E49E011F578FF90067A532 /* ccnf_patches_0.25_wild.txt in Resources */,
+				74E49DFF1F578FF90067A532 /* pdm_51_inner.txt in Resources */,
+				74E49DEA1F578FF90067A532 /* clnf_wild.txt in Resources */,
+				74E49DED1F578FF90067A532 /* haarAlign.txt in Resources */,
+				74E49DEE1F578FF90067A532 /* main_clm_general.txt in Resources */,
+				74E49DF31F578FF90067A532 /* clnf_right_synth.txt in Resources */,
+				74E49DF51F578FF90067A532 /* main_clnf_synth_right.txt in Resources */,
+				74E49DF81F578FF90067A532 /* left_ccnf_patches_1.00_synth_lid_.txt in Resources */,
+				74E49DFB1F578FF90067A532 /* pdm_28_l_eye_3D_closed.txt in Resources */,
+				74E49E001F578FF90067A532 /* ccnf_patches_0.25_general.txt in Resources */,
+				74E49E1C1F578FF90067A532 /* OpenFace-license.txt in Resources */,
+				74E49DF61F578FF90067A532 /* ccnf_patches_1.00_synth_lid_.txt in Resources */,
+				74E49DF91F578FF90067A532 /* left_ccnf_patches_1.50_synth_lid_.txt in Resources */,
+				74E49E061F578FF90067A532 /* ccnf_patches_1_wild.txt in Resources */,
+				74E49DF41F578FF90067A532 /* main_clnf_synth_left.txt in Resources */,
+				74E49DEC1F578FF90067A532 /* validator_general_68.txt in Resources */,
+				74E49DE61F578FF90067A532 /* LandmarkDetector.vcxproj.filters in Resources */,
+				74E49DE71F578FF90067A532 /* clm_general.txt in Resources */,
+				74E49DFE1F578FF90067A532 /* ccnf_patches_1.00_inner.txt in Resources */,
+				74E49DFC1F578FF90067A532 /* clnf_inner.txt in Resources */,
 				2237EEE8588B43DBA8E48E7A /* CinderApp.icns in Resources */,
-				742513B11D09B4D10073FBCA /* COPYRIGHT in Resources */,
+				74E49DF01F578FF90067A532 /* main_clnf_general.txt in Resources */,
+				74E49DF21F578FF90067A532 /* clnf_left_synth.txt in Resources */,
+				74E49E101F578FF90067A532 /* tris_68_full.txt in Resources */,
+				74E49D901F578FF90067A532 /* COPYRIGHT in Resources */,
+				74E49E0A1F578FF90067A532 /* svr_patches_0.35_wild.txt in Resources */,
+				74E49DEF1F578FF90067A532 /* main_clm_wild.txt in Resources */,
+				74E49E081F578FF90067A532 /* svr_patches_0.25_wild.txt in Resources */,
+				74E49E0E1F578FF90067A532 /* Multi-PIE_aligned_PDM_68.txt in Resources */,
+				74E49DE81F578FF90067A532 /* clm_wild.txt in Resources */,
+				74E49E0F1F578FF90067A532 /* tris_68.txt in Resources */,
+				74E49E041F578FF90067A532 /* ccnf_patches_0.5_general.txt in Resources */,
+				74E49E021F578FF90067A532 /* ccnf_patches_0.35_general.txt in Resources */,
+				74E49DE91F578FF90067A532 /* clnf_general.txt in Resources */,
+				74E49DF11F578FF90067A532 /* main_clnf_wild.txt in Resources */,
+				74E49DF71F578FF90067A532 /* ccnf_patches_1.50_synth_lid_.txt in Resources */,
 				74FDA6051EBF744C004A3A0B /* LICENSE in Resources */,
+				74E49E071F578FF90067A532 /* svr_patches_0.25_general.txt in Resources */,
+				74E49E0B1F578FF90067A532 /* svr_patches_0.5_general.txt in Resources */,
+				74E49E051F578FF90067A532 /* ccnf_patches_0.5_wild.txt in Resources */,
+				74E49E091F578FF90067A532 /* svr_patches_0.35_general.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,27 +830,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E49E181F578FF90067A532 /* PAW.cpp in Sources */,
 				74265F7A1D1173E8002EE405 /* MiniConfig.cpp in Sources */,
-				742513B41D09B4D10073FBCA /* IO.cc in Sources */,
+				74E49E141F578FF90067A532 /* LandmarkDetectorModel.cpp in Sources */,
+				74E49D911F578FF90067A532 /* FCheck.cc in Sources */,
+				74E49E151F578FF90067A532 /* LandmarkDetectorParameters.cpp in Sources */,
 				742513AF1D09B4D10073FBCA /* ciFaceTracker.cpp in Sources */,
+				74E49E161F578FF90067A532 /* LandmarkDetectorUtils.cpp in Sources */,
+				74E49D941F578FF90067A532 /* Patch.cc in Sources */,
+				74E49E1A1F578FF90067A532 /* stdafx.cpp in Sources */,
+				74E49E171F578FF90067A532 /* Patch_experts.cpp in Sources */,
 				74FDA6061EBF744C004A3A0B /* README.md in Sources */,
+				74E49E111F578FF90067A532 /* CCNF_patch_expert.cpp in Sources */,
 				74727D541D0F001C00EF7B50 /* CinderImGui.cpp in Sources */,
 				D5701A71C9844149A33FDA8C /* FaceVFXApp.cpp in Sources */,
-				742513B31D09B4D10073FBCA /* FDet.cc in Sources */,
 				74727D501D0F001C00EF7B50 /* imgui_demo.cpp in Sources */,
-				742513B51D09B4D10073FBCA /* Makefile in Sources */,
 				38FBF0514EEB4923B74FC5B0 /* AssetManager.cpp in Sources */,
 				74A547551CFAE06300C05CAC /* Clone.cpp in Sources */,
+				74E49E191F578FF90067A532 /* PDM.cpp in Sources */,
+				74E49D961F578FF90067A532 /* Tracker.cc in Sources */,
+				74E49E131F578FF90067A532 /* LandmarkDetectorFunc.cpp in Sources */,
 				74FDA6041EBF744C004A3A0B /* ImGuizmo.cpp in Sources */,
-				742513B61D09B4D10073FBCA /* Patch.cc in Sources */,
+				74E49D8E1F578FF90067A532 /* _PDM.cc in Sources */,
+				74E49D8F1F578FF90067A532 /* CLM.cc in Sources */,
 				74727D511D0F001C00EF7B50 /* imgui_draw.cpp in Sources */,
-				742513BA1D09B4D10073FBCA /* Tracker.cc in Sources */,
-				742513B81D09B4D10073FBCA /* PDM.cc in Sources */,
-				742513B71D09B4D10073FBCA /* PAW.cc in Sources */,
-				742513B01D09B4D10073FBCA /* CLM.cc in Sources */,
+				74E49E1D1F578FF90067A532 /* README.md in Sources */,
 				742513AE1D09B4D10073FBCA /* IFaceTracker.cpp in Sources */,
-				742513B21D09B4D10073FBCA /* FCheck.cc in Sources */,
+				74E49D921F578FF90067A532 /* FDet.cc in Sources */,
+				74E49E121F578FF90067A532 /* LandmarkDetectionValidator.cpp in Sources */,
+				74E49D931F578FF90067A532 /* IO.cc in Sources */,
 				74727D4F1D0F001C00EF7B50 /* imgui.cpp in Sources */,
+				74E49D8D1F578FF90067A532 /* _PAW.cc in Sources */,
+				74E49E1B1F578FF90067A532 /* SVR_patch_expert.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,7 +911,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = FaceVFX;
 				SYMROOT = ./build;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks\" ../3rdpart/OpenFace/LandmarkDetector/include";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -591,7 +961,7 @@
 				PRODUCT_NAME = FaceVFX;
 				STRIP_INSTALLED_PRODUCT = YES;
 				SYMROOT = ./build;
-				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../../Cinder/blocks/Cinder-OpenCV3/include\" \"../../Cinder/blocks\" ../3rdpart/OpenFace/LandmarkDetector/include";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

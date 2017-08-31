@@ -37,8 +37,8 @@
 #include "CCNF_patch_expert.h"
 
 // OpenCV includes
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgproc.hpp>
+#include "opencv2/core/core.hpp"
+#include "opencv2/imgproc.hpp"
 
 // Local includes
 #include "LandmarkDetectorUtils.h"

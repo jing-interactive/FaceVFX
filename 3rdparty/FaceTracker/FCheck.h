@@ -39,7 +39,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #ifndef __FCheck_h_
 #define __FCheck_h_
-#include "PAW.h"
+#include "_PAW.h"
 #include <vector>
 namespace FACETRACKER
 {

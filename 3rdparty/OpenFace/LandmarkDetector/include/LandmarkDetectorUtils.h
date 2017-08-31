@@ -37,7 +37,7 @@
 #define __LANDMARK_DETECTOR_UTILS_h_
 
 // OpenCV includes
-#include <opencv2/core/core.hpp>
+#include "opencv2/core/core.hpp"
 
 #include "LandmarkDetectorModel.h"
 

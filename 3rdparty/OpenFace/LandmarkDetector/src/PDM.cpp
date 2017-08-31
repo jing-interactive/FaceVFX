@@ -34,11 +34,11 @@
 
 #include "stdafx.h"
 
-#include <PDM.h>
+#include "PDM.h"
 
 // OpenCV include
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgproc.hpp>
+#include "opencv2/core/core.hpp"
+#include "opencv2/imgproc.hpp"
 
 // Math includes
 #define _USE_MATH_DEFINES
@@ -48,7 +48,7 @@
 	#define M_PI 3.14159265358979323846
 #endif
 
-#include <LandmarkDetectorUtils.h>
+#include "LandmarkDetectorUtils.h"
 
 using namespace LandmarkDetector;
 //===========================================================================

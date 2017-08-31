@@ -61,8 +61,8 @@
 #include "LandmarkDetectionValidator.h"
 
 // OpenCV includes
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgproc.hpp>
+#include "opencv2/core/core.hpp"
+#include "opencv2/imgproc.hpp"
 
 // TBB includes
 //#include <tbb/tbb.h>

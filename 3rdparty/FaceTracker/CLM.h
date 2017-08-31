@@ -39,7 +39,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #ifndef __CLM_h_
 #define __CLM_h_
-#include "PDM.h"
+#include "_PDM.h"
 #include "Patch.h"
 #include <vector>
 namespace FACETRACKER

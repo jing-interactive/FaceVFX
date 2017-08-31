@@ -35,7 +35,7 @@
 #ifndef __CCNF_PATCH_EXPERT_h_
 #define __CCNF_PATCH_EXPERT_h_
 
-#include <opencv2/core/core.hpp>
+#include "opencv2/core/core.hpp"
 
 #include <map>
 #include <vector>

@@ -34,12 +34,12 @@
 
 #include "stdafx.h"
 
-#include <LandmarkDetectorFunc.h>
+#include "LandmarkDetectorFunc.h"
 
 // OpenCV includes
-#include <opencv2/core/core.hpp>
-#include <opencv2/calib3d.hpp>
-#include <opencv2/imgproc.hpp>
+#include "opencv2/core/core.hpp"
+#include "opencv2/calib3d.hpp"
+#include "opencv2/imgproc.hpp"
 
 // System includes
 #include <vector>

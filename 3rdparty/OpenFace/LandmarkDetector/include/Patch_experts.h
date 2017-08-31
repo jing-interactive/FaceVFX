@@ -36,7 +36,7 @@
 #define __Patch_experts_h_
 
 // OpenCV includes
-#include <opencv2/core/core.hpp>
+#include "opencv2/core/core.hpp"
 
 
 #include "SVR_patch_expert.h"

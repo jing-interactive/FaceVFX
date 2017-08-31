@@ -34,7 +34,7 @@
 
 #include "stdafx.h"
 
-#include <LandmarkDetectorModel.h>
+#include "LandmarkDetectorModel.h"
 
 // Boost includes
 #include "cinder/Filesystem.h"
@@ -45,7 +45,7 @@
 //#include <tbb/tbb.h>
 
 // Local includes
-#include <LandmarkDetectorUtils.h>
+#include "LandmarkDetectorUtils.h"
 
 using namespace LandmarkDetector;
 

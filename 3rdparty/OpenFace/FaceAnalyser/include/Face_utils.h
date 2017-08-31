@@ -35,10 +35,10 @@
 #ifndef __FACE_UTILS_h_
 #define __FACE_UTILS_h_
 
-#include <LandmarkCoreIncludes.h>
+#include "LandmarkCoreIncludes.h"
 
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
+#include "opencv2/core/core.hpp"
+#include "opencv2/highgui/highgui.hpp"
 
 namespace FaceAnalysis
 {

@@ -34,12 +34,12 @@
 
 #include "stdafx.h"
 
-#include <LandmarkDetectorUtils.h>
+#include "LandmarkDetectorUtils.h"
 
 // OpenCV includes
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgproc.hpp>
-#include <opencv2/calib3d.hpp>
+#include "opencv2/core/core.hpp"
+#include "opencv2/imgproc.hpp"
+#include "opencv2/calib3d.hpp"
 
 // Boost includes
 #include "cinder/Filesystem.h"

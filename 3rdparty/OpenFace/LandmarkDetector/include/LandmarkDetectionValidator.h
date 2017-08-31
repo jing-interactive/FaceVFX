@@ -60,7 +60,7 @@
 #define __LANDMARK_DETECTION_VALIDATOR_h_
 
 // OpenCV includes
-#include <opencv2/core/core.hpp>
+#include "opencv2/core/core.hpp"
 
 // System includes
 #include <vector>

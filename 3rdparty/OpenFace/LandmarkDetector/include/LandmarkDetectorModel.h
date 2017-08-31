@@ -36,8 +36,8 @@
 #define __LANDMARK_DETECTOR_MODEL_h_
 
 // OpenCV dependencies
-#include <opencv2/core/core.hpp>
-#include <opencv2/objdetect.hpp>
+#include "opencv2/core/core.hpp"
+#include "opencv2/objdetect.hpp"
 
 // dlib dependencies for face detection
 //#include <dlib/image_processing/frontal_face_detector.h>
