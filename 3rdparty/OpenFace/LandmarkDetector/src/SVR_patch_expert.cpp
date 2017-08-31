@@ -37,8 +37,8 @@
 #include "SVR_patch_expert.h"
 
 // OpenCV include
-#include <opencv2/core/core.hpp>
-#include <opencv2/imgproc.hpp>
+#include "opencv2/core/core.hpp"
+#include "opencv2/imgproc.hpp"
 
 #include "LandmarkDetectorUtils.h"
 
