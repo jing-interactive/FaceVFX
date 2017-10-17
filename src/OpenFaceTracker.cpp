@@ -1,4 +1,5 @@
 #include "OpenFaceTracker.h"
+#include "../3rdparty/OpenFace/LandmarkDetector/include/LandmarkCoreIncludes.h"
 
 namespace jing
 {
@@ -44,6 +45,6 @@ namespace jing
 
     void OpenFaceTracker::setup()
     {
-
+        //LandmarkDetector::FaceModelParameters det_parameters(arguments);
     }
 }

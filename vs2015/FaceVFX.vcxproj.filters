@@ -28,9 +28,6 @@
     <Filter Include="Blocks\vnm\src">
       <UniqueIdentifier>{1C47D5A5-6E5F-4EFC-B680-2086A9C9DB9B}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\IFaceTracker">
-      <UniqueIdentifier>{bc79f5e3-a52c-4e55-b3af-c23260eced81}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Blocks\imgui">
       <UniqueIdentifier>{e71c4c9e-444b-4468-a17e-30346df64610}</UniqueIdentifier>
     </Filter>
@@ -65,9 +62,6 @@
     </ClCompile>
     <ClCompile Include="..\src\Clone.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\IFaceTracker.cpp">
-      <Filter>Source Files\IFaceTracker</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\src\CinderImGui.cpp">
       <Filter>Blocks\imgui\src</Filter>
@@ -144,7 +138,13 @@
     <ClInclude Include="..\3rdparty\FaceTracker\Tracker.h">
       <Filter>Source Files\FaceTracker</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\ciFacetracker.h">
+    <ClInclude Include="..\src\JasonFaceTracker.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\BaseFaceTracker.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OpenFaceTracker.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -154,9 +154,6 @@
     </ClInclude>
     <ClInclude Include="..\src\Clone.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\IFaceTracker\IFaceTracker.h">
-      <Filter>Source Files\IFaceTracker</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\CinderImGui.h">
       <Filter>Blocks\imgui\include</Filter>
@@ -266,7 +263,13 @@
     <ClCompile Include="..\3rdparty\FaceTracker\_PDM.cc">
       <Filter>Source Files\FaceTracker</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.cpp">
+    <ClCompile Include="..\src\JasonFaceTracker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\BaseFaceTracker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\OpenFaceTracker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

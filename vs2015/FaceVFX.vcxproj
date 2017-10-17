@@ -226,12 +226,13 @@
     <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\PDM.cpp" />
     <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\stdafx.cpp" />
     <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\SVR_patch_expert.cpp" />
+    <ClCompile Include="..\src\BaseFaceTracker.cpp" />
     <ClCompile Include="..\src\Clone.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\AssetManager.cpp" />
     <ClCompile Include="..\..\Cinder\blocks\Cinder-VNM\src\MiniConfig.cpp" />
     <ClCompile Include="..\src\FaceVFXApp.cpp" />
-    <ClCompile Include="..\src\IFaceTracker\IFaceTracker.cpp" />
-    <ClCompile Include="..\src\IFaceTracker\jason_saragih_tracker\ciFaceTracker.cpp" />
+    <ClCompile Include="..\src\JasonFaceTracker.cpp" />
+    <ClCompile Include="..\src\OpenFaceTracker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\include\CinderImGui.h" />
@@ -265,9 +266,10 @@
     <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\SVR_patch_expert.h" />
     <ClInclude Include="..\include\Resources.h" />
     <ClInclude Include="..\..\Cinder\blocks\Cinder-OpenCV3\include\CinderOpenCV.h" />
+    <ClInclude Include="..\src\BaseFaceTracker.h" />
     <ClInclude Include="..\src\Clone.h" />
-    <ClInclude Include="..\src\IFaceTracker\IFaceTracker.h" />
-    <ClInclude Include="..\src\IFaceTracker\jason_saragih_tracker\ciFacetracker.h" />
+    <ClInclude Include="..\src\JasonFaceTracker.h" />
+    <ClInclude Include="..\src\OpenFaceTracker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
