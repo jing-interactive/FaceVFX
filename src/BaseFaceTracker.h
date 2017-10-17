@@ -4,15 +4,15 @@
 #include <cinder/Surface.h>
 #include "cinder/TriMesh.h"
 
-namespace ft
+namespace jing
 {
-    typedef std::shared_ptr<struct IFaceTracker> FaceTrackerRef;
+    typedef std::shared_ptr<struct BaseFaceTracker> BaseFaceTrackerRef;
 
     struct Option
     {
         Option()
         {
-            method = "jason_saragih_tracker";
+            method = "JasonFaceTracker";
             scale = 1.0f;
         }
 
@@ -20,9 +20,9 @@ namespace ft
         float scale;
     };
 
-    struct IFaceTracker
+    struct BaseFaceTracker
     {
-        static FaceTrackerRef create(Option option = Option());
+        static BaseFaceTrackerRef create(Option option = Option());
         virtual bool update(const ci::Surface& surface) = 0;
         virtual void reset() = 0;
         virtual int size() const = 0;

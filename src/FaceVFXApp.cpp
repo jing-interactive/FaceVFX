@@ -21,7 +21,7 @@
 #include "cinder/qtime/QuickTimeGl.h"
 #endif
 
-#include "IFaceTracker/IFaceTracker.h"
+#include "BaseFaceTracker.h"
 
 #include "Cinder-VNM/include/TextureHelper.h"
 #include "Cinder-VNM/include/CaptureHelper.h"
@@ -121,8 +121,8 @@ private:
 
     TriMesh         mFaceMesh;
 
-    ft::FaceTrackerRef   mOnlineTracker;
-    ft::FaceTrackerRef   mOfflineTracker;
+    jing::BaseFaceTrackerRef   mOnlineTracker;
+    jing::BaseFaceTrackerRef   mOfflineTracker;
     gl::TextureRef mPhotoTex;
 
 #ifdef QUICKTIME_ENABLED
@@ -186,10 +186,10 @@ void FaceOff::updateClone()
 
 void FaceOff::trackerThreadFn()
 {
-    ft::Option option;
+    jing::Option option;
     option.scale = 0.5f;
-    mOfflineTracker = ft::IFaceTracker::create();
-    mOnlineTracker = ft::IFaceTracker::create(option);
+    mOfflineTracker = jing::BaseFaceTracker::create();
+    mOnlineTracker = jing::BaseFaceTracker::create(option);
 
     bool shouldInitFaceMesh = false;
 
