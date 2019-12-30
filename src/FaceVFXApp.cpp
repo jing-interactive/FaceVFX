@@ -271,7 +271,8 @@ void FaceOff::trackerThreadFn()
 
 void FaceOff::setup()
 {
-    ui::initialize(ui::Options().fontGlobalScale(getWindowContentScale()));
+    // ui::Options().fontGlobalScale(getWindowContentScale())
+    ui::initialize();
 
     resize();
     
@@ -377,7 +378,7 @@ void FaceOff::update()
 
 void FaceOff::updateGui()
 {
-    ui::ScopedWindow window("Settings", {toPixels(getWindowWidth() / 2), toPixels(getWindowHeight() / 2)}, 0.5f);
+    ui::ScopedWindow window("Settings");// , { toPixels(getWindowWidth() / 2), toPixels(getWindowHeight() / 2) }, 0.5f);
     
     if (ui::Button("Save Config"))
     {

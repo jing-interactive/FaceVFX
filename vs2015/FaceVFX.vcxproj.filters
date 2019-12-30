@@ -75,9 +75,6 @@
     <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_draw.cpp">
       <Filter>Blocks\imgui\lib</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Cinder\blocks\Cinder-ImGui\lib\ImGuizmo\ImGuizmo.h">
-      <Filter>Blocks\imgui\lib</Filter>
-    </ClInclude>
     <ClInclude Include="..\3rdparty\OpenFace\LandmarkDetector\include\CCNF_patch_expert.h">
       <Filter>Source Files\OpenFace</Filter>
     </ClInclude>
@@ -203,9 +200,6 @@
     <ClCompile Include="..\src\FaceVFXApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\ImGuizmo\ImGuizmo.cpp">
-      <Filter>Blocks\imgui\lib</Filter>
-    </ClCompile>
     <ClCompile Include="..\3rdparty\OpenFace\LandmarkDetector\src\CCNF_patch_expert.cpp">
       <Filter>Source Files\OpenFace</Filter>
     </ClCompile>
@@ -271,6 +265,9 @@
     </ClCompile>
     <ClCompile Include="..\src\OpenFaceTracker.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Cinder\blocks\Cinder-ImGui\lib\imgui\imgui_widgets.cpp">
+      <Filter>Blocks\imgui\lib</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
